@@ -1,0 +1,112 @@
+
+version: 2
+
+models:
+  # ===========================
+  # DIM_DATE
+  # ===========================
+  - name: dim_date
+    description: "Calendar dimension built from ORDER_HEADER timestamps"
+    columns:
+      - name: date_key
+        description: "YYYYMMDD integer"
+        tests: [unique, not_null]
+      - name: date
+        tests: [not_null]
+      - name: year
+      - name: month
+      - name: day_of_month
+
+  # ===========================
+  # DIM_LOCATION
+  # ===========================
+  - name: dim_location
+    description: "Conformed location dimension from RAW.LOCATION"
+    columns:
+      - name: location_key
+        tests: [unique, not_null]
+      - name: location_id
+        tests: [not_null]
+      - name: PLACEKEY
+      - name: LOCATION
+        tests: [not_null]
+      - name: CITY
+        tests: [not_null]
+      - name: REGION
+      - name: ISO_COUNTRY_CODE
+        tests: [not_null]
+      - name: COUNTRY
+        tests: [not_null]
+
+  # ===========================
+  # DIM_TRUCK
+  # ===========================
+  - name: dim_truck
+    description: "Truck dimension from RAW.TRUCK"
+    columns:
+      - name: truck_key
+        tests: [unique, not_null]
+      - name: truck_id
+        tests: [not_null]
+      - name: MENU_TYPE_ID
+        tests: [not_null]
+      - name: PRIMARY_CITY
+        tests: [not_null]
+      - name: REGION
+      - name: ISO_REGION
+      - name: COUNTRY
+        tests: [not_null]
+      - name: ISO_COUNTRY_CODE
+      - name: FRANCHISE_FLAG
+      - name: YEAR
+        tests: [not_null]
+      - name: MAKE
+      - name: MODEL
+      - name: EV_FLAG
+      - name: FRANCHISE_ID
+      - name: TRUCK_OPENING_DATE
+        tests: [not_null]
+
+  # ===========================
+  # DIM_CUSTOMER
+  # ===========================
+  - name: dim_customer
+    description: "Customer dimension from RAW.CUSTOMER_LOYALTY"
+    columns:
+      - name: customer_id
+        tests: [not_null]
+      - name: FIRST_NAME
+      - name: LAST_NAME
+      - name: CITY
+      - name: COUNTRY
+      - name: POSTAL_CODE
+      - name: PREFERRED_LANGUAGE
+      - name: GENDER
+      - name: FAVOURITE_BRAND
+      - name: MARITAL_STATUS
+      - name: CHILDREN_COUNT
+      - name: SIGN_UP_DATE
+      - name: BIRTHDAY_DATE
+      - name: E_MAIL
+      - name: PHONE_NUMBER
+
+  # ===========================
+  # DIM_PRODUCT
+  # ===========================
+  # # - name: dim_product
+  #   description: "Product dimension from RAW.MENU"
+  #   columns:
+  #     - name: product_key
+  #       tests: [unique, not_null]
+  #     - name: menu_item_id
+  #       tests: [not_null]
+  #     - name: MENU_ID
+  #     - name: MENU_TYPE_ID
+  #     - name: MENU_TYPE
+  #     - name: TRUCK_BRAND_NAME
+  #     - name: MENU_ITEM_NAME
+  #       tests: [not_null]
+  #     - name: ITEM_CATEGORY
+  #     - name: COST_OF_GOODS_USD
+  #     - name: SALE_PRICE_USD
+  #     - name: MENU_ITEM_HEALTH_METRICS_OBJ
