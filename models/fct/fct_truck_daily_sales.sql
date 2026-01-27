@@ -1,19 +1,19 @@
 {{ config(materialized='table') }}
 
-with order_header_source as (
+with order_header_data as (
     select
-        order_ts,
-        truck_id,
-        location_id,
-        order_id
+        cast(order_ts as timestamp) as order_ts,
+        cast(truck_id as varchar) as truck_id,
+        cast(location_id as varchar) as location_id,
+        cast(order_id as varchar) as order_id
     from {{ source('tb_101', 'ORDER_HEADER') }}
 ),
 
-order_detail_source as (
+order_detail_data as (
     select
-        order_id,
-        price,
-        order_item_discount_amount
+        cast(order_id as varchar) as order_id,
+        cast(price as decimal(10,2)) as price,
+        cast(order_item_discount_amount as decimal(10,2)) as order_item_discount_amount
     from {{ source('tb_101', 'ORDER_DETAIL') }}
 ),
 
@@ -38,7 +38,7 @@ location_lookup as (
     from {{ ref('dim_location') }}
 ),
 
-order_aggregated as (
+order_aggregations as (
     select
         oh.order_ts,
         oh.truck_id,
@@ -46,8 +46,8 @@ order_aggregated as (
         count(distinct oh.order_id) as order_count,
         sum(coalesce(od.price, 0)) as gross_sales_usd,
         sum(coalesce(od.price, 0) - coalesce(od.order_item_discount_amount, 0)) as net_sales_usd
-    from order_header_source oh
-    left join order_detail_source od
+    from order_header_data oh
+    left join order_detail_data od
         on oh.order_id = od.order_id
     group by
         oh.order_ts,
@@ -61,9 +61,9 @@ final as (
         tl.truck_key,
         ll.location_key,
         oa.order_count,
-        cast(oa.gross_sales_usd as decimal(18,2)) as gross_sales_usd,
-        cast(oa.net_sales_usd as decimal(18,2)) as net_sales_usd
-    from order_aggregated oa
+        oa.gross_sales_usd,
+        oa.net_sales_usd
+    from order_aggregations oa
     left join date_lookup dl
         on dl.date = date(oa.order_ts)
     left join truck_lookup tl
