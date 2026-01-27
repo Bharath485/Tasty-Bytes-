@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
-with order_detail_source as (
+with source_order_detail as (
     select
         order_detail_id,
         order_id,
@@ -8,7 +8,7 @@ with order_detail_source as (
     from {{ source('tb_101', 'ORDER_DETAIL') }}
 ),
 
-order_header_source as (
+source_order_header as (
     select
         order_id,
         order_ts,
@@ -46,8 +46,8 @@ joined_data as (
         oh.location_id,
         oh.truck_id,
         coalesce(od.price, 0) as price
-    from order_detail_source od
-    left join order_header_source oh
+    from source_order_detail od
+    left join source_order_header oh
         on od.order_id = oh.order_id
 ),
 
