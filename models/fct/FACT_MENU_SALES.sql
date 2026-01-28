@@ -18,9 +18,9 @@ order_detail_aggregated as (
 
 select
     m.menu_item_id as menu_item_key,
-    oda.quantity_sold,
-    oda.total_sales_amount,
+    od.quantity_sold,
+    od.total_sales_amount,
     m.item_category
 from menu_data m
-left join order_detail_aggregated oda
-    on m.menu_item_id = oda.menu_item_id
+left join order_detail_aggregated od
+    on m.menu_item_id = od.menu_item_id
