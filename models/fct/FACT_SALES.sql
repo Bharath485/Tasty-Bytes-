@@ -1,48 +1,74 @@
 {{ config(materialized='table') }}
 
-with dim_customer_lookup as (
-    select * from {{ ref('dim_customer') }}
+with order_detail_source as (
+    select
+        order_detail_id,
+        order_id,
+        quantity,
+        unit_price,
+        price,
+        order_item_discount_amount,
+        discount_id
+    from {{ source('tb_101', 'ORDER_DETAIL') }}
 ),
 
-dim_location_lookup as (
-    select * from {{ ref('dim_location') }}
+order_header_source as (
+    select
+        order_id,
+        order_ts,
+        location_id,
+        truck_id,
+        customer_id,
+        order_tax_amount,
+        order_channel,
+        order_currency
+    from {{ source('tb_101', 'ORDER_HEADER') }}
 ),
 
-dim_truck_lookup as (
-    select * from {{ ref('dim_truck') }}
-),
-
-order_header as (
-    select * from {{ source('tb_101', 'ORDER_HEADER') }}
-),
-
-order_detail as (
-    select * from {{ source('tb_101', 'ORDER_DETAIL') }}
+joined_data as (
+    select
+        od.order_detail_id,
+        od.order_id,
+        oh.order_ts,
+        to_number(to_char(oh.order_ts, 'YYYYMMDD')) as order_date_key,
+        oh.location_id as location_key,
+        oh.truck_id as truck_key,
+        oh.customer_id as customer_key,
+        case 
+            when od.quantity < 0 then 0 
+            else cast(od.quantity as number) 
+        end as quantity,
+        coalesce(cast(od.unit_price as number), 0) as unit_price,
+        cast(od.price as number) as line_gross_amount,
+        coalesce(cast(od.order_item_discount_amount as number), 0) as line_discount_amount,
+        cast(oh.order_tax_amount as number) as header_tax_amount,
+        trim(upper(oh.order_channel)) as order_channel,
+        upper(oh.order_currency) as order_currency,
+        od.discount_id,
+        current_timestamp() as dw_insert_ts,
+        current_timestamp() as dw_update_ts
+    from order_detail_source od
+    inner join order_header_source oh
+        on od.order_id = oh.order_id
 )
 
 select
-    oh.order_id,
-    oh.truck_id,
-    oh.location_id,
-    oh.customer_id,
-    oh.discount_id,
-    oh.shift_id,
-    oh.shift_start_time,
-    oh.shift_end_time,
-    oh.order_channel,
-    oh.order_ts,
-    oh.served_ts,
-    oh.order_currency,
-    oh.order_amount,
-    oh.order_tax_amount,
-    oh.order_discount_amount,
-    oh.order_total,
-    od.order_detail_id,
-    od.line_number,
-    od.menu_item_id,
-    od.quantity,
-    od.unit_price,
-    od.price,
-    od.order_item_discount_amount
-from order_header oh
-join order_detail od on oh.order_id = od.order_id
+    order_detail_id as order_item_id,
+    order_id,
+    order_ts,
+    order_date_key,
+    location_key,
+    truck_key,
+    customer_key,
+    quantity,
+    unit_price,
+    line_gross_amount,
+    line_discount_amount,
+    line_gross_amount - coalesce(line_discount_amount, 0) as line_net_amount,
+    header_tax_amount,
+    order_channel,
+    order_currency,
+    discount_id,
+    dw_insert_ts,
+    dw_update_ts
+from joined_data
