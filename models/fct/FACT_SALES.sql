@@ -1,4 +1,8 @@
-{{ config(materialized='table') }}
+{{ config(
+    materialized='incremental',
+    unique_key='order_item_id',
+    on_schema_change='fail'
+) }}
 
 with order_detail_source as (
     select
@@ -50,6 +54,9 @@ joined_data as (
     from order_detail_source od
     inner join order_header_source oh
         on od.order_id = oh.order_id
+    {% if is_incremental() %}
+        where oh.order_ts > (select max(order_ts) from {{ this }})
+    {% endif %}
 )
 
 select
