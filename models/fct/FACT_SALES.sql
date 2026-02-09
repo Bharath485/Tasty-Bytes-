@@ -1,81 +1,56 @@
-{{ config(
-    materialized='incremental',
-    unique_key='order_item_id',
-    on_schema_change='fail'
-) }}
+{{ config(materialized='incremental', unique_key='order_item_id') }}
 
 with order_detail_source as (
     select
-        order_detail_id,
-        order_id,
-        quantity,
-        unit_price,
-        price,
-        order_item_discount_amount,
-        discount_id
+        ORDER_DETAIL_ID,
+        ORDER_ID,
+        QUANTITY,
+        UNIT_PRICE,
+        PRICE,
+        ORDER_ITEM_DISCOUNT_AMOUNT,
+        DISCOUNT_ID
     from {{ source('tb_101', 'ORDER_DETAIL') }}
+    {% if is_incremental() %}
+        where ORDER_DETAIL_ID > (select max(order_item_id) from {{ this }})
+    {% endif %}
 ),
 
 order_header_source as (
     select
-        order_id,
-        order_ts,
-        location_id,
-        truck_id,
-        customer_id,
-        order_tax_amount,
-        order_channel,
-        order_currency
+        ORDER_ID,
+        ORDER_TS,
+        LOCATION_ID,
+        TRUCK_ID,
+        CUSTOMER_ID,
+        ORDER_TAX_AMOUNT,
+        ORDER_CHANNEL,
+        ORDER_CURRENCY
     from {{ source('tb_101', 'ORDER_HEADER') }}
 ),
 
-joined_data as (
+final as (
     select
-        od.order_detail_id,
-        od.order_id,
-        oh.order_ts,
-        to_number(to_char(oh.order_ts, 'YYYYMMDD')) as order_date_key,
-        oh.location_id as location_key,
-        oh.truck_id as truck_key,
-        oh.customer_id as customer_key,
-        case 
-            when od.quantity < 0 then 0 
-            else cast(od.quantity as number) 
-        end as quantity,
-        coalesce(cast(od.unit_price as number), 0) as unit_price,
-        cast(od.price as number) as line_gross_amount,
-        coalesce(cast(od.order_item_discount_amount as number), 0) as line_discount_amount,
-        cast(oh.order_tax_amount as number) as header_tax_amount,
-        trim(upper(oh.order_channel)) as order_channel,
-        upper(oh.order_currency) as order_currency,
-        od.discount_id,
-        current_timestamp() as dw_insert_ts,
-        current_timestamp() as dw_update_ts
+        cast(od.ORDER_DETAIL_ID as integer) as order_item_id,
+        cast(od.ORDER_ID as integer) as order_id,
+        cast(oh.ORDER_TS as timestamp) as order_ts,
+        cast(to_number(to_char(oh.ORDER_TS, 'YYYYMMDD')) as integer) as order_date_key,
+        cast(oh.LOCATION_ID as integer) as location_key,
+        cast(oh.TRUCK_ID as integer) as truck_key,
+        cast(oh.CUSTOMER_ID as integer) as customer_key,
+        cast(greatest(od.QUANTITY, 0) as decimal(10,2)) as quantity,
+        cast(coalesce(od.UNIT_PRICE, 0) as decimal(10,2)) as unit_price,
+        cast(od.PRICE as decimal(10,2)) as line_gross_amount,
+        cast(coalesce(od.ORDER_ITEM_DISCOUNT_AMOUNT, 0) as decimal(10,2)) as line_discount_amount,
+        cast(od.PRICE - coalesce(od.ORDER_ITEM_DISCOUNT_AMOUNT, 0) as decimal(10,2)) as line_net_amount,
+        cast(oh.ORDER_TAX_AMOUNT as decimal(10,2)) as header_tax_amount,
+        cast(trim(upper(oh.ORDER_CHANNEL)) as varchar(50)) as order_channel,
+        cast(upper(oh.ORDER_CURRENCY) as varchar(3)) as order_currency,
+        cast(od.DISCOUNT_ID as integer) as discount_id,
+        cast(current_timestamp() as timestamp) as dw_insert_ts,
+        cast(current_timestamp() as timestamp) as dw_update_ts
     from order_detail_source od
-    inner join order_header_source oh
-        on od.order_id = oh.order_id
-    {% if is_incremental() %}
-        where oh.order_ts > (select max(order_ts) from {{ this }})
-    {% endif %}
+    left join order_header_source oh
+        on od.ORDER_ID = oh.ORDER_ID
 )
 
-select
-    order_detail_id as order_item_id,
-    order_id,
-    order_ts,
-    order_date_key,
-    location_key,
-    truck_key,
-    customer_key,
-    quantity,
-    unit_price,
-    line_gross_amount,
-    line_discount_amount,
-    line_gross_amount - coalesce(line_discount_amount, 0) as line_net_amount,
-    header_tax_amount,
-    order_channel,
-    order_currency,
-    discount_id,
-    dw_insert_ts,
-    dw_update_ts
-from joined_data
+select * from final
