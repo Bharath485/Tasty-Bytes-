@@ -2,7 +2,7 @@
   
     
 
-create or replace transient table tasty_bytes_dbt_db.DEV.FACT_MENU_SALES
+create or replace transient table DBT_POC.DEV.FACT_MENU_SALES
     
     
     
@@ -10,19 +10,19 @@ create or replace transient table tasty_bytes_dbt_db.DEV.FACT_MENU_SALES
 
 with order_detail_source as (
     select
-        cast(MENU_ITEM_ID as varchar) as menu_item_id,
-        cast(QUANTITY as integer) as quantity,
-        cast(PRICE as decimal(10,2)) as price
-    from tasty_bytes_dbt_db.RAW.ORDER_DETAIL
+        cast(menu_item_id as varchar) as menu_item_id,
+        cast(quantity as integer) as quantity,
+        cast(price as decimal(10,2)) as price
+    from dbt_poc.RAW.ORDER_DETAIL
     
 ),
 
 menu_source as (
     select
-        cast(MENU_ITEM_ID as varchar) as menu_item_id,
-        cast(SALE_PRICE_USD as decimal(10,2)) as sale_price_usd,
-        cast(ITEM_CATEGORY as varchar) as item_category
-    from tasty_bytes_dbt_db.RAW.MENU
+        cast(menu_item_id as varchar) as menu_item_id,
+        cast(sale_price_usd as decimal(10,2)) as sale_price_usd,
+        cast(item_category as varchar) as item_category
+    from dbt_poc.RAW.MENU
 ),
 
 aggregated_sales as (
@@ -46,7 +46,7 @@ final as (
         on a.menu_item_id = m.menu_item_id
 )
 
-select
+select 
     menu_item_id,
     quantity_sold,
     total_sales_amount,

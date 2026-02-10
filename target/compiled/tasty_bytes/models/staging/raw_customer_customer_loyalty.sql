@@ -1,2 +1,2 @@
 select *
-from tasty_bytes_dbt_db.RAW.CUSTOMER_LOYALTY
+from dbt_poc.RAW.CUSTOMER_LOYALTY

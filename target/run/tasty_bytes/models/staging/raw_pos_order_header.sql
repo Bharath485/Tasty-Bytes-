@@ -1,11 +1,11 @@
 
-  create or replace   view tasty_bytes_dbt_db.DEV.raw_pos_order_header
+  create or replace   view DBT_POC.DEV.raw_pos_order_header
   
   
   
   
   as (
     SELECT *
-FROM tasty_bytes_dbt_db.RAW.ORDER_HEADER
+FROM dbt_poc.RAW.ORDER_HEADER
   );
 

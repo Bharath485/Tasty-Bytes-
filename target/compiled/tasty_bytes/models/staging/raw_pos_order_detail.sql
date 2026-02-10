@@ -1,2 +1,2 @@
 SELECT *
-FROM tasty_bytes_dbt_db.RAW.ORDER_DETAIL
+FROM dbt_poc.RAW.ORDER_DETAIL

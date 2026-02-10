@@ -1,2 +1,2 @@
 SELECT *
-FROM tasty_bytes_dbt_db.RAW.LOCATION
+FROM dbt_poc.RAW.LOCATION

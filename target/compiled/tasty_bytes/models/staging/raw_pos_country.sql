@@ -1,2 +1,2 @@
 SELECT *
-FROM tasty_bytes_dbt_db.RAW.COUNTRY
+FROM dbt_poc.RAW.COUNTRY

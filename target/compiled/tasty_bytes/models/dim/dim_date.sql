@@ -4,7 +4,7 @@
 with dates as (
   select distinct
     cast(date(ORDER_TS) as date) as calendar_date
-  from tasty_bytes_dbt_db.DEV.raw_pos_order_header
+  from DBT_POC.DEV.raw_pos_order_header
   where ORDER_TS is not null
 )
 

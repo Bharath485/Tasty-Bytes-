@@ -27672,3 +27672,1624 @@ select * from final
 [0m21:19:36.049174 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024723E63430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024736D778B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002472589E650>]}
 [0m21:19:36.049174 [debug] [MainThread]: Flushing usage events
 [0m21:19:36.450633 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:21:04.538508 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F53C6873D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F53E9849A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F53E9847C0>]}
+
+
+============================== 10:21:04.563578 | fc795c85-9a20-4549-a8a0-d848d9dc6118 ==============================
+[0m10:21:04.563578 [info ] [MainThread]: Running with dbt=1.10.13
+[0m10:21:04.569580 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt compile --select FACT_MENU_SALES --target dev', 'target_path': 'None', 'cache_selected_only': 'False', 'warn_error': 'None', 'log_path': 'C:\\Users\\10731399\\Downloads\\getting-started-with-dbt-on-snowflake-main\\tasty_bytes_dbt_demo\\logs', 'fail_fast': 'False', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'use_experimental_parser': 'False', 'version_check': 'True', 'quiet': 'False', 'introspect': 'True', 'empty': 'False', 'log_cache_events': 'False', 'debug': 'False', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'use_colors': 'True', 'printer_width': '80', 'write_json': 'True'}
+[0m10:21:11.096265 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m10:21:11.100308 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m10:21:11.106366 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m10:21:13.754035 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fc795c85-9a20-4549-a8a0-d848d9dc6118', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F53AA524A0>]}
+[0m10:21:14.414870 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fc795c85-9a20-4549-a8a0-d848d9dc6118', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F53E0BE680>]}
+[0m10:21:14.424690 [info ] [MainThread]: Registered adapter: snowflake=1.10.3
+[0m10:21:18.554866 [debug] [MainThread]: checksum: 87546e06832e1286bf2d49b8b108dd3f58da97cbfca650a1f147ec4aedfbbf25, vars: {}, profile: , target: dev, version: 1.10.13
+[0m10:21:20.760838 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 1 files added, 0 files changed.
+[0m10:21:20.766486 [debug] [MainThread]: Partial parsing: added file: tasty_bytes://models\fct\FACT_MENU_SALES.sql
+[0m10:21:20.769178 [debug] [MainThread]: Partial parsing: deleted file: tasty_bytes://models\fct\FACT_ORDERS.sql
+[0m10:21:22.693496 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.tasty_bytes.FACT_MENU_SALES' (models\fct\FACT_MENU_SALES.sql) depends on a source named 'tasty_bytes.ORDER_DETAIL' which was not found
+[0m10:21:22.700493 [debug] [MainThread]: Command `dbt compile` failed at 10:21:22.700493 after 19.02 seconds
+[0m10:21:22.703497 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F53C6873D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F53D9BCBB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F54FAC8460>]}
+[0m10:21:22.705492 [debug] [MainThread]: Flushing usage events
+[0m10:21:23.999809 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:27:47.832002 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027227A37430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027228D64A00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027228D64820>]}
+
+
+============================== 10:27:47.855539 | 92efd678-90f0-48b5-9a3e-93e7b3f7e4fe ==============================
+[0m10:27:47.855539 [info ] [MainThread]: Running with dbt=1.10.13
+[0m10:27:47.861586 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'printer_width': '80', 'target_path': 'None', 'warn_error': 'None', 'indirect_selection': 'eager', 'partial_parse': 'True', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': 'C:\\Users\\10731399\\Downloads\\getting-started-with-dbt-on-snowflake-main\\tasty_bytes_dbt_demo\\logs', 'use_experimental_parser': 'False', 'version_check': 'True', 'quiet': 'False', 'introspect': 'True', 'empty': 'False', 'log_cache_events': 'False', 'debug': 'False', 'no_print': 'None', 'invocation_command': 'dbt compile --select FACT_MENU_SALES --target dev', 'cache_selected_only': 'False', 'write_json': 'True'}
+[0m10:27:55.879426 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m10:27:55.883161 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m10:27:55.886675 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m10:27:58.421804 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '92efd678-90f0-48b5-9a3e-93e7b3f7e4fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027228CEDC90>]}
+[0m10:27:58.972042 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '92efd678-90f0-48b5-9a3e-93e7b3f7e4fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000272399D3A30>]}
+[0m10:27:58.981128 [info ] [MainThread]: Registered adapter: snowflake=1.10.3
+[0m10:28:02.933856 [debug] [MainThread]: checksum: 87546e06832e1286bf2d49b8b108dd3f58da97cbfca650a1f147ec4aedfbbf25, vars: {}, profile: , target: dev, version: 1.10.13
+[0m10:28:04.534864 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 1 files added, 0 files changed.
+[0m10:28:04.539938 [debug] [MainThread]: Partial parsing: added file: tasty_bytes://models\fct\FACT_MENU_SALES.sql
+[0m10:28:04.544434 [debug] [MainThread]: Partial parsing: deleted file: tasty_bytes://models\fct\FACT_ORDERS.sql
+[0m10:28:06.832577 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '92efd678-90f0-48b5-9a3e-93e7b3f7e4fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002723B1A77C0>]}
+[0m10:28:07.840652 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m10:28:07.857094 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m10:28:08.096307 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '92efd678-90f0-48b5-9a3e-93e7b3f7e4fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002723B3CC4F0>]}
+[0m10:28:08.100516 [info ] [MainThread]: Found 17 models, 69 data tests, 8 sources, 603 macros
+[0m10:28:08.103514 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '92efd678-90f0-48b5-9a3e-93e7b3f7e4fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002723B3ECFD0>]}
+[0m10:28:08.113665 [info ] [MainThread]: 
+[0m10:28:08.115662 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:28:08.118709 [info ] [MainThread]: 
+[0m10:28:08.122719 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:28:08.158905 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_DEV'
+[0m10:28:09.479374 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_DEV"
+[0m10:28:09.482399 [debug] [ThreadPool]: On list_DBT_POC_DEV: show objects in DBT_POC.DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_DEV"} */;
+[0m10:28:09.484938 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:28:13.334566 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 3.850 seconds
+[0m10:28:13.348788 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '92efd678-90f0-48b5-9a3e-93e7b3f7e4fe', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002723B3CC7F0>]}
+[0m10:28:13.375558 [debug] [Thread-1 (]: Began running node model.tasty_bytes.FACT_MENU_SALES
+[0m10:28:13.379163 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.tasty_bytes.FACT_MENU_SALES'
+[0m10:28:13.382456 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.FACT_MENU_SALES
+[0m10:28:13.423944 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.FACT_MENU_SALES"
+[0m10:28:13.430256 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.FACT_MENU_SALES
+[0m10:28:13.435247 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.FACT_MENU_SALES
+[0m10:28:13.439491 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:28:13.447150 [debug] [MainThread]: Connection 'list_DBT_POC_DEV' was left open.
+[0m10:28:13.452684 [debug] [MainThread]: On list_DBT_POC_DEV: Close
+[0m10:28:14.190863 [debug] [MainThread]: Connection 'model.tasty_bytes.FACT_MENU_SALES' was properly closed.
+[0m10:28:14.194959 [debug] [MainThread]: Command end result
+[0m10:28:14.398032 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m10:28:14.407539 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m10:28:14.437944 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\run_results.json
+[0m10:28:14.440863 [info ] [MainThread]: Compiled node 'FACT_MENU_SALES' is:
+
+
+with order_detail_source as (
+    select
+        cast(menu_item_id as varchar) as menu_item_id,
+        cast(quantity as integer) as quantity,
+        cast(price as decimal(10,2)) as price
+    from dbt_poc.RAW.ORDER_DETAIL
+    
+),
+
+menu_source as (
+    select
+        cast(menu_item_id as varchar) as menu_item_id,
+        cast(sale_price_usd as decimal(10,2)) as sale_price_usd,
+        cast(item_category as varchar) as item_category
+    from dbt_poc.RAW.MENU
+),
+
+aggregated_sales as (
+    select
+        menu_item_id,
+        sum(quantity) as quantity_sold,
+        sum(price) as total_sales_amount
+    from order_detail_source
+    group by menu_item_id
+),
+
+final as (
+    select
+        a.menu_item_id,
+        a.quantity_sold,
+        a.total_sales_amount,
+        m.sale_price_usd as unit_sale_price,
+        m.item_category
+    from aggregated_sales a
+    left join menu_source m
+        on a.menu_item_id = m.menu_item_id
+)
+
+select 
+    menu_item_id,
+    quantity_sold,
+    total_sales_amount,
+    unit_sale_price,
+    item_category
+from final
+[0m10:28:14.446655 [debug] [MainThread]: Command `dbt compile` succeeded at 10:28:14.446655 after 27.33 seconds
+[0m10:28:14.448659 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027227A37430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000272264513C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002723B256CB0>]}
+[0m10:28:14.450195 [debug] [MainThread]: Flushing usage events
+[0m10:28:14.640955 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:29:27.140541 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F770567430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7728589D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7728587F0>]}
+
+
+============================== 10:29:27.161793 | 3a37620c-9f8c-42c7-9d44-40fec1203885 ==============================
+[0m10:29:27.161793 [info ] [MainThread]: Running with dbt=1.10.13
+[0m10:29:27.164793 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt run --select FACT_MENU_SALES --target dev', 'write_json': 'True', 'no_print': 'None', 'log_format': 'default', 'cache_selected_only': 'False', 'warn_error': 'None', 'static_parser': 'True', 'partial_parse': 'True', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'log_path': 'C:\\Users\\10731399\\Downloads\\getting-started-with-dbt-on-snowflake-main\\tasty_bytes_dbt_demo\\logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'version_check': 'True', 'use_experimental_parser': 'False', 'introspect': 'True', 'quiet': 'False', 'empty': 'False', 'log_cache_events': 'False', 'debug': 'False', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'use_colors': 'True', 'printer_width': '80', 'target_path': 'None'}
+[0m10:29:31.392580 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m10:29:31.396349 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m10:29:31.399310 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m10:29:32.792098 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3a37620c-9f8c-42c7-9d44-40fec1203885', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7718A13C0>]}
+[0m10:29:33.057082 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3a37620c-9f8c-42c7-9d44-40fec1203885', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7034D2560>]}
+[0m10:29:33.075491 [info ] [MainThread]: Registered adapter: snowflake=1.10.3
+[0m10:29:34.952104 [debug] [MainThread]: checksum: 87546e06832e1286bf2d49b8b108dd3f58da97cbfca650a1f147ec4aedfbbf25, vars: {}, profile: , target: dev, version: 1.10.13
+[0m10:29:35.839367 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:29:35.839367 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:29:36.004955 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3a37620c-9f8c-42c7-9d44-40fec1203885', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F704CAC130>]}
+[0m10:29:36.377528 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m10:29:36.386558 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m10:29:36.519969 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3a37620c-9f8c-42c7-9d44-40fec1203885', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F704CCB970>]}
+[0m10:29:36.522385 [info ] [MainThread]: Found 17 models, 69 data tests, 8 sources, 603 macros
+[0m10:29:36.524698 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3a37620c-9f8c-42c7-9d44-40fec1203885', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F704CC9120>]}
+[0m10:29:36.530818 [info ] [MainThread]: 
+[0m10:29:36.533420 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:29:36.535103 [info ] [MainThread]: 
+[0m10:29:36.537337 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:29:36.542444 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC'
+[0m10:29:37.099934 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m10:29:37.102138 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m10:29:37.106319 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:29:39.721785 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 2.628 seconds
+[0m10:29:39.756079 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_DEV'
+[0m10:29:39.793749 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_DEV"
+[0m10:29:39.793749 [debug] [ThreadPool]: On list_DBT_POC_DEV: show objects in DBT_POC.DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_DEV"} */;
+[0m10:29:39.793749 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:29:41.539131 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.743 seconds
+[0m10:29:41.540878 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3a37620c-9f8c-42c7-9d44-40fec1203885', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F704CDAA10>]}
+[0m10:29:41.554602 [debug] [Thread-1 (]: Began running node model.tasty_bytes.FACT_MENU_SALES
+[0m10:29:41.554602 [info ] [Thread-1 (]: 1 of 1 START sql incremental model DEV.FACT_MENU_SALES ......................... [RUN]
+[0m10:29:41.554602 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.tasty_bytes.FACT_MENU_SALES'
+[0m10:29:41.554602 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.FACT_MENU_SALES
+[0m10:29:41.590075 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.FACT_MENU_SALES"
+[0m10:29:41.590075 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.FACT_MENU_SALES
+[0m10:29:41.719656 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.FACT_MENU_SALES"
+[0m10:29:41.721159 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.FACT_MENU_SALES"
+[0m10:29:41.727360 [debug] [Thread-1 (]: On model.tasty_bytes.FACT_MENU_SALES: create or replace transient table DBT_POC.DEV.FACT_MENU_SALES
+    
+    
+    
+    as (
+
+with order_detail_source as (
+    select
+        cast(menu_item_id as varchar) as menu_item_id,
+        cast(quantity as integer) as quantity,
+        cast(price as decimal(10,2)) as price
+    from dbt_poc.RAW.ORDER_DETAIL
+    
+),
+
+menu_source as (
+    select
+        cast(menu_item_id as varchar) as menu_item_id,
+        cast(sale_price_usd as decimal(10,2)) as sale_price_usd,
+        cast(item_category as varchar) as item_category
+    from dbt_poc.RAW.MENU
+),
+
+aggregated_sales as (
+    select
+        menu_item_id,
+        sum(quantity) as quantity_sold,
+        sum(price) as total_sales_amount
+    from order_detail_source
+    group by menu_item_id
+),
+
+final as (
+    select
+        a.menu_item_id,
+        a.quantity_sold,
+        a.total_sales_amount,
+        m.sale_price_usd as unit_sale_price,
+        m.item_category
+    from aggregated_sales a
+    left join menu_source m
+        on a.menu_item_id = m.menu_item_id
+)
+
+select 
+    menu_item_id,
+    quantity_sold,
+    total_sales_amount,
+    unit_sale_price,
+    item_category
+from final
+    )
+
+/* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.FACT_MENU_SALES"} */;
+[0m10:29:41.727360 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:29:57.040179 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 15.311 seconds
+[0m10:29:57.055471 [debug] [Thread-1 (]: Applying DROP to: DBT_POC.DEV.FACT_MENU_SALES__dbt_tmp
+[0m10:29:57.079521 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.FACT_MENU_SALES"
+[0m10:29:57.080067 [debug] [Thread-1 (]: On model.tasty_bytes.FACT_MENU_SALES: drop view if exists DBT_POC.DEV.FACT_MENU_SALES__dbt_tmp cascade
+/* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.FACT_MENU_SALES"} */
+[0m10:29:57.519969 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.438 seconds
+[0m10:29:57.561141 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3a37620c-9f8c-42c7-9d44-40fec1203885', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F704D482E0>]}
+[0m10:29:57.564236 [info ] [Thread-1 (]: 1 of 1 OK created sql incremental model DEV.FACT_MENU_SALES .................... [[32mSUCCESS 1[0m in 16.00s]
+[0m10:29:57.566055 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.FACT_MENU_SALES
+[0m10:29:57.568516 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:29:57.569573 [debug] [MainThread]: Connection 'list_DBT_POC' was left open.
+[0m10:29:57.571301 [debug] [MainThread]: On list_DBT_POC: Close
+[0m10:29:58.222142 [debug] [MainThread]: Connection 'list_DBT_POC_DEV' was left open.
+[0m10:29:58.239452 [debug] [MainThread]: On list_DBT_POC_DEV: Close
+[0m10:29:58.821638 [debug] [MainThread]: Connection 'model.tasty_bytes.FACT_MENU_SALES' was left open.
+[0m10:29:58.821638 [debug] [MainThread]: On model.tasty_bytes.FACT_MENU_SALES: Close
+[0m10:29:59.417778 [info ] [MainThread]: 
+[0m10:29:59.419781 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 22.88 seconds (22.88s).
+[0m10:29:59.421759 [debug] [MainThread]: Command end result
+[0m10:29:59.531889 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m10:29:59.540331 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m10:29:59.555713 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\run_results.json
+[0m10:29:59.555713 [info ] [MainThread]: 
+[0m10:29:59.555713 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:29:59.555713 [info ] [MainThread]: 
+[0m10:29:59.555713 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m10:29:59.555713 [debug] [MainThread]: Command `dbt run` succeeded at 10:29:59.555713 after 32.97 seconds
+[0m10:29:59.555713 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F770567430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7718A13C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F7034D2560>]}
+[0m10:29:59.555713 [debug] [MainThread]: Flushing usage events
+[0m10:29:59.885314 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:46:40.694717 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000271715CB340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000271738C4940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000271738C4760>]}
+
+
+============================== 10:46:40.719334 | d37ced52-e6ed-4e6d-8020-9a96f1f325e3 ==============================
+[0m10:46:40.719334 [info ] [MainThread]: Running with dbt=1.10.13
+[0m10:46:40.723390 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'target_path': 'None', 'log_format': 'default', 'use_colors': 'True', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'warn_error': 'None', 'indirect_selection': 'eager', 'partial_parse': 'True', 'log_path': 'C:\\Users\\10731399\\Downloads\\getting-started-with-dbt-on-snowflake-main\\tasty_bytes_dbt_demo\\logs', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'version_check': 'True', 'use_experimental_parser': 'False', 'introspect': 'True', 'quiet': 'False', 'empty': 'False', 'log_cache_events': 'False', 'debug': 'False', 'no_print': 'None', 'invocation_command': 'dbt compile --select fact_order_line_sales --target dev', 'printer_width': '80', 'write_json': 'True'}
+[0m10:46:45.935430 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m10:46:45.937447 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m10:46:45.940538 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m10:46:47.519059 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd37ced52-e6ed-4e6d-8020-9a96f1f325e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002716F993160>]}
+[0m10:46:47.809278 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd37ced52-e6ed-4e6d-8020-9a96f1f325e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000271044CC220>]}
+[0m10:46:47.814959 [info ] [MainThread]: Registered adapter: snowflake=1.10.3
+[0m10:46:50.257400 [debug] [MainThread]: checksum: 87546e06832e1286bf2d49b8b108dd3f58da97cbfca650a1f147ec4aedfbbf25, vars: {}, profile: , target: dev, version: 1.10.13
+[0m10:46:52.670487 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m10:46:52.675049 [debug] [MainThread]: Partial parsing: added file: tasty_bytes://models\fct\fact_order_line_sales.sql
+[0m10:46:55.255912 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd37ced52-e6ed-4e6d-8020-9a96f1f325e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002710465DC90>]}
+[0m10:46:56.288817 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m10:46:56.317174 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m10:46:56.620211 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd37ced52-e6ed-4e6d-8020-9a96f1f325e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027105F4C730>]}
+[0m10:46:56.624244 [info ] [MainThread]: Found 18 models, 69 data tests, 8 sources, 603 macros
+[0m10:46:56.627242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd37ced52-e6ed-4e6d-8020-9a96f1f325e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027105F5E8F0>]}
+[0m10:46:56.638857 [info ] [MainThread]: 
+[0m10:46:56.641662 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:46:56.645138 [info ] [MainThread]: 
+[0m10:46:56.650429 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:46:56.687627 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_DEV'
+[0m10:46:58.560093 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_DEV"
+[0m10:46:58.564382 [debug] [ThreadPool]: On list_DBT_POC_DEV: show objects in DBT_POC.DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_DEV"} */;
+[0m10:46:58.567378 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:47:02.277148 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 3.709 seconds
+[0m10:47:02.302944 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd37ced52-e6ed-4e6d-8020-9a96f1f325e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027105F4C310>]}
+[0m10:47:02.341355 [debug] [Thread-1 (]: Began running node model.tasty_bytes.fact_order_line_sales
+[0m10:47:02.346522 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.tasty_bytes.fact_order_line_sales'
+[0m10:47:02.350173 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.fact_order_line_sales
+[0m10:47:02.424367 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.fact_order_line_sales"
+[0m10:47:02.438012 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.fact_order_line_sales
+[0m10:47:02.445676 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.fact_order_line_sales
+[0m10:47:02.453459 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:47:02.461532 [debug] [MainThread]: Connection 'list_DBT_POC_DEV' was left open.
+[0m10:47:02.466274 [debug] [MainThread]: On list_DBT_POC_DEV: Close
+[0m10:47:03.058142 [debug] [MainThread]: Connection 'model.tasty_bytes.fact_order_line_sales' was properly closed.
+[0m10:47:03.061165 [debug] [MainThread]: Command end result
+[0m10:47:03.283890 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m10:47:03.293791 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m10:47:03.327708 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\run_results.json
+[0m10:47:03.333275 [info ] [MainThread]: Compiled node 'fact_order_line_sales' is:
+
+
+with order_detail_source as (
+    select
+        cast(ORDER_DETAIL_ID as varchar) as order_detail_id,
+        cast(ORDER_ID as varchar) as order_id,
+        cast(PRICE as decimal(10,2)) as price
+    from dbt_poc.RAW.ORDER_DETAIL
+    
+),
+
+order_header_source as (
+    select
+        cast(ORDER_ID as varchar) as order_id,
+        cast(ORDER_TS as timestamp) as order_ts,
+        cast(LOCATION_ID as varchar) as location_id,
+        cast(TRUCK_ID as varchar) as truck_id
+    from dbt_poc.RAW.ORDER_HEADER
+),
+
+date_lookup as (
+    select
+        date_key,
+        date
+    from DBT_POC.DEV.DIM_DATE
+),
+
+location_lookup as (
+    select
+        location_key,
+        location_id
+    from DBT_POC.DEV.DIM_LOCATION
+),
+
+truck_lookup as (
+    select
+        truck_key,
+        truck_id
+    from DBT_POC.DEV.DIM_TRUCK
+),
+
+final as (
+    select
+        od.order_detail_id,
+        od.order_id,
+        dl.date_key,
+        ll.location_key,
+        tl.truck_key,
+        coalesce(od.price, 0) as line_sales_amount_usd
+    from order_detail_source od
+    left join order_header_source oh on od.order_id = oh.order_id
+    left join date_lookup dl on date(oh.order_ts) = dl.date
+    left join location_lookup ll on oh.location_id = ll.location_id
+    left join truck_lookup tl on oh.truck_id = tl.truck_id
+)
+
+select * from final
+[0m10:47:03.338785 [debug] [MainThread]: Command `dbt compile` succeeded at 10:47:03.337272 after 23.22 seconds
+[0m10:47:03.341376 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000271715CB340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027170FB00D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027105D85EA0>]}
+[0m10:47:03.344395 [debug] [MainThread]: Flushing usage events
+[0m10:47:03.687310 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:48:21.911139 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F3998B3A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F3BC789A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F3BC787C0>]}
+
+
+============================== 10:48:21.927342 | b2583cfc-9892-476f-8bfb-b81532bd438d ==============================
+[0m10:48:21.927342 [info ] [MainThread]: Running with dbt=1.10.13
+[0m10:48:21.930903 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt run --select fact_order_line_sales --target dev', 'target_path': 'None', 'log_format': 'default', 'no_print': 'None', 'printer_width': '80', 'warn_error': 'None', 'log_path': 'C:\\Users\\10731399\\Downloads\\getting-started-with-dbt-on-snowflake-main\\tasty_bytes_dbt_demo\\logs', 'partial_parse': 'True', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'version_check': 'True', 'use_experimental_parser': 'False', 'introspect': 'True', 'quiet': 'False', 'empty': 'False', 'log_cache_events': 'False', 'debug': 'False', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'use_colors': 'True', 'cache_selected_only': 'False', 'write_json': 'True'}
+[0m10:48:26.088770 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m10:48:26.096091 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m10:48:26.099265 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m10:48:28.011261 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b2583cfc-9892-476f-8bfb-b81532bd438d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F3BC78790>]}
+[0m10:48:28.365469 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b2583cfc-9892-476f-8bfb-b81532bd438d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F3B54B040>]}
+[0m10:48:28.371683 [info ] [MainThread]: Registered adapter: snowflake=1.10.3
+[0m10:48:30.827058 [debug] [MainThread]: checksum: 87546e06832e1286bf2d49b8b108dd3f58da97cbfca650a1f147ec4aedfbbf25, vars: {}, profile: , target: dev, version: 1.10.13
+[0m10:48:31.820447 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m10:48:31.822461 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m10:48:31.999323 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b2583cfc-9892-476f-8bfb-b81532bd438d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F4E0CC130>]}
+[0m10:48:32.522735 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m10:48:32.535521 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m10:48:32.701284 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b2583cfc-9892-476f-8bfb-b81532bd438d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F4E0E4AF0>]}
+[0m10:48:32.704509 [info ] [MainThread]: Found 18 models, 69 data tests, 8 sources, 603 macros
+[0m10:48:32.706525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b2583cfc-9892-476f-8bfb-b81532bd438d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F392E5DE0>]}
+[0m10:48:32.713079 [info ] [MainThread]: 
+[0m10:48:32.715080 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:48:32.716418 [info ] [MainThread]: 
+[0m10:48:32.720473 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:48:32.725486 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC'
+[0m10:48:33.239960 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m10:48:33.243734 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m10:48:33.245738 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:48:36.876576 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 3.631 seconds
+[0m10:48:36.902703 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_DEV'
+[0m10:48:36.954375 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_DEV"
+[0m10:48:36.956373 [debug] [ThreadPool]: On list_DBT_POC_DEV: show objects in DBT_POC.DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_DEV"} */;
+[0m10:48:36.958915 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:48:40.707226 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 3.749 seconds
+[0m10:48:40.720539 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b2583cfc-9892-476f-8bfb-b81532bd438d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F4E0FD2D0>]}
+[0m10:48:40.738643 [debug] [Thread-1 (]: Began running node model.tasty_bytes.fact_order_line_sales
+[0m10:48:40.741285 [info ] [Thread-1 (]: 1 of 1 START sql incremental model DEV.fact_order_line_sales ................... [RUN]
+[0m10:48:40.744320 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.tasty_bytes.fact_order_line_sales'
+[0m10:48:40.746319 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.fact_order_line_sales
+[0m10:48:40.783253 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.fact_order_line_sales"
+[0m10:48:40.785334 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.fact_order_line_sales
+[0m10:48:40.897775 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.fact_order_line_sales"
+[0m10:48:40.903379 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.fact_order_line_sales"
+[0m10:48:40.904385 [debug] [Thread-1 (]: On model.tasty_bytes.fact_order_line_sales: create or replace transient table DBT_POC.DEV.fact_order_line_sales
+    
+    
+    
+    as (
+
+with order_detail_source as (
+    select
+        cast(ORDER_DETAIL_ID as varchar) as order_detail_id,
+        cast(ORDER_ID as varchar) as order_id,
+        cast(PRICE as decimal(10,2)) as price
+    from dbt_poc.RAW.ORDER_DETAIL
+    
+),
+
+order_header_source as (
+    select
+        cast(ORDER_ID as varchar) as order_id,
+        cast(ORDER_TS as timestamp) as order_ts,
+        cast(LOCATION_ID as varchar) as location_id,
+        cast(TRUCK_ID as varchar) as truck_id
+    from dbt_poc.RAW.ORDER_HEADER
+),
+
+date_lookup as (
+    select
+        date_key,
+        date
+    from DBT_POC.DEV.DIM_DATE
+),
+
+location_lookup as (
+    select
+        location_key,
+        location_id
+    from DBT_POC.DEV.DIM_LOCATION
+),
+
+truck_lookup as (
+    select
+        truck_key,
+        truck_id
+    from DBT_POC.DEV.DIM_TRUCK
+),
+
+final as (
+    select
+        od.order_detail_id,
+        od.order_id,
+        dl.date_key,
+        ll.location_key,
+        tl.truck_key,
+        coalesce(od.price, 0) as line_sales_amount_usd
+    from order_detail_source od
+    left join order_header_source oh on od.order_id = oh.order_id
+    left join date_lookup dl on date(oh.order_ts) = dl.date
+    left join location_lookup ll on oh.location_id = ll.location_id
+    left join truck_lookup tl on oh.truck_id = tl.truck_id
+)
+
+select * from final
+    )
+
+/* {"app": "dbt", "dbt_version": "1.10.13", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.fact_order_line_sales"} */;
+[0m10:48:40.906384 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:48:42.643930 [debug] [Thread-1 (]: Snowflake adapter: Snowflake query id: 01c24ffe-060a-dbbd-002b-e28312172762
+[0m10:48:42.645987 [debug] [Thread-1 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'DBT_POC.DEV.DIM_DATE' does not exist or not authorized.
+[0m10:48:42.653615 [debug] [Thread-1 (]: Database Error in model fact_order_line_sales (models\fct\fact_order_line_sales.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_POC.DEV.DIM_DATE' does not exist or not authorized.
+  compiled code at target\run\tasty_bytes\models\fct\fact_order_line_sales.sql
+[0m10:48:42.660518 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b2583cfc-9892-476f-8bfb-b81532bd438d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F4E83B400>]}
+[0m10:48:42.662040 [error] [Thread-1 (]: 1 of 1 ERROR creating sql incremental model DEV.fact_order_line_sales .......... [[31mERROR[0m in 1.91s]
+[0m10:48:42.664274 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.fact_order_line_sales
+[0m10:48:42.666096 [debug] [Thread-4 (]: Marking all children of 'model.tasty_bytes.fact_order_line_sales' to be skipped because of status 'error'.  Reason: Database Error in model fact_order_line_sales (models\fct\fact_order_line_sales.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_POC.DEV.DIM_DATE' does not exist or not authorized.
+  compiled code at target\run\tasty_bytes\models\fct\fact_order_line_sales.sql.
+[0m10:48:42.670631 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:48:42.673663 [debug] [MainThread]: Connection 'list_DBT_POC' was left open.
+[0m10:48:42.674735 [debug] [MainThread]: On list_DBT_POC: Close
+[0m10:48:43.497927 [debug] [MainThread]: Connection 'list_DBT_POC_DEV' was left open.
+[0m10:48:43.499929 [debug] [MainThread]: On list_DBT_POC_DEV: Close
+[0m10:48:44.330837 [debug] [MainThread]: Connection 'model.tasty_bytes.fact_order_line_sales' was left open.
+[0m10:48:44.333860 [debug] [MainThread]: On model.tasty_bytes.fact_order_line_sales: Close
+[0m10:48:44.964069 [info ] [MainThread]: 
+[0m10:48:44.976519 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 12.25 seconds (12.25s).
+[0m10:48:44.996433 [debug] [MainThread]: Command end result
+[0m10:48:45.687704 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m10:48:45.717022 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m10:48:45.785700 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\run_results.json
+[0m10:48:45.788909 [info ] [MainThread]: 
+[0m10:48:45.796776 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m10:48:45.802802 [info ] [MainThread]: 
+[0m10:48:45.811298 [error] [MainThread]: [31mFailure in model fact_order_line_sales (models\fct\fact_order_line_sales.sql)[0m
+[0m10:48:45.817598 [error] [MainThread]:   Database Error in model fact_order_line_sales (models\fct\fact_order_line_sales.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_POC.DEV.DIM_DATE' does not exist or not authorized.
+  compiled code at target\run\tasty_bytes\models\fct\fact_order_line_sales.sql
+[0m10:48:45.822423 [info ] [MainThread]: 
+[0m10:48:45.826482 [info ] [MainThread]:   compiled code at target\compiled\tasty_bytes\models\fct\fact_order_line_sales.sql
+[0m10:48:45.835545 [info ] [MainThread]: 
+[0m10:48:45.839469 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m10:48:45.846934 [debug] [MainThread]: Command `dbt run` failed at 10:48:45.846934 after 24.47 seconds
+[0m10:48:45.851186 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F3998B3A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F37D524A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F4CA5CD60>]}
+[0m10:48:45.854651 [debug] [MainThread]: Flushing usage events
+[0m10:48:46.213165 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:52:30.143795 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238C25349B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238C4FBC740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238C56BFDA0>]}
+
+
+============================== 10:52:30.376795 | 5e32536f-6558-4c24-a987-a65316ccf4e5 ==============================
+[0m10:52:30.376795 [info ] [MainThread]: Running with dbt=1.11.2
+[0m10:52:30.504226 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'empty': 'False', 'log_format': 'default', 'quiet': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'C:\\Users\\10731399\\Downloads\\getting-started-with-dbt-on-snowflake-main\\tasty_bytes_dbt_demo\\logs', 'introspect': 'True', 'invocation_command': 'dbt run --select dim_customer.sql', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'write_json': 'True', 'target_path': 'None'}
+[0m10:52:41.993032 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m10:52:41.995035 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m10:52:41.997937 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m10:52:44.133283 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5e32536f-6558-4c24-a987-a65316ccf4e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238D9BF08C0>]}
+[0m10:52:44.734292 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5e32536f-6558-4c24-a987-a65316ccf4e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238D9826870>]}
+[0m10:52:44.745185 [info ] [MainThread]: Registered adapter: snowflake=1.11.0
+[0m10:52:49.613155 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m10:52:50.646893 [info ] [MainThread]: Unable to do partial parsing because of a version mismatch
+[0m10:52:50.651298 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '5e32536f-6558-4c24-a987-a65316ccf4e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238C5185FA0>]}
+[0m10:53:04.240402 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on
+'tb_101_ORDER_DETAIL' in package 'tasty_bytes' (models\staging\__sources.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+[0m10:53:04.253626 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '5e32536f-6558-4c24-a987-a65316ccf4e5', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238DA40ECC0>]}
+[0m10:53:05.836071 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5e32536f-6558-4c24-a987-a65316ccf4e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238DA33A960>]}
+[0m10:53:06.890369 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m10:53:06.918299 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m10:53:07.302287 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5e32536f-6558-4c24-a987-a65316ccf4e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238DA6DC170>]}
+[0m10:53:07.304288 [info ] [MainThread]: Found 18 models, 69 data tests, 8 sources, 644 macros
+[0m10:53:07.334031 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5e32536f-6558-4c24-a987-a65316ccf4e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238DA57D520>]}
+[0m10:53:07.373890 [info ] [MainThread]: 
+[0m10:53:07.416656 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:53:07.444633 [info ] [MainThread]: 
+[0m10:53:07.553375 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m10:53:07.585394 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC'
+[0m10:53:09.010328 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m10:53:09.012438 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m10:53:09.014441 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:53:11.841154 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 2.827 seconds
+[0m10:53:11.896105 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_DEV'
+[0m10:53:11.989332 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_DEV"
+[0m10:53:12.008006 [debug] [ThreadPool]: On list_DBT_POC_DEV: show objects in DBT_POC.DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_DEV"} */;
+[0m10:53:12.012637 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:53:14.047505 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 2.037 seconds
+[0m10:53:14.061162 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5e32536f-6558-4c24-a987-a65316ccf4e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238DA5AA5A0>]}
+[0m10:53:14.151947 [debug] [Thread-1 (]: Began running node model.tasty_bytes.dim_customer
+[0m10:53:14.153969 [info ] [Thread-1 (]: 1 of 1 START sql table model DEV.dim_customer .................................. [RUN]
+[0m10:53:14.164215 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.tasty_bytes.dim_customer'
+[0m10:53:14.166228 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.dim_customer
+[0m10:53:14.210163 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.dim_customer"
+[0m10:53:14.215692 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.dim_customer
+[0m10:53:14.414876 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.dim_customer"
+[0m10:53:14.424869 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.dim_customer"
+[0m10:53:14.426379 [debug] [Thread-1 (]: On model.tasty_bytes.dim_customer: create or replace transient table DBT_POC.DEV.dim_customer
+    
+    
+    
+    as (-- models/marts/sales/dim_customer.sql
+
+
+with customer as (
+    select
+        -- natural key from source
+        customer_id,
+        -- standard conformed attributes
+        initcap(trim(first_name))      as first_name,
+        initcap(trim(last_name))       as last_name,
+        lower(trim(e_mail))             as email,
+        coalesce(country, 'Unknown')   as country,
+        -- coalesce(state, 'Unknown')     as state,
+        -- coalesce(city, 'Unknown')      as city,
+
+        -- type 1 dimension pattern: latest snapshot from staging
+        current_timestamp()            as dim_load_ts
+    from DBT_POC.DEV.raw_customer_customer_loyalty
+)
+select * from customer
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.dim_customer"} */;
+[0m10:53:14.429521 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:53:16.397102 [debug] [Thread-1 (]: Snowflake adapter: Snowflake query id: 01c25003-060a-da36-002b-e2831216dc5a
+[0m10:53:16.398617 [debug] [Thread-1 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'DBT_POC.DEV.RAW_CUSTOMER_CUSTOMER_LOYALTY' does not exist or not authorized.
+[0m10:53:16.417928 [debug] [Thread-1 (]: Database Error in model dim_customer (models\dim\dim_customer.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_POC.DEV.RAW_CUSTOMER_CUSTOMER_LOYALTY' does not exist or not authorized.
+  compiled code at target\run\tasty_bytes\models\dim\dim_customer.sql
+[0m10:53:16.427797 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5e32536f-6558-4c24-a987-a65316ccf4e5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238DA52DE20>]}
+[0m10:53:16.430770 [error] [Thread-1 (]: 1 of 1 ERROR creating sql table model DEV.dim_customer ......................... [[31mERROR[0m in 2.26s]
+[0m10:53:16.437065 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.dim_customer
+[0m10:53:16.440092 [debug] [Thread-4 (]: Marking all children of 'model.tasty_bytes.dim_customer' to be skipped because of status 'error'.  Reason: Database Error in model dim_customer (models\dim\dim_customer.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_POC.DEV.RAW_CUSTOMER_CUSTOMER_LOYALTY' does not exist or not authorized.
+  compiled code at target\run\tasty_bytes\models\dim\dim_customer.sql.
+[0m10:53:16.447234 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:53:16.448813 [debug] [MainThread]: Connection 'list_DBT_POC' was left open.
+[0m10:53:16.449826 [debug] [MainThread]: On list_DBT_POC: Close
+[0m10:53:18.299150 [debug] [MainThread]: Connection 'list_DBT_POC_DEV' was left open.
+[0m10:53:18.301186 [debug] [MainThread]: On list_DBT_POC_DEV: Close
+[0m10:53:18.928163 [debug] [MainThread]: Connection 'model.tasty_bytes.dim_customer' was left open.
+[0m10:53:18.929178 [debug] [MainThread]: On model.tasty_bytes.dim_customer: Close
+[0m10:53:19.530635 [info ] [MainThread]: 
+[0m10:53:19.550191 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 11.98 seconds (11.98s).
+[0m10:53:19.554251 [debug] [MainThread]: Command end result
+[0m10:53:19.914982 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m10:53:19.944724 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m10:53:20.008588 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\run_results.json
+[0m10:53:20.011645 [info ] [MainThread]: 
+[0m10:53:20.021297 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m10:53:20.076415 [info ] [MainThread]: 
+[0m10:53:20.125858 [error] [MainThread]: [31mFailure in model dim_customer (models\dim\dim_customer.sql)[0m
+[0m10:53:20.172349 [error] [MainThread]:   Database Error in model dim_customer (models\dim\dim_customer.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_POC.DEV.RAW_CUSTOMER_CUSTOMER_LOYALTY' does not exist or not authorized.
+  compiled code at target\run\tasty_bytes\models\dim\dim_customer.sql
+[0m10:53:20.211258 [info ] [MainThread]: 
+[0m10:53:20.245782 [info ] [MainThread]:   compiled code at target\compiled\tasty_bytes\models\dim\dim_customer.sql
+[0m10:53:20.265525 [info ] [MainThread]: 
+[0m10:53:20.302087 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m10:53:20.403409 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m10:53:20.536220 [debug] [MainThread]: Command `dbt run` failed at 10:53:20.536220 after 51.77 seconds
+[0m10:53:20.539311 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238C520DFA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238C4A55460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000238C4A55550>]}
+[0m10:53:20.541341 [debug] [MainThread]: Flushing usage events
+[0m10:53:24.204044 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:00:43.910859 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259F11F68D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259F11F6960>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259F11F5880>]}
+
+
+============================== 11:00:43.962627 | f040dcc4-8c2c-4196-91f8-efbe62dfff74 ==============================
+[0m11:00:43.962627 [info ] [MainThread]: Running with dbt=1.11.2
+[0m11:00:43.969185 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'empty': 'False', 'quiet': 'False', 'log_format': 'default', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'C:\\Users\\10731399\\Downloads\\getting-started-with-dbt-on-snowflake-main\\tasty_bytes_dbt_demo\\logs', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'invocation_command': 'dbt run --select dim_customer.sql', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'target_path': 'None', 'write_json': 'True'}
+[0m11:00:52.163102 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m11:00:52.165148 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m11:00:52.166668 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m11:00:52.721051 [warn ] [MainThread]: [[33mWARNING[0m][MissingPlusPrefixDeprecation]: Deprecated functionality
+Missing '+' prefix on `schema` found at `tasty_bytes.dims.schema` in file `C:\Us
+ers\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_db
+t_demo\dbt_project.yml`. Hierarchical config values without a '+' prefix are
+deprecated in dbt_project.yml.
+[0m11:00:52.724447 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'f040dcc4-8c2c-4196-91f8-efbe62dfff74', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025986921040>]}
+[0m11:00:54.540105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f040dcc4-8c2c-4196-91f8-efbe62dfff74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259869E7A40>]}
+[0m11:00:55.240766 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f040dcc4-8c2c-4196-91f8-efbe62dfff74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025984C67EC0>]}
+[0m11:00:55.254128 [info ] [MainThread]: Registered adapter: snowflake=1.11.0
+[0m11:00:59.703522 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m11:01:00.386794 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m11:01:00.388320 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f040dcc4-8c2c-4196-91f8-efbe62dfff74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002598701A2A0>]}
+[0m11:01:13.854126 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on
+'tb_101_ORDER_DETAIL' in package 'tasty_bytes' (models\staging\__sources.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+[0m11:01:13.863785 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'f040dcc4-8c2c-4196-91f8-efbe62dfff74', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025986F78AD0>]}
+[0m11:01:15.067262 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.tasty_bytes.dims
+- models.tasty_bytes.facts
+[0m11:01:15.151352 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f040dcc4-8c2c-4196-91f8-efbe62dfff74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002598724DEB0>]}
+[0m11:01:16.290088 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m11:01:16.314066 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m11:01:16.620179 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f040dcc4-8c2c-4196-91f8-efbe62dfff74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259875AA8A0>]}
+[0m11:01:16.622181 [info ] [MainThread]: Found 18 models, 69 data tests, 8 sources, 644 macros
+[0m11:01:16.625179 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f040dcc4-8c2c-4196-91f8-efbe62dfff74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259875318B0>]}
+[0m11:01:16.655201 [info ] [MainThread]: 
+[0m11:01:16.663090 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:01:16.666750 [info ] [MainThread]: 
+[0m11:01:16.670805 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m11:01:16.687515 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC'
+[0m11:01:18.354415 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m11:01:18.357281 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m11:01:18.361794 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:01:21.698701 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 3.336 seconds
+[0m11:01:21.750839 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_DEV'
+[0m11:01:21.808903 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_DEV"
+[0m11:01:21.809898 [debug] [ThreadPool]: On list_DBT_POC_DEV: show objects in DBT_POC.DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_DEV"} */;
+[0m11:01:21.811897 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:01:24.253381 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 2.442 seconds
+[0m11:01:24.264459 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f040dcc4-8c2c-4196-91f8-efbe62dfff74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259874582F0>]}
+[0m11:01:24.297116 [debug] [Thread-1 (]: Began running node model.tasty_bytes.dim_customer
+[0m11:01:24.298665 [info ] [Thread-1 (]: 1 of 1 START sql table model DEV.dim_customer .................................. [RUN]
+[0m11:01:24.302118 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.tasty_bytes.dim_customer'
+[0m11:01:24.303121 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.dim_customer
+[0m11:01:24.348003 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.dim_customer"
+[0m11:01:24.354030 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.dim_customer
+[0m11:01:24.525520 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.dim_customer"
+[0m11:01:24.537323 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.dim_customer"
+[0m11:01:24.539864 [debug] [Thread-1 (]: On model.tasty_bytes.dim_customer: create or replace transient table DBT_POC.DEV.dim_customer
+    
+    
+    
+    as (-- models/marts/sales/dim_customer.sql
+
+
+with customer as (
+    select
+        -- natural key from source
+        customer_id,
+        -- standard conformed attributes
+        initcap(trim(first_name))      as first_name,
+        initcap(trim(last_name))       as last_name,
+        lower(trim(e_mail))             as email,
+        coalesce(country, 'Unknown')   as country,
+        -- coalesce(state, 'Unknown')     as state,
+        -- coalesce(city, 'Unknown')      as city,
+
+        -- type 1 dimension pattern: latest snapshot from staging
+        current_timestamp()            as dim_load_ts
+    from DBT_POC.DEV.raw_customer_customer_loyalty
+)
+select * from customer
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.dim_customer"} */;
+[0m11:01:24.541813 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m11:01:27.111958 [debug] [Thread-1 (]: Snowflake adapter: Snowflake query id: 01c2500b-060a-da83-002b-e2831217a54a
+[0m11:01:27.114278 [debug] [Thread-1 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'DBT_POC.DEV.RAW_CUSTOMER_CUSTOMER_LOYALTY' does not exist or not authorized.
+[0m11:01:27.140676 [debug] [Thread-1 (]: Database Error in model dim_customer (models\dim\dim_customer.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_POC.DEV.RAW_CUSTOMER_CUSTOMER_LOYALTY' does not exist or not authorized.
+  compiled code at target\run\tasty_bytes\models\dim\dim_customer.sql
+[0m11:01:27.149299 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f040dcc4-8c2c-4196-91f8-efbe62dfff74', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259F0B28740>]}
+[0m11:01:27.152407 [error] [Thread-1 (]: 1 of 1 ERROR creating sql table model DEV.dim_customer ......................... [[31mERROR[0m in 2.84s]
+[0m11:01:27.155303 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.dim_customer
+[0m11:01:27.157847 [debug] [Thread-4 (]: Marking all children of 'model.tasty_bytes.dim_customer' to be skipped because of status 'error'.  Reason: Database Error in model dim_customer (models\dim\dim_customer.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_POC.DEV.RAW_CUSTOMER_CUSTOMER_LOYALTY' does not exist or not authorized.
+  compiled code at target\run\tasty_bytes\models\dim\dim_customer.sql.
+[0m11:01:27.164691 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:01:27.166381 [debug] [MainThread]: Connection 'list_DBT_POC' was left open.
+[0m11:01:27.169247 [debug] [MainThread]: On list_DBT_POC: Close
+[0m11:01:27.819138 [debug] [MainThread]: Connection 'list_DBT_POC_DEV' was left open.
+[0m11:01:27.821159 [debug] [MainThread]: On list_DBT_POC_DEV: Close
+[0m11:01:29.785456 [debug] [MainThread]: Connection 'model.tasty_bytes.dim_customer' was left open.
+[0m11:01:29.786977 [debug] [MainThread]: On model.tasty_bytes.dim_customer: Close
+[0m11:01:30.397346 [info ] [MainThread]: 
+[0m11:01:30.402142 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 13.73 seconds (13.73s).
+[0m11:01:30.409178 [debug] [MainThread]: Command end result
+[0m11:01:31.028152 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m11:01:31.056987 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m11:01:31.146365 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\run_results.json
+[0m11:01:31.150438 [info ] [MainThread]: 
+[0m11:01:31.155695 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m11:01:31.163744 [info ] [MainThread]: 
+[0m11:01:31.172217 [error] [MainThread]: [31mFailure in model dim_customer (models\dim\dim_customer.sql)[0m
+[0m11:01:31.189817 [error] [MainThread]:   Database Error in model dim_customer (models\dim\dim_customer.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_POC.DEV.RAW_CUSTOMER_CUSTOMER_LOYALTY' does not exist or not authorized.
+  compiled code at target\run\tasty_bytes\models\dim\dim_customer.sql
+[0m11:01:31.205130 [info ] [MainThread]: 
+[0m11:01:31.218603 [info ] [MainThread]:   compiled code at target\compiled\tasty_bytes\models\dim\dim_customer.sql
+[0m11:01:31.236312 [info ] [MainThread]: 
+[0m11:01:31.259508 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m11:01:31.279835 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingPlusPrefixDeprecation: 1 occurrence
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m11:01:31.293095 [debug] [MainThread]: Command `dbt run` failed at 11:01:31.292101 after 48.36 seconds
+[0m11:01:31.303234 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259F1697F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259F1A1A090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000259F1A19910>]}
+[0m11:01:31.317840 [debug] [MainThread]: Flushing usage events
+[0m11:01:34.637716 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:02:37.022731 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D01D744AD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D0203968A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D020395A00>]}
+
+
+============================== 11:02:37.034876 | 858b545b-23d2-4735-ad4f-db23b71e2015 ==============================
+[0m11:02:37.034876 [info ] [MainThread]: Running with dbt=1.11.2
+[0m11:02:37.036385 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'write_json': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'empty': 'False', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'log_format': 'default', 'quiet': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'C:\\Users\\10731399\\Downloads\\getting-started-with-dbt-on-snowflake-main\\tasty_bytes_dbt_demo\\logs', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'invocation_command': 'dbt run --select dim_customer.sql', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'target_path': 'None'}
+[0m11:02:41.302100 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m11:02:41.304710 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m11:02:41.306228 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m11:02:41.750888 [warn ] [MainThread]: [[33mWARNING[0m][MissingPlusPrefixDeprecation]: Deprecated functionality
+Missing '+' prefix on `schema` found at `tasty_bytes.dims.schema` in file `C:\Us
+ers\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_db
+t_demo\dbt_project.yml`. Hierarchical config values without a '+' prefix are
+deprecated in dbt_project.yml.
+[0m11:02:41.752893 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '858b545b-23d2-4735-ad4f-db23b71e2015', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D034C611C0>]}
+[0m11:02:42.753741 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '858b545b-23d2-4735-ad4f-db23b71e2015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D034A22990>]}
+[0m11:02:43.221829 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '858b545b-23d2-4735-ad4f-db23b71e2015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D01F7881D0>]}
+[0m11:02:43.227453 [info ] [MainThread]: Registered adapter: snowflake=1.11.0
+[0m11:02:45.902894 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m11:02:46.386466 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m11:02:46.390518 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '858b545b-23d2-4735-ad4f-db23b71e2015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D0203961B0>]}
+[0m11:02:53.532285 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on
+'tb_101_ORDER_DETAIL' in package 'tasty_bytes' (models\staging\__sources.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+[0m11:02:53.534290 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '858b545b-23d2-4735-ad4f-db23b71e2015', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D035680AD0>]}
+[0m11:02:54.253344 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.tasty_bytes.dims
+- models.tasty_bytes.facts
+[0m11:02:54.297756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '858b545b-23d2-4735-ad4f-db23b71e2015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D0350D5BE0>]}
+[0m11:02:54.816540 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m11:02:54.826117 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m11:02:54.981792 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '858b545b-23d2-4735-ad4f-db23b71e2015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D0357DAC30>]}
+[0m11:02:54.983307 [info ] [MainThread]: Found 18 models, 69 data tests, 8 sources, 644 macros
+[0m11:02:54.985324 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '858b545b-23d2-4735-ad4f-db23b71e2015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D03576B380>]}
+[0m11:02:54.996901 [info ] [MainThread]: 
+[0m11:02:54.998414 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:02:55.000625 [info ] [MainThread]: 
+[0m11:02:55.002627 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m11:02:55.006145 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC'
+[0m11:02:55.624672 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m11:02:55.626188 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m11:02:55.627769 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:02:57.844122 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 2.216 seconds
+[0m11:02:57.936127 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_RAW'
+[0m11:02:58.049185 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_RAW"
+[0m11:02:58.051413 [debug] [ThreadPool]: On list_DBT_POC_RAW: show objects in DBT_POC.RAW
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_RAW"} */;
+[0m11:02:58.052552 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:03:00.474450 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 2.421 seconds
+[0m11:03:00.491884 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '858b545b-23d2-4735-ad4f-db23b71e2015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D035726F60>]}
+[0m11:03:00.507567 [debug] [Thread-1 (]: Began running node model.tasty_bytes.dim_customer
+[0m11:03:00.512663 [info ] [Thread-1 (]: 1 of 1 START sql table model RAW.dim_customer .................................. [RUN]
+[0m11:03:00.516185 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.tasty_bytes.dim_customer'
+[0m11:03:00.518790 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.dim_customer
+[0m11:03:00.566736 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.dim_customer"
+[0m11:03:00.573821 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.dim_customer
+[0m11:03:00.756006 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.dim_customer"
+[0m11:03:00.764207 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.dim_customer"
+[0m11:03:00.768766 [debug] [Thread-1 (]: On model.tasty_bytes.dim_customer: create or replace transient table DBT_POC.RAW.dim_customer
+    
+    
+    
+    as (-- models/marts/sales/dim_customer.sql
+
+
+with customer as (
+    select
+        -- natural key from source
+        customer_id,
+        -- standard conformed attributes
+        initcap(trim(first_name))      as first_name,
+        initcap(trim(last_name))       as last_name,
+        lower(trim(e_mail))             as email,
+        coalesce(country, 'Unknown')   as country,
+        -- coalesce(state, 'Unknown')     as state,
+        -- coalesce(city, 'Unknown')      as city,
+
+        -- type 1 dimension pattern: latest snapshot from staging
+        current_timestamp()            as dim_load_ts
+    from DBT_POC.RAW.raw_customer_customer_loyalty
+)
+select * from customer
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.dim_customer"} */;
+[0m11:03:00.771766 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m11:03:02.706867 [debug] [Thread-1 (]: Snowflake adapter: Snowflake query id: 01c2500d-060a-ced3-002b-e28312175b82
+[0m11:03:02.709417 [debug] [Thread-1 (]: Snowflake adapter: Snowflake error: 002003 (42S02): SQL compilation error:
+Object 'DBT_POC.RAW.RAW_CUSTOMER_CUSTOMER_LOYALTY' does not exist or not authorized.
+[0m11:03:02.720565 [debug] [Thread-1 (]: Database Error in model dim_customer (models\dim\dim_customer.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_POC.RAW.RAW_CUSTOMER_CUSTOMER_LOYALTY' does not exist or not authorized.
+  compiled code at target\run\tasty_bytes\models\dim\dim_customer.sql
+[0m11:03:02.726086 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '858b545b-23d2-4735-ad4f-db23b71e2015', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D01FCC9070>]}
+[0m11:03:02.729660 [error] [Thread-1 (]: 1 of 1 ERROR creating sql table model RAW.dim_customer ......................... [[31mERROR[0m in 2.21s]
+[0m11:03:02.732962 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.dim_customer
+[0m11:03:02.735439 [debug] [Thread-4 (]: Marking all children of 'model.tasty_bytes.dim_customer' to be skipped because of status 'error'.  Reason: Database Error in model dim_customer (models\dim\dim_customer.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_POC.RAW.RAW_CUSTOMER_CUSTOMER_LOYALTY' does not exist or not authorized.
+  compiled code at target\run\tasty_bytes\models\dim\dim_customer.sql.
+[0m11:03:02.741025 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:03:02.742026 [debug] [MainThread]: Connection 'list_DBT_POC' was left open.
+[0m11:03:02.743022 [debug] [MainThread]: On list_DBT_POC: Close
+[0m11:03:03.409620 [debug] [MainThread]: Connection 'list_DBT_POC_RAW' was left open.
+[0m11:03:03.412637 [debug] [MainThread]: On list_DBT_POC_RAW: Close
+[0m11:03:03.992867 [debug] [MainThread]: Connection 'model.tasty_bytes.dim_customer' was left open.
+[0m11:03:03.994869 [debug] [MainThread]: On model.tasty_bytes.dim_customer: Close
+[0m11:03:09.254466 [info ] [MainThread]: 
+[0m11:03:09.255980 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 14.25 seconds (14.25s).
+[0m11:03:09.260134 [debug] [MainThread]: Command end result
+[0m11:03:09.531412 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m11:03:09.557644 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m11:03:09.591757 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\run_results.json
+[0m11:03:09.593756 [info ] [MainThread]: 
+[0m11:03:09.596265 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m11:03:09.598369 [info ] [MainThread]: 
+[0m11:03:09.600904 [error] [MainThread]: [31mFailure in model dim_customer (models\dim\dim_customer.sql)[0m
+[0m11:03:09.610522 [error] [MainThread]:   Database Error in model dim_customer (models\dim\dim_customer.sql)
+  002003 (42S02): SQL compilation error:
+  Object 'DBT_POC.RAW.RAW_CUSTOMER_CUSTOMER_LOYALTY' does not exist or not authorized.
+  compiled code at target\run\tasty_bytes\models\dim\dim_customer.sql
+[0m11:03:09.613524 [info ] [MainThread]: 
+[0m11:03:09.616049 [info ] [MainThread]:   compiled code at target\compiled\tasty_bytes\models\dim\dim_customer.sql
+[0m11:03:09.618655 [info ] [MainThread]: 
+[0m11:03:09.623236 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m11:03:09.629952 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingPlusPrefixDeprecation: 1 occurrence
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m11:03:09.636613 [debug] [MainThread]: Command `dbt run` failed at 11:03:09.636613 after 33.03 seconds
+[0m11:03:09.640683 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D01D744AD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D035525EE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D03580B830>]}
+[0m11:03:09.644710 [debug] [MainThread]: Flushing usage events
+[0m11:03:12.972619 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:04:48.866088 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECD569B3B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECD5699310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECD569B7D0>]}
+
+
+============================== 11:04:48.876106 | 96cd83b8-e07d-4023-ba3a-0ac4adfde5db ==============================
+[0m11:04:48.876106 [info ] [MainThread]: Running with dbt=1.11.2
+[0m11:04:48.877127 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'warn_error': 'None', 'empty': 'False', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'log_format': 'default', 'quiet': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'C:\\Users\\10731399\\Downloads\\getting-started-with-dbt-on-snowflake-main\\tasty_bytes_dbt_demo\\logs', 'introspect': 'True', 'no_print': 'None', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run --select models/staging', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'write_json': 'True', 'target_path': 'None'}
+[0m11:04:51.302062 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m11:04:51.302062 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m11:04:51.303061 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m11:04:51.522491 [warn ] [MainThread]: [[33mWARNING[0m][MissingPlusPrefixDeprecation]: Deprecated functionality
+Missing '+' prefix on `schema` found at `tasty_bytes.dims.schema` in file `C:\Us
+ers\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_db
+t_demo\dbt_project.yml`. Hierarchical config values without a '+' prefix are
+deprecated in dbt_project.yml.
+[0m11:04:51.524493 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECE9A80AD0>]}
+[0m11:04:52.079205 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECE9BBCFB0>]}
+[0m11:04:52.323756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECE74180B0>]}
+[0m11:04:52.327280 [info ] [MainThread]: Registered adapter: snowflake=1.11.0
+[0m11:04:53.676553 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m11:04:53.900424 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m11:04:53.901424 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECEA07A2A0>]}
+[0m11:04:59.039257 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on
+'tb_101_ORDER_DETAIL' in package 'tasty_bytes' (models\staging\__sources.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+[0m11:04:59.041253 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECEA4CF920>]}
+[0m11:04:59.458708 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.tasty_bytes.dims
+- models.tasty_bytes.facts
+[0m11:04:59.486957 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECEA43F3B0>]}
+[0m11:04:59.884305 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m11:04:59.891426 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m11:05:00.002326 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECEA60B320>]}
+[0m11:05:00.003337 [info ] [MainThread]: Found 18 models, 69 data tests, 8 sources, 644 macros
+[0m11:05:00.004337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECE99D5010>]}
+[0m11:05:00.028079 [info ] [MainThread]: 
+[0m11:05:00.031095 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:05:00.033098 [info ] [MainThread]: 
+[0m11:05:00.040110 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m11:05:00.059998 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC'
+[0m11:05:00.593404 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m11:05:00.594708 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m11:05:00.595732 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:05:10.178948 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 9.583 seconds
+[0m11:05:10.185513 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_DEV'
+[0m11:05:10.209270 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_DEV"
+[0m11:05:10.210310 [debug] [ThreadPool]: On list_DBT_POC_DEV: show objects in DBT_POC.DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_DEV"} */;
+[0m11:05:10.210310 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:05:14.083434 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 3.873 seconds
+[0m11:05:14.090177 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECEA59E6C0>]}
+[0m11:05:14.100431 [debug] [Thread-1 (]: Began running node model.tasty_bytes.raw_customer_customer_loyalty
+[0m11:05:14.101431 [info ] [Thread-1 (]: 1 of 8 START sql view model DEV.raw_customer_customer_loyalty .................. [RUN]
+[0m11:05:14.102432 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.tasty_bytes.raw_customer_customer_loyalty'
+[0m11:05:14.103432 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.raw_customer_customer_loyalty
+[0m11:05:14.132276 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m11:05:14.139855 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.raw_customer_customer_loyalty
+[0m11:05:14.262657 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m11:05:14.267180 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m11:05:14.269209 [debug] [Thread-1 (]: On model.tasty_bytes.raw_customer_customer_loyalty: create or replace   view DBT_POC.DEV.raw_customer_customer_loyalty
+  
+  
+  
+  
+  as (
+    select *
+from dbt_poc.RAW.CUSTOMER_LOYALTY
+  )
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_customer_customer_loyalty"} */;
+[0m11:05:14.271213 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m11:05:16.600367 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.330 seconds
+[0m11:05:16.647378 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECD2651190>]}
+[0m11:05:16.648430 [info ] [Thread-1 (]: 1 of 8 OK created sql view model DEV.raw_customer_customer_loyalty ............. [[32mSUCCESS 1[0m in 2.54s]
+[0m11:05:16.650645 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.raw_customer_customer_loyalty
+[0m11:05:16.651603 [debug] [Thread-1 (]: Began running node model.tasty_bytes.raw_pos_country
+[0m11:05:16.652650 [info ] [Thread-1 (]: 2 of 8 START sql view model DEV.raw_pos_country ................................ [RUN]
+[0m11:05:16.653605 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_customer_customer_loyalty, now model.tasty_bytes.raw_pos_country)
+[0m11:05:16.654649 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.raw_pos_country
+[0m11:05:16.661416 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_country"
+[0m11:05:16.663417 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.raw_pos_country
+[0m11:05:16.668959 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_country"
+[0m11:05:16.673066 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.raw_pos_country"
+[0m11:05:16.673615 [debug] [Thread-1 (]: On model.tasty_bytes.raw_pos_country: create or replace   view DBT_POC.DEV.raw_pos_country
+  
+  
+  
+  
+  as (
+    SELECT *
+FROM dbt_poc.RAW.COUNTRY
+  )
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_country"} */;
+[0m11:05:17.162447 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.488 seconds
+[0m11:05:17.166962 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECEBD43080>]}
+[0m11:05:17.167972 [info ] [Thread-1 (]: 2 of 8 OK created sql view model DEV.raw_pos_country ........................... [[32mSUCCESS 1[0m in 0.51s]
+[0m11:05:17.168980 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.raw_pos_country
+[0m11:05:17.170202 [debug] [Thread-1 (]: Began running node model.tasty_bytes.raw_pos_franchise
+[0m11:05:17.171642 [info ] [Thread-1 (]: 3 of 8 START sql view model DEV.raw_pos_franchise .............................. [RUN]
+[0m11:05:17.172894 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_country, now model.tasty_bytes.raw_pos_franchise)
+[0m11:05:17.174397 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.raw_pos_franchise
+[0m11:05:17.180248 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_franchise"
+[0m11:05:17.182216 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.raw_pos_franchise
+[0m11:05:17.188593 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_franchise"
+[0m11:05:17.192248 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.raw_pos_franchise"
+[0m11:05:17.192248 [debug] [Thread-1 (]: On model.tasty_bytes.raw_pos_franchise: create or replace   view DBT_POC.DEV.raw_pos_franchise
+  
+  
+  
+  
+  as (
+    SELECT *
+FROM dbt_poc.RAW.FRANCHISE
+  )
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_franchise"} */;
+[0m11:05:17.753129 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.560 seconds
+[0m11:05:17.757233 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECEBD96E70>]}
+[0m11:05:17.759247 [info ] [Thread-1 (]: 3 of 8 OK created sql view model DEV.raw_pos_franchise ......................... [[32mSUCCESS 1[0m in 0.58s]
+[0m11:05:17.760248 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.raw_pos_franchise
+[0m11:05:17.761281 [debug] [Thread-1 (]: Began running node model.tasty_bytes.raw_pos_location
+[0m11:05:17.761281 [info ] [Thread-1 (]: 4 of 8 START sql view model DEV.raw_pos_location ............................... [RUN]
+[0m11:05:17.762525 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_franchise, now model.tasty_bytes.raw_pos_location)
+[0m11:05:17.763648 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.raw_pos_location
+[0m11:05:17.769331 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_location"
+[0m11:05:17.771335 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.raw_pos_location
+[0m11:05:17.778824 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_location"
+[0m11:05:17.781991 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.raw_pos_location"
+[0m11:05:17.783020 [debug] [Thread-1 (]: On model.tasty_bytes.raw_pos_location: create or replace   view DBT_POC.DEV.raw_pos_location
+  
+  
+  
+  
+  as (
+    SELECT *
+FROM dbt_poc.RAW.LOCATION
+  )
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_location"} */;
+[0m11:05:18.290879 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.508 seconds
+[0m11:05:18.295562 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECEBD9B650>]}
+[0m11:05:18.298137 [info ] [Thread-1 (]: 4 of 8 OK created sql view model DEV.raw_pos_location .......................... [[32mSUCCESS 1[0m in 0.53s]
+[0m11:05:18.301134 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.raw_pos_location
+[0m11:05:18.302132 [debug] [Thread-1 (]: Began running node model.tasty_bytes.raw_pos_menu
+[0m11:05:18.303130 [info ] [Thread-1 (]: 5 of 8 START sql view model DEV.raw_pos_menu ................................... [RUN]
+[0m11:05:18.304132 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_location, now model.tasty_bytes.raw_pos_menu)
+[0m11:05:18.305644 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.raw_pos_menu
+[0m11:05:18.315698 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_menu"
+[0m11:05:18.319301 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.raw_pos_menu
+[0m11:05:18.327823 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_menu"
+[0m11:05:18.331844 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.raw_pos_menu"
+[0m11:05:18.332841 [debug] [Thread-1 (]: On model.tasty_bytes.raw_pos_menu: create or replace   view DBT_POC.DEV.raw_pos_menu
+  
+  
+  
+  
+  as (
+    SELECT *
+FROM dbt_poc.RAW.MENU
+  )
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_menu"} */;
+[0m11:05:19.190487 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.856 seconds
+[0m11:05:19.198484 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECEBD9BB30>]}
+[0m11:05:19.200504 [info ] [Thread-1 (]: 5 of 8 OK created sql view model DEV.raw_pos_menu .............................. [[32mSUCCESS 1[0m in 0.89s]
+[0m11:05:19.204757 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.raw_pos_menu
+[0m11:05:19.206272 [debug] [Thread-1 (]: Began running node model.tasty_bytes.raw_pos_order_detail
+[0m11:05:19.208308 [info ] [Thread-1 (]: 6 of 8 START sql view model DEV.raw_pos_order_detail ........................... [RUN]
+[0m11:05:19.211308 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_menu, now model.tasty_bytes.raw_pos_order_detail)
+[0m11:05:19.212309 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.raw_pos_order_detail
+[0m11:05:19.225736 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_order_detail"
+[0m11:05:19.230336 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.raw_pos_order_detail
+[0m11:05:19.244418 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_order_detail"
+[0m11:05:19.250042 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.raw_pos_order_detail"
+[0m11:05:19.252041 [debug] [Thread-1 (]: On model.tasty_bytes.raw_pos_order_detail: create or replace   view DBT_POC.DEV.raw_pos_order_detail
+  
+  
+  
+  
+  as (
+    SELECT *
+FROM dbt_poc.RAW.ORDER_DETAIL
+  )
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_order_detail"} */;
+[0m11:05:20.122341 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.866 seconds
+[0m11:05:20.126863 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECEBDA7830>]}
+[0m11:05:20.129896 [info ] [Thread-1 (]: 6 of 8 OK created sql view model DEV.raw_pos_order_detail ...................... [[32mSUCCESS 1[0m in 0.92s]
+[0m11:05:20.132326 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.raw_pos_order_detail
+[0m11:05:20.133412 [debug] [Thread-1 (]: Began running node model.tasty_bytes.raw_pos_order_header
+[0m11:05:20.134368 [info ] [Thread-1 (]: 7 of 8 START sql view model DEV.raw_pos_order_header ........................... [RUN]
+[0m11:05:20.136891 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_order_detail, now model.tasty_bytes.raw_pos_order_header)
+[0m11:05:20.139432 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.raw_pos_order_header
+[0m11:05:20.150114 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_order_header"
+[0m11:05:20.154112 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.raw_pos_order_header
+[0m11:05:20.166457 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_order_header"
+[0m11:05:20.171106 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.raw_pos_order_header"
+[0m11:05:20.172877 [debug] [Thread-1 (]: On model.tasty_bytes.raw_pos_order_header: create or replace   view DBT_POC.DEV.raw_pos_order_header
+  
+  
+  
+  
+  as (
+    SELECT *
+FROM dbt_poc.RAW.ORDER_HEADER
+  )
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_order_header"} */;
+[0m11:05:20.723278 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.548 seconds
+[0m11:05:20.727386 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECEBDCBFB0>]}
+[0m11:05:20.729404 [info ] [Thread-1 (]: 7 of 8 OK created sql view model DEV.raw_pos_order_header ...................... [[32mSUCCESS 1[0m in 0.59s]
+[0m11:05:20.731487 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.raw_pos_order_header
+[0m11:05:20.732740 [debug] [Thread-1 (]: Began running node model.tasty_bytes.raw_pos_truck
+[0m11:05:20.733779 [info ] [Thread-1 (]: 8 of 8 START sql view model DEV.raw_pos_truck .................................. [RUN]
+[0m11:05:20.734774 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_order_header, now model.tasty_bytes.raw_pos_truck)
+[0m11:05:20.736248 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.raw_pos_truck
+[0m11:05:20.743809 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_truck"
+[0m11:05:20.747844 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.raw_pos_truck
+[0m11:05:20.762476 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_truck"
+[0m11:05:20.765539 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.raw_pos_truck"
+[0m11:05:20.766827 [debug] [Thread-1 (]: On model.tasty_bytes.raw_pos_truck: create or replace   view DBT_POC.DEV.raw_pos_truck
+  
+  
+  
+  
+  as (
+    SELECT *
+FROM dbt_poc.RAW.TRUCK
+  )
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.raw_pos_truck"} */;
+[0m11:05:21.232856 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.464 seconds
+[0m11:05:21.235901 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96cd83b8-e07d-4023-ba3a-0ac4adfde5db', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECEBDCF1A0>]}
+[0m11:05:21.240164 [info ] [Thread-1 (]: 8 of 8 OK created sql view model DEV.raw_pos_truck ............................. [[32mSUCCESS 1[0m in 0.50s]
+[0m11:05:21.241653 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.raw_pos_truck
+[0m11:05:21.246045 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:05:21.246045 [debug] [MainThread]: Connection 'list_DBT_POC' was left open.
+[0m11:05:21.247733 [debug] [MainThread]: On list_DBT_POC: Close
+[0m11:05:21.963121 [debug] [MainThread]: Connection 'list_DBT_POC_DEV' was left open.
+[0m11:05:21.964122 [debug] [MainThread]: On list_DBT_POC_DEV: Close
+[0m11:05:23.690946 [debug] [MainThread]: Connection 'model.tasty_bytes.raw_pos_truck' was left open.
+[0m11:05:23.690946 [debug] [MainThread]: On model.tasty_bytes.raw_pos_truck: Close
+[0m11:05:24.248002 [info ] [MainThread]: 
+[0m11:05:24.249023 [info ] [MainThread]: Finished running 8 view models in 0 hours 0 minutes and 24.21 seconds (24.21s).
+[0m11:05:24.254521 [debug] [MainThread]: Command end result
+[0m11:05:24.360409 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m11:05:24.367215 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m11:05:24.385003 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\run_results.json
+[0m11:05:24.385003 [info ] [MainThread]: 
+[0m11:05:24.386513 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:05:24.388030 [info ] [MainThread]: 
+[0m11:05:24.389229 [info ] [MainThread]: Done. PASS=8 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=8
+[0m11:05:24.391748 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingPlusPrefixDeprecation: 1 occurrence
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m11:05:24.395579 [debug] [MainThread]: Command `dbt run` succeeded at 11:05:24.395579 after 35.86 seconds
+[0m11:05:24.398157 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECD45A9880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECEA613830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001ECE9B6D400>]}
+[0m11:05:24.399157 [debug] [MainThread]: Flushing usage events
+[0m11:05:26.183516 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:06:54.446470 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A478EBBC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A4A80DEE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A4A80E7E0>]}
+
+
+============================== 11:06:54.460879 | 47376483-f885-405a-89ba-ff80afa95d98 ==============================
+[0m11:06:54.460879 [info ] [MainThread]: Running with dbt=1.11.2
+[0m11:06:54.462867 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'warn_error': 'None', 'empty': 'False', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'quiet': 'False', 'log_format': 'default', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'C:\\Users\\10731399\\Downloads\\getting-started-with-dbt-on-snowflake-main\\tasty_bytes_dbt_demo\\logs', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'no_print': 'None', 'invocation_command': 'dbt run --select models/dim', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'write_json': 'True', 'target_path': 'None'}
+[0m11:06:58.049685 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m11:06:58.050740 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m11:06:58.051249 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m11:06:58.249122 [warn ] [MainThread]: [[33mWARNING[0m][MissingPlusPrefixDeprecation]: Deprecated functionality
+Missing '+' prefix on `schema` found at `tasty_bytes.dims.schema` in file `C:\Us
+ers\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_db
+t_demo\dbt_project.yml`. Hierarchical config values without a '+' prefix are
+deprecated in dbt_project.yml.
+[0m11:06:58.250138 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '47376483-f885-405a-89ba-ff80afa95d98', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A5F81BE00>]}
+[0m11:06:58.684611 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '47376483-f885-405a-89ba-ff80afa95d98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A5F909E20>]}
+[0m11:06:58.876135 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '47376483-f885-405a-89ba-ff80afa95d98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A4A87F620>]}
+[0m11:06:58.879416 [info ] [MainThread]: Registered adapter: snowflake=1.11.0
+[0m11:07:00.038858 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m11:07:00.313178 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m11:07:00.315188 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '47376483-f885-405a-89ba-ff80afa95d98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A4AF16180>]}
+[0m11:07:06.909878 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on
+'tb_101_ORDER_DETAIL' in package 'tasty_bytes' (models\staging\__sources.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+[0m11:07:06.913671 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '47376483-f885-405a-89ba-ff80afa95d98', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A60226F90>]}
+[0m11:07:07.581652 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.tasty_bytes.facts
+- models.tasty_bytes.dims
+[0m11:07:07.616779 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '47376483-f885-405a-89ba-ff80afa95d98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A6028E0C0>]}
+[0m11:07:08.034989 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m11:07:08.043687 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m11:07:08.185674 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '47376483-f885-405a-89ba-ff80afa95d98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A60376990>]}
+[0m11:07:08.186759 [info ] [MainThread]: Found 18 models, 69 data tests, 8 sources, 644 macros
+[0m11:07:08.188445 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '47376483-f885-405a-89ba-ff80afa95d98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A603A9580>]}
+[0m11:07:08.203092 [info ] [MainThread]: 
+[0m11:07:08.204614 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:07:08.205616 [info ] [MainThread]: 
+[0m11:07:08.207652 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m11:07:08.221452 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC'
+[0m11:07:08.712571 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m11:07:08.713569 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m11:07:08.714570 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:07:12.196129 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 3.481 seconds
+[0m11:07:12.213663 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_DEV'
+[0m11:07:12.276574 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_DEV"
+[0m11:07:12.279606 [debug] [ThreadPool]: On list_DBT_POC_DEV: show objects in DBT_POC.DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_DEV"} */;
+[0m11:07:12.280611 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:07:14.416651 [debug] [ThreadPool]: SQL status: SUCCESS 10 in 2.136 seconds
+[0m11:07:14.428122 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '47376483-f885-405a-89ba-ff80afa95d98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A6025B830>]}
+[0m11:07:14.438776 [debug] [Thread-1 (]: Began running node model.tasty_bytes.dim_customer
+[0m11:07:14.441642 [info ] [Thread-1 (]: 1 of 4 START sql table model DEV.dim_customer .................................. [RUN]
+[0m11:07:14.443298 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.tasty_bytes.dim_customer'
+[0m11:07:14.444405 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.dim_customer
+[0m11:07:14.463728 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.dim_customer"
+[0m11:07:14.469381 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.dim_customer
+[0m11:07:14.595207 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.dim_customer"
+[0m11:07:14.600017 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.dim_customer"
+[0m11:07:14.602016 [debug] [Thread-1 (]: On model.tasty_bytes.dim_customer: create or replace transient table DBT_POC.DEV.dim_customer
+    
+    
+    
+    as (-- models/marts/sales/dim_customer.sql
+
+
+with customer as (
+    select
+        -- natural key from source
+        customer_id,
+        -- standard conformed attributes
+        initcap(trim(first_name))      as first_name,
+        initcap(trim(last_name))       as last_name,
+        lower(trim(e_mail))             as email,
+        coalesce(country, 'Unknown')   as country,
+        -- coalesce(state, 'Unknown')     as state,
+        -- coalesce(city, 'Unknown')      as city,
+
+        -- type 1 dimension pattern: latest snapshot from staging
+        current_timestamp()            as dim_load_ts
+    from DBT_POC.DEV.raw_customer_customer_loyalty
+)
+select * from customer
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.dim_customer"} */;
+[0m11:07:14.603013 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m11:07:18.893357 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 4.290 seconds
+[0m11:07:19.006160 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '47376483-f885-405a-89ba-ff80afa95d98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A4A848740>]}
+[0m11:07:19.009707 [info ] [Thread-1 (]: 1 of 4 OK created sql table model DEV.dim_customer ............................. [[32mSUCCESS 1[0m in 4.56s]
+[0m11:07:19.013707 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.dim_customer
+[0m11:07:19.016800 [debug] [Thread-1 (]: Began running node model.tasty_bytes.dim_date
+[0m11:07:19.018829 [info ] [Thread-1 (]: 2 of 4 START sql table model DEV.DIM_DATE ...................................... [RUN]
+[0m11:07:19.021989 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.dim_customer, now model.tasty_bytes.dim_date)
+[0m11:07:19.023988 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.dim_date
+[0m11:07:19.047153 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.dim_date"
+[0m11:07:19.055684 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.dim_date
+[0m11:07:19.070910 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.dim_date"
+[0m11:07:19.082760 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.dim_date"
+[0m11:07:19.085259 [debug] [Thread-1 (]: On model.tasty_bytes.dim_date: create or replace transient table DBT_POC.DEV.DIM_DATE
+    
+    
+    
+    as (
+
+-- Build a minimal calendar from ORDER_HEADER timestamps
+with dates as (
+  select distinct
+    cast(date(ORDER_TS) as date) as calendar_date
+  from DBT_POC.DEV.raw_pos_order_header
+  where ORDER_TS is not null
+)
+
+select
+  -- YYYYMMDD integer key exactly as required by the fact
+  to_number(to_char(calendar_date, 'YYYYMMDD')) as date_key,
+  calendar_date as date,
+  extract(year  from calendar_date) as year,
+  extract(month from calendar_date) as month,
+  extract(day   from calendar_date) as day_of_month
+from dates
+order by calendar_date
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.dim_date"} */;
+[0m11:07:22.212716 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 3.125 seconds
+[0m11:07:22.215231 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '47376483-f885-405a-89ba-ff80afa95d98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A61ACAE10>]}
+[0m11:07:22.217877 [info ] [Thread-1 (]: 2 of 4 OK created sql table model DEV.DIM_DATE ................................. [[32mSUCCESS 1[0m in 3.19s]
+[0m11:07:22.219154 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.dim_date
+[0m11:07:22.221156 [debug] [Thread-1 (]: Began running node model.tasty_bytes.dim_location
+[0m11:07:22.222153 [info ] [Thread-1 (]: 3 of 4 START sql table model DEV.DIM_LOCATION .................................. [RUN]
+[0m11:07:22.223157 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.dim_date, now model.tasty_bytes.dim_location)
+[0m11:07:22.225184 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.dim_location
+[0m11:07:22.232590 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.dim_location"
+[0m11:07:22.235599 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.dim_location
+[0m11:07:22.242902 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.dim_location"
+[0m11:07:22.247443 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.dim_location"
+[0m11:07:22.249466 [debug] [Thread-1 (]: On model.tasty_bytes.dim_location: create or replace transient table DBT_POC.DEV.DIM_LOCATION
+    
+    
+    
+    as (
+
+-- Minimal conformed attributes for lookups
+select
+  LOCATION_ID as location_key,   -- surrogate (simple) matches natural id
+  LOCATION_ID as location_id,    -- natural key retained for joins
+  PLACEKEY,
+  LOCATION,
+  CITY,
+  REGION,
+  ISO_COUNTRY_CODE,
+  COUNTRY
+from DBT_POC.DEV.raw_pos_location
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.dim_location"} */;
+[0m11:07:23.623755 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.373 seconds
+[0m11:07:23.630858 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '47376483-f885-405a-89ba-ff80afa95d98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A61AFF4D0>]}
+[0m11:07:23.632853 [info ] [Thread-1 (]: 3 of 4 OK created sql table model DEV.DIM_LOCATION ............................. [[32mSUCCESS 1[0m in 1.41s]
+[0m11:07:23.635897 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.dim_location
+[0m11:07:23.637931 [debug] [Thread-1 (]: Began running node model.tasty_bytes.dim_truck
+[0m11:07:23.639930 [info ] [Thread-1 (]: 4 of 4 START sql table model DEV.DIM_TRUCK ..................................... [RUN]
+[0m11:07:23.645284 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.dim_location, now model.tasty_bytes.dim_truck)
+[0m11:07:23.647337 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.dim_truck
+[0m11:07:23.660666 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.dim_truck"
+[0m11:07:23.664665 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.dim_truck
+[0m11:07:23.677966 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.dim_truck"
+[0m11:07:23.684459 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.dim_truck"
+[0m11:07:23.686988 [debug] [Thread-1 (]: On model.tasty_bytes.dim_truck: create or replace transient table DBT_POC.DEV.DIM_TRUCK
+    
+    
+    
+    as (
+
+select
+  TRUCK_ID as truck_key,
+  TRUCK_ID as truck_id,
+  MENU_TYPE_ID,
+  PRIMARY_CITY,
+  REGION,
+  ISO_REGION,
+  COUNTRY,
+  ISO_COUNTRY_CODE,
+  FRANCHISE_FLAG,
+  YEAR,
+  MAKE,
+  MODEL,
+  EV_FLAG,
+  FRANCHISE_ID,
+  TRUCK_OPENING_DATE
+from DBT_POC.DEV.raw_pos_truck
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.dim_truck"} */;
+[0m11:07:25.516603 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.828 seconds
+[0m11:07:25.519626 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '47376483-f885-405a-89ba-ff80afa95d98', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A61B12510>]}
+[0m11:07:25.521627 [info ] [Thread-1 (]: 4 of 4 OK created sql table model DEV.DIM_TRUCK ................................ [[32mSUCCESS 1[0m in 1.88s]
+[0m11:07:25.524009 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.dim_truck
+[0m11:07:25.529881 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:07:25.530955 [debug] [MainThread]: Connection 'list_DBT_POC' was left open.
+[0m11:07:25.531466 [debug] [MainThread]: On list_DBT_POC: Close
+[0m11:07:27.392610 [debug] [MainThread]: Connection 'list_DBT_POC_DEV' was left open.
+[0m11:07:27.393611 [debug] [MainThread]: On list_DBT_POC_DEV: Close
+[0m11:07:27.990146 [debug] [MainThread]: Connection 'model.tasty_bytes.dim_truck' was left open.
+[0m11:07:27.990731 [debug] [MainThread]: On model.tasty_bytes.dim_truck: Close
+[0m11:07:28.606432 [info ] [MainThread]: 
+[0m11:07:28.609463 [info ] [MainThread]: Finished running 4 table models in 0 hours 0 minutes and 20.40 seconds (20.40s).
+[0m11:07:28.613545 [debug] [MainThread]: Command end result
+[0m11:07:28.787738 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m11:07:28.802360 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m11:07:28.825982 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\run_results.json
+[0m11:07:28.828018 [info ] [MainThread]: 
+[0m11:07:28.831034 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:07:28.834034 [info ] [MainThread]: 
+[0m11:07:28.835547 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m11:07:28.839606 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingPlusPrefixDeprecation: 1 occurrence
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m11:07:28.843598 [debug] [MainThread]: Command `dbt run` succeeded at 11:07:28.843598 after 34.82 seconds
+[0m11:07:28.845595 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A478EBBC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A4AF159D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A4AF16A80>]}
+[0m11:07:28.848673 [debug] [MainThread]: Flushing usage events
+[0m11:07:32.810763 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m11:08:28.041218 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C7424D8FE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C7424D9100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C7424D86B0>]}
+
+
+============================== 11:08:28.055207 | b6d309fc-6f25-430a-969c-785b227d5130 ==============================
+[0m11:08:28.055207 [info ] [MainThread]: Running with dbt=1.11.2
+[0m11:08:28.058869 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'target_path': 'None', 'cache_selected_only': 'False', 'warn_error': 'None', 'empty': 'False', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'log_format': 'default', 'quiet': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'C:\\Users\\10731399\\Downloads\\getting-started-with-dbt-on-snowflake-main\\tasty_bytes_dbt_demo\\logs', 'introspect': 'True', 'no_print': 'None', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run --select fact_order_line_sales', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'write_json': 'True'}
+[0m11:08:30.871785 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m11:08:30.872786 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m11:08:30.874293 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m11:08:31.102661 [warn ] [MainThread]: [[33mWARNING[0m][MissingPlusPrefixDeprecation]: Deprecated functionality
+Missing '+' prefix on `schema` found at `tasty_bytes.dims.schema` in file `C:\Us
+ers\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_db
+t_demo\dbt_project.yml`. Hierarchical config values without a '+' prefix are
+deprecated in dbt_project.yml.
+[0m11:08:31.103930 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'b6d309fc-6f25-430a-969c-785b227d5130', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C7565B91C0>]}
+[0m11:08:31.596497 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b6d309fc-6f25-430a-969c-785b227d5130', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C7421A7A40>]}
+[0m11:08:31.863023 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b6d309fc-6f25-430a-969c-785b227d5130', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C754AE0740>]}
+[0m11:08:31.867574 [info ] [MainThread]: Registered adapter: snowflake=1.11.0
+[0m11:08:33.356320 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m11:08:33.686492 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m11:08:33.687503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'b6d309fc-6f25-430a-969c-785b227d5130', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C741CC60F0>]}
+[0m11:08:40.533445 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on
+'tb_101_ORDER_DETAIL' in package 'tasty_bytes' (models\staging\__sources.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+[0m11:08:40.534959 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'b6d309fc-6f25-430a-969c-785b227d5130', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C756EA12E0>]}
+[0m11:08:41.065056 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.tasty_bytes.dims
+- models.tasty_bytes.facts
+[0m11:08:41.105092 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b6d309fc-6f25-430a-969c-785b227d5130', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C7570572C0>]}
+[0m11:08:41.625228 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m11:08:41.634998 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m11:08:41.806523 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b6d309fc-6f25-430a-969c-785b227d5130', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C7571277D0>]}
+[0m11:08:41.808548 [info ] [MainThread]: Found 18 models, 69 data tests, 8 sources, 644 macros
+[0m11:08:41.810548 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b6d309fc-6f25-430a-969c-785b227d5130', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C7570E4470>]}
+[0m11:08:41.819674 [info ] [MainThread]: 
+[0m11:08:41.822248 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:08:41.825265 [info ] [MainThread]: 
+[0m11:08:41.831641 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m11:08:41.837830 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC'
+[0m11:08:42.359300 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m11:08:42.361303 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m11:08:42.362298 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:08:46.843308 [debug] [ThreadPool]: SQL status: SUCCESS 8 in 4.482 seconds
+[0m11:08:46.859642 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_DEV'
+[0m11:08:46.886767 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_DEV"
+[0m11:08:46.886767 [debug] [ThreadPool]: On list_DBT_POC_DEV: show objects in DBT_POC.DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_DEV"} */;
+[0m11:08:46.887775 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:08:49.394325 [debug] [ThreadPool]: SQL status: SUCCESS 14 in 2.506 seconds
+[0m11:08:49.408415 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b6d309fc-6f25-430a-969c-785b227d5130', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C756FF8D40>]}
+[0m11:08:49.418403 [debug] [Thread-1 (]: Began running node model.tasty_bytes.fact_order_line_sales
+[0m11:08:49.419400 [info ] [Thread-1 (]: 1 of 1 START sql incremental model DEV.fact_order_line_sales ................... [RUN]
+[0m11:08:49.421402 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.tasty_bytes.fact_order_line_sales'
+[0m11:08:49.422398 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.fact_order_line_sales
+[0m11:08:49.444702 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.fact_order_line_sales"
+[0m11:08:49.449775 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.fact_order_line_sales
+[0m11:08:49.613665 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.fact_order_line_sales"
+[0m11:08:49.618843 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.fact_order_line_sales"
+[0m11:08:49.619843 [debug] [Thread-1 (]: On model.tasty_bytes.fact_order_line_sales: create or replace transient table DBT_POC.DEV.fact_order_line_sales
+    
+    
+    
+    as (
+
+with order_detail_source as (
+    select
+        cast(ORDER_DETAIL_ID as varchar) as order_detail_id,
+        cast(ORDER_ID as varchar) as order_id,
+        cast(PRICE as decimal(10,2)) as price
+    from dbt_poc.RAW.ORDER_DETAIL
+    
+),
+
+order_header_source as (
+    select
+        cast(ORDER_ID as varchar) as order_id,
+        cast(ORDER_TS as timestamp) as order_ts,
+        cast(LOCATION_ID as varchar) as location_id,
+        cast(TRUCK_ID as varchar) as truck_id
+    from dbt_poc.RAW.ORDER_HEADER
+),
+
+date_lookup as (
+    select
+        date_key,
+        date
+    from DBT_POC.DEV.DIM_DATE
+),
+
+location_lookup as (
+    select
+        location_key,
+        location_id
+    from DBT_POC.DEV.DIM_LOCATION
+),
+
+truck_lookup as (
+    select
+        truck_key,
+        truck_id
+    from DBT_POC.DEV.DIM_TRUCK
+),
+
+final as (
+    select
+        od.order_detail_id,
+        od.order_id,
+        dl.date_key,
+        ll.location_key,
+        tl.truck_key,
+        coalesce(od.price, 0) as line_sales_amount_usd
+    from order_detail_source od
+    left join order_header_source oh on od.order_id = oh.order_id
+    left join date_lookup dl on date(oh.order_ts) = dl.date
+    left join location_lookup ll on oh.location_id = ll.location_id
+    left join truck_lookup tl on oh.truck_id = tl.truck_id
+)
+
+select * from final
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.fact_order_line_sales"} */;
+[0m11:08:49.620843 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m11:12:43.660042 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 234.039 seconds
+[0m11:12:43.681992 [debug] [Thread-1 (]: Applying DROP to: DBT_POC.DEV.fact_order_line_sales__dbt_tmp
+[0m11:12:43.699632 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.fact_order_line_sales"
+[0m11:12:43.700632 [debug] [Thread-1 (]: On model.tasty_bytes.fact_order_line_sales: drop view if exists DBT_POC.DEV.fact_order_line_sales__dbt_tmp cascade
+/* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.fact_order_line_sales"} */
+[0m11:12:44.060270 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.358 seconds
+[0m11:12:44.121537 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b6d309fc-6f25-430a-969c-785b227d5130', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C73F161040>]}
+[0m11:12:44.123208 [info ] [Thread-1 (]: 1 of 1 OK created sql incremental model DEV.fact_order_line_sales .............. [[32mSUCCESS 1[0m in 234.70s]
+[0m11:12:44.124883 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.fact_order_line_sales
+[0m11:12:44.129595 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:12:44.130746 [debug] [MainThread]: Connection 'list_DBT_POC' was left open.
+[0m11:12:44.132672 [debug] [MainThread]: On list_DBT_POC: Close
+[0m11:12:46.869551 [debug] [MainThread]: Connection 'list_DBT_POC_DEV' was left open.
+[0m11:12:46.870550 [debug] [MainThread]: On list_DBT_POC_DEV: Close
+[0m11:12:48.323266 [debug] [MainThread]: Connection 'model.tasty_bytes.fact_order_line_sales' was left open.
+[0m11:12:48.324267 [debug] [MainThread]: On model.tasty_bytes.fact_order_line_sales: Close
+[0m11:12:49.134358 [info ] [MainThread]: 
+[0m11:12:49.134358 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 4 minutes and 7.30 seconds (247.30s).
+[0m11:12:49.136952 [debug] [MainThread]: Command end result
+[0m11:12:49.217696 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\manifest.json
+[0m11:12:49.221981 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\semantic_manifest.json
+[0m11:12:49.231104 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\10731399\Downloads\getting-started-with-dbt-on-snowflake-main\tasty_bytes_dbt_demo\target\run_results.json
+[0m11:12:49.232105 [info ] [MainThread]: 
+[0m11:12:49.233105 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:12:49.234612 [info ] [MainThread]: 
+[0m11:12:49.235626 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m11:12:49.238370 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingPlusPrefixDeprecation: 2 occurrences
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m11:12:49.239488 [debug] [MainThread]: Command `dbt run` succeeded at 11:12:49.239488 after 261.74 seconds
+[0m11:12:49.240528 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C7424FECF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C7415F9AF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C756FFA8D0>]}
+[0m11:12:49.241608 [debug] [MainThread]: Flushing usage events
+[0m11:12:50.449192 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,11 +1,11 @@
 
-  create or replace   view tasty_bytes_dbt_db.DEV.raw_pos_menu
+  create or replace   view DBT_POC.DEV.raw_pos_menu
   
   
   
   
   as (
     SELECT *
-FROM tasty_bytes_dbt_db.RAW.MENU
+FROM dbt_poc.RAW.MENU
   );
 
