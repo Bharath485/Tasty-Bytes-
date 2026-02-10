@@ -1,1 +1,56 @@
-with order_detail_source as (    select        order_detail_id,        order_id,        quantity,        unit_price,        price,        order_item_discount_amount,        discount_id    from tasty_bytes_dbt_db.RAW.ORDER_DETAIL),order_header_source as (    select        order_id,        order_ts,        location_id,        truck_id,        customer_id,        order_tax_amount,        order_channel,        order_currency    from tasty_bytes_dbt_db.RAW.ORDER_HEADER),dim_date_lookup as (    select        date_key,        date_key as date_value    from tasty_bytes_dbt_db.DEV.DIM_DATE),dim_location_lookup as (    select        location_key,        location_id    from tasty_bytes_dbt_db.DEV.DIM_LOCATION),dim_truck_lookup as (    select        truck_key,        truck_id    from tasty_bytes_dbt_db.DEV.DIM_TRUCK),dim_customer_lookup as (    select        customer_key,        customer_id    from tasty_bytes_dbt_db.DEV.dim_customer),fact_sales as (    select        od.order_detail_id as order_item_id,        od.order_id,        oh.order_ts,        cast(to_char(oh.order_ts, 'YYYYMMDD') as integer) as order_date_key,        coalesce(dl.location_key, -1) as location_key,        coalesce(dt.truck_key, -1) as truck_key,        coalesce(dc.customer_key, -1) as customer_key,        case             when cast(od.quantity as number) < 0 then 0             else cast(od.quantity as number)         end as quantity,        coalesce(cast(od.unit_price as number), 0) as unit_price,        cast(od.price as number) as line_gross_amount,        coalesce(cast(od.order_item_discount_amount as number), 0) as line_discount_amount,        cast(od.price as number) - coalesce(cast(od.order_item_discount_amount as number), 0) as line_net_amount,        cast(oh.order_tax_amount as number) as header_tax_amount,        trim(upper(oh.order_channel)) as order_channel,        upper(oh.order_currency) as order_currency,        od.discount_id,        current_timestamp() as dw_insert_ts,        current_timestamp() as dw_update_ts    from order_detail_source od    inner join order_header_source oh        on od.order_id = oh.order_id    left join dim_location_lookup dl        on oh.location_id = dl.location_id    left join dim_truck_lookup dt        on oh.truck_id = dt.truck_id    left join dim_customer_lookup dc        on oh.customer_id = dc.customer_id)select     order_item_id,    order_id,    order_ts,    order_date_key,    location_key,    truck_key,    customer_key,    quantity,    unit_price,    line_gross_amount,    line_discount_amount,    line_net_amount,    header_tax_amount,    order_channel,    order_currency,    discount_id,    dw_insert_ts,    dw_update_tsfrom fact_sales
+
+
+with order_detail_source as (
+    select
+        ORDER_DETAIL_ID,
+        ORDER_ID,
+        QUANTITY,
+        UNIT_PRICE,
+        PRICE,
+        ORDER_ITEM_DISCOUNT_AMOUNT,
+        DISCOUNT_ID
+    from tasty_bytes_dbt_db.RAW.ORDER_DETAIL
+    
+        where ORDER_DETAIL_ID > (select max(order_item_id) from tasty_bytes_dbt_db.DEV.FACT_SALES)
+    
+),
+
+order_header_source as (
+    select
+        ORDER_ID,
+        ORDER_TS,
+        LOCATION_ID,
+        TRUCK_ID,
+        CUSTOMER_ID,
+        ORDER_TAX_AMOUNT,
+        ORDER_CHANNEL,
+        ORDER_CURRENCY
+    from tasty_bytes_dbt_db.RAW.ORDER_HEADER
+),
+
+final as (
+    select
+        cast(od.ORDER_DETAIL_ID as integer) as order_item_id,
+        cast(od.ORDER_ID as integer) as order_id,
+        cast(oh.ORDER_TS as timestamp) as order_ts,
+        cast(to_number(to_char(oh.ORDER_TS, 'YYYYMMDD')) as integer) as order_date_key,
+        cast(oh.LOCATION_ID as integer) as location_key,
+        cast(oh.TRUCK_ID as integer) as truck_key,
+        cast(oh.CUSTOMER_ID as integer) as customer_key,
+        cast(greatest(od.QUANTITY, 0) as decimal(10,2)) as quantity,
+        cast(coalesce(od.UNIT_PRICE, 0) as decimal(10,2)) as unit_price,
+        cast(od.PRICE as decimal(10,2)) as line_gross_amount,
+        cast(coalesce(od.ORDER_ITEM_DISCOUNT_AMOUNT, 0) as decimal(10,2)) as line_discount_amount,
+        cast(od.PRICE - coalesce(od.ORDER_ITEM_DISCOUNT_AMOUNT, 0) as decimal(10,2)) as line_net_amount,
+        cast(oh.ORDER_TAX_AMOUNT as decimal(10,2)) as header_tax_amount,
+        cast(trim(upper(oh.ORDER_CHANNEL)) as varchar(50)) as order_channel,
+        cast(upper(oh.ORDER_CURRENCY) as varchar(3)) as order_currency,
+        cast(od.DISCOUNT_ID as integer) as discount_id,
+        cast(current_timestamp() as timestamp) as dw_insert_ts,
+        cast(current_timestamp() as timestamp) as dw_update_ts
+    from order_detail_source od
+    left join order_header_source oh
+        on od.ORDER_ID = oh.ORDER_ID
+)
+
+select * from final

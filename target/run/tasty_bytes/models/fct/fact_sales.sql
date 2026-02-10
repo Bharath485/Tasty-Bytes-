@@ -1,14 +1,30 @@
-
+-- back compat for old kwarg name
   
+  begin;
+    
+        
+            
+	    
+	    
+            
+        
     
 
-create or replace transient table tasty_bytes_dbt_db.DEV.FACT_SALES
     
+
+    merge into tasty_bytes_dbt_db.DEV.FACT_SALES as DBT_INTERNAL_DEST
+        using tasty_bytes_dbt_db.DEV.FACT_SALES__dbt_tmp as DBT_INTERNAL_SOURCE
+        on ((DBT_INTERNAL_SOURCE.order_item_id = DBT_INTERNAL_DEST.order_item_id))
+
     
+    when matched then update set
+        "ORDER_ITEM_ID" = DBT_INTERNAL_SOURCE."ORDER_ITEM_ID","ORDER_ID" = DBT_INTERNAL_SOURCE."ORDER_ID","ORDER_TS" = DBT_INTERNAL_SOURCE."ORDER_TS","ORDER_DATE_KEY" = DBT_INTERNAL_SOURCE."ORDER_DATE_KEY","LOCATION_KEY" = DBT_INTERNAL_SOURCE."LOCATION_KEY","TRUCK_KEY" = DBT_INTERNAL_SOURCE."TRUCK_KEY","CUSTOMER_KEY" = DBT_INTERNAL_SOURCE."CUSTOMER_KEY","QUANTITY" = DBT_INTERNAL_SOURCE."QUANTITY","UNIT_PRICE" = DBT_INTERNAL_SOURCE."UNIT_PRICE","LINE_GROSS_AMOUNT" = DBT_INTERNAL_SOURCE."LINE_GROSS_AMOUNT","LINE_DISCOUNT_AMOUNT" = DBT_INTERNAL_SOURCE."LINE_DISCOUNT_AMOUNT","LINE_NET_AMOUNT" = DBT_INTERNAL_SOURCE."LINE_NET_AMOUNT","HEADER_TAX_AMOUNT" = DBT_INTERNAL_SOURCE."HEADER_TAX_AMOUNT","ORDER_CHANNEL" = DBT_INTERNAL_SOURCE."ORDER_CHANNEL","ORDER_CURRENCY" = DBT_INTERNAL_SOURCE."ORDER_CURRENCY","DISCOUNT_ID" = DBT_INTERNAL_SOURCE."DISCOUNT_ID","DW_INSERT_TS" = DBT_INTERNAL_SOURCE."DW_INSERT_TS","DW_UPDATE_TS" = DBT_INTERNAL_SOURCE."DW_UPDATE_TS"
     
-    as (with order_detail_source as (    select        order_detail_id,        order_id,        quantity,        unit_price,        price,        order_item_discount_amount,        discount_id    from tasty_bytes_dbt_db.RAW.ORDER_DETAIL),order_header_source as (    select        order_id,        order_ts,        location_id,        truck_id,        customer_id,        order_tax_amount,        order_channel,        order_currency    from tasty_bytes_dbt_db.RAW.ORDER_HEADER),dim_date_lookup as (    select        date_key,        date_key as date_value    from tasty_bytes_dbt_db.DEV.DIM_DATE),dim_location_lookup as (    select        location_key,        location_id    from tasty_bytes_dbt_db.DEV.DIM_LOCATION),dim_truck_lookup as (    select        truck_key,        truck_id    from tasty_bytes_dbt_db.DEV.DIM_TRUCK),dim_customer_lookup as (    select        customer_key,        customer_id    from tasty_bytes_dbt_db.DEV.dim_customer),fact_sales as (    select        od.order_detail_id as order_item_id,        od.order_id,        oh.order_ts,        cast(to_char(oh.order_ts, 'YYYYMMDD') as integer) as order_date_key,        coalesce(dl.location_key, -1) as location_key,        coalesce(dt.truck_key, -1) as truck_key,        coalesce(dc.customer_key, -1) as customer_key,        case             when cast(od.quantity as number) < 0 then 0             else cast(od.quantity as number)         end as quantity,        coalesce(cast(od.unit_price as number), 0) as unit_price,        cast(od.price as number) as line_gross_amount,        coalesce(cast(od.order_item_discount_amount as number), 0) as line_discount_amount,        cast(od.price as number) - coalesce(cast(od.order_item_discount_amount as number), 0) as line_net_amount,        cast(oh.order_tax_amount as number) as header_tax_amount,        trim(upper(oh.order_channel)) as order_channel,        upper(oh.order_currency) as order_currency,        od.discount_id,        current_timestamp() as dw_insert_ts,        current_timestamp() as dw_update_ts    from order_detail_source od    inner join order_header_source oh        on od.order_id = oh.order_id    left join dim_location_lookup dl        on oh.location_id = dl.location_id    left join dim_truck_lookup dt        on oh.truck_id = dt.truck_id    left join dim_customer_lookup dc        on oh.customer_id = dc.customer_id)select     order_item_id,    order_id,    order_ts,    order_date_key,    location_key,    truck_key,    customer_key,    quantity,    unit_price,    line_gross_amount,    line_discount_amount,    line_net_amount,    header_tax_amount,    order_channel,    order_currency,    discount_id,    dw_insert_ts,    dw_update_tsfrom fact_sales
-    )
+
+    when not matched then insert
+        ("ORDER_ITEM_ID", "ORDER_ID", "ORDER_TS", "ORDER_DATE_KEY", "LOCATION_KEY", "TRUCK_KEY", "CUSTOMER_KEY", "QUANTITY", "UNIT_PRICE", "LINE_GROSS_AMOUNT", "LINE_DISCOUNT_AMOUNT", "LINE_NET_AMOUNT", "HEADER_TAX_AMOUNT", "ORDER_CHANNEL", "ORDER_CURRENCY", "DISCOUNT_ID", "DW_INSERT_TS", "DW_UPDATE_TS")
+    values
+        ("ORDER_ITEM_ID", "ORDER_ID", "ORDER_TS", "ORDER_DATE_KEY", "LOCATION_KEY", "TRUCK_KEY", "CUSTOMER_KEY", "QUANTITY", "UNIT_PRICE", "LINE_GROSS_AMOUNT", "LINE_DISCOUNT_AMOUNT", "LINE_NET_AMOUNT", "HEADER_TAX_AMOUNT", "ORDER_CHANNEL", "ORDER_CURRENCY", "DISCOUNT_ID", "DW_INSERT_TS", "DW_UPDATE_TS")
+
 ;
-
-
-  
+    commit;

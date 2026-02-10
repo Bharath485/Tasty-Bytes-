@@ -89,7 +89,6 @@ models:
       - name: BIRTHDAY_DATE
       - name: E_MAIL
       - name: PHONE_NUMBER
-
   # ===========================
   # DIM_PRODUCT
   # ===========================

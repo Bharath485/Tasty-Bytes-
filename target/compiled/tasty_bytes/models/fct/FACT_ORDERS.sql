@@ -3,36 +3,30 @@
 with order_header as (
     select
         cast(ORDER_ID as varchar) as order_id,
-        cast(ORDER_TS as timestamp) as order_ts
-    from tasty_bytes_dbt_db.RAW.ORDER_HEADER
+        cast(ORDER_TS as timestamp) as order_timestamp
+    from dbt_poc.RAW.ORDER_HEADER
+    
 ),
 
-order_detail as (
+order_detail_aggregated as (
     select
         cast(ORDER_ID as varchar) as order_id,
-        cast(PRICE as decimal(10,2)) as price,
-        cast(QUANTITY as integer) as quantity
-    from tasty_bytes_dbt_db.RAW.ORDER_DETAIL
-),
-
-order_aggregations as (
-    select
-        order_id,
-        sum(price) as total_line_amount,
-        sum(quantity) as total_quantity
-    from order_detail
-    group by order_id
+        sum(cast(PRICE as decimal(18,2))) as total_line_amount,
+        sum(cast(QUANTITY as integer)) as total_quantity
+    from dbt_poc.RAW.ORDER_DETAIL
+    
+    group by ORDER_ID
 ),
 
 final as (
     select
         oh.order_id,
-        convert_timezone('UTC', oh.order_ts) as order_timestamp,
-        oa.total_line_amount,
-        oa.total_quantity
+        oh.order_timestamp,
+        oda.total_line_amount,
+        oda.total_quantity
     from order_header oh
-    left join order_aggregations oa
-        on oh.order_id = oa.order_id
+    left join order_detail_aggregated oda
+        on oh.order_id = oda.order_id
 )
 
 select * from final
