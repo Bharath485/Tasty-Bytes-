@@ -33,41 +33,54 @@ order_header_source as (
 
 joined_data as (
     select
-        -- Primary identifiers
-        cast(od.order_detail_id as number) as order_item_id,
-        cast(od.order_id as number) as order_id,
-        
-        -- Date and time columns
-        cast(oh.order_ts as timestamp) as order_ts,
-        cast(to_char(oh.order_ts, 'YYYYMMDD') as number) as order_date_key,
-        
-        -- Dimension keys (lookups to be resolved by dimension tables)
-        cast(oh.location_id as number) as location_key,
-        cast(oh.truck_id as number) as truck_key,
-        cast(oh.customer_id as number) as customer_key,
-        
-        -- Quantity and pricing measures
-        cast(case when od.quantity < 0 then 0 else od.quantity end as number) as quantity,
-        cast(coalesce(od.unit_price, 0) as number(10,2)) as unit_price,
-        cast(od.price as number(10,2)) as line_gross_amount,
-        cast(coalesce(od.order_item_discount_amount, 0) as number(10,2)) as line_discount_amount,
-        cast(od.price - coalesce(od.order_item_discount_amount, 0) as number(10,2)) as line_net_amount,
-        
-        -- Header level amounts
-        cast(oh.order_tax_amount as number(10,2)) as header_tax_amount,
-        
-        -- Descriptive attributes
-        cast(trim(upper(oh.order_channel)) as varchar(50)) as order_channel,
-        cast(upper(oh.order_currency) as varchar(3)) as order_currency,
-        cast(od.discount_id as number) as discount_id,
-        
-        -- System timestamps
-        current_timestamp() as dw_insert_ts,
-        current_timestamp() as dw_update_ts
-        
+        od.order_detail_id,
+        od.order_id,
+        oh.order_ts,
+        oh.location_id,
+        oh.truck_id,
+        oh.customer_id,
+        cast(case when od.quantity < 0 then 0 else od.quantity end as numeric) as quantity,
+        cast(coalesce(od.unit_price, 0) as numeric) as unit_price,
+        cast(od.price as numeric) as line_gross_amount,
+        cast(coalesce(od.order_item_discount_amount, 0) as numeric) as line_discount_amount,
+        cast(oh.order_tax_amount as numeric) as header_tax_amount,
+        upper(trim(oh.order_channel)) as order_channel,
+        upper(oh.order_currency) as order_currency,
+        od.discount_id
     from order_detail_source od
-    left join order_header_source oh
+    inner join order_header_source oh
         on od.order_id = oh.order_id
 )
 
-select * from joined_data
+select
+    -- Primary identifiers
+    cast(order_detail_id as varchar) as order_item_id,
+    cast(order_id as varchar) as order_id,
+    
+    -- Date and time dimensions
+    cast(order_ts as timestamp) as order_ts,
+    cast(to_number(to_char(order_ts, 'YYYYMMDD')) as integer) as order_date_key,
+    
+    -- Dimension keys (lookups to be resolved via dimension tables)
+    cast(location_id as varchar) as location_key,
+    cast(truck_id as varchar) as truck_key,
+    cast(customer_id as varchar) as customer_key,
+    
+    -- Measures
+    quantity,
+    unit_price,
+    line_gross_amount,
+    line_discount_amount,
+    cast(line_gross_amount - coalesce(line_discount_amount, 0) as numeric) as line_net_amount,
+    header_tax_amount,
+    
+    -- Attributes
+    order_channel,
+    order_currency,
+    cast(discount_id as varchar) as discount_id,
+    
+    -- System metadata
+    current_timestamp() as dw_insert_ts,
+    current_timestamp() as dw_update_ts
+    
+from joined_data
