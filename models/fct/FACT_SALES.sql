@@ -1,86 +1,100 @@
-{{ config(
-    materialized='incremental',
-    unique_key='order_item_id'
-) }}
-
-with order_detail_source as (
-    select
-        order_detail_id,
-        order_id,
-        quantity,
-        unit_price,
-        price,
-        order_item_discount_amount,
-        discount_id
-    from {{ source('tb_101', 'ORDER_DETAIL') }}
-    {% if is_incremental() %}
-        where order_detail_id > (select max(order_item_id) from {{ this }})
-    {% endif %}
+WITH order_header AS (
+    SELECT
+        ORDER_ID,
+        ORDER_TS,
+        LOCATION_ID,
+        TRUCK_ID,
+        CUSTOMER_ID,
+        ORDER_TAX_AMOUNT,
+        ORDER_CHANNEL,
+        ORDER_CURRENCY
+    FROM {{ source('tb_101', 'ORDER_HEADER') }}
 ),
 
-order_header_source as (
-    select
-        order_id,
-        order_ts,
-        location_id,
-        truck_id,
-        customer_id,
-        order_tax_amount,
-        order_channel,
-        order_currency
-    from {{ source('tb_101', 'ORDER_HEADER') }}
+order_detail AS (
+    SELECT
+        ORDER_DETAIL_ID,
+        ORDER_ID,
+        QUANTITY,
+        UNIT_PRICE,
+        PRICE,
+        ORDER_ITEM_DISCOUNT_AMOUNT,
+        DISCOUNT_ID
+    FROM {{ source('tb_101', 'ORDER_DETAIL') }}
 ),
 
-joined_data as (
-    select
-        od.order_detail_id,
-        od.order_id,
-        oh.order_ts,
-        oh.location_id,
-        oh.truck_id,
-        oh.customer_id,
-        cast(case when od.quantity < 0 then 0 else od.quantity end as numeric) as quantity,
-        cast(coalesce(od.unit_price, 0) as numeric) as unit_price,
-        cast(od.price as numeric) as line_gross_amount,
-        cast(coalesce(od.order_item_discount_amount, 0) as numeric) as line_discount_amount,
-        cast(oh.order_tax_amount as numeric) as header_tax_amount,
-        upper(trim(oh.order_channel)) as order_channel,
-        upper(oh.order_currency) as order_currency,
-        od.discount_id
-    from order_detail_source od
-    inner join order_header_source oh
-        on od.order_id = oh.order_id
+dim_location AS (
+    SELECT
+        LOCATION_ID,
+        LOCATION_KEY
+    FROM {{ ref('dim_location') }}
+),
+
+dim_truck AS (
+    SELECT
+        TRUCK_ID,
+        TRUCK_KEY
+    FROM {{ ref('dim_truck') }}
+),
+
+dim_customer AS (
+    SELECT
+        CUSTOMER_ID,
+        CUSTOMER_KEY
+    FROM {{ ref('dim_customers') }}
+),
+
+joined AS (
+    SELECT
+        od.ORDER_DETAIL_ID,
+        od.ORDER_ID,
+        oh.ORDER_TS,
+        oh.LOCATION_ID,
+        oh.TRUCK_ID,
+        oh.CUSTOMER_ID,
+        od.QUANTITY,
+        od.UNIT_PRICE,
+        od.PRICE,
+        od.ORDER_ITEM_DISCOUNT_AMOUNT,
+        oh.ORDER_TAX_AMOUNT,
+        oh.ORDER_CHANNEL,
+        oh.ORDER_CURRENCY,
+        od.DISCOUNT_ID,
+        dl.LOCATION_KEY,
+        dt.TRUCK_KEY,
+        dc.CUSTOMER_KEY
+    FROM order_detail od
+    INNER JOIN order_header oh
+        ON od.ORDER_ID = oh.ORDER_ID
+    LEFT JOIN dim_location dl
+        ON oh.LOCATION_ID = dl.LOCATION_ID
+    LEFT JOIN dim_truck dt
+        ON oh.TRUCK_ID = dt.TRUCK_ID
+    LEFT JOIN dim_customer dc
+        ON oh.CUSTOMER_ID = dc.CUSTOMER_ID
+),
+
+final AS (
+    SELECT
+        ORDER_DETAIL_ID AS order_item_id,
+        ORDER_ID AS order_id,
+        COALESCE(ORDER_TS, CURRENT_TIMESTAMP()) AS order_ts,
+        CAST(TO_CHAR(ORDER_TS, 'YYYYMMDD') AS NUMBER(10)) AS order_date_key,
+        LOCATION_KEY AS location_key,
+        TRUCK_KEY AS truck_key,
+        CUSTOMER_KEY AS customer_key,
+        CASE WHEN CAST(QUANTITY AS NUMBER(12,2)) < 0 THEN 0 ELSE CAST(QUANTITY AS NUMBER(12,2)) END AS quantity,
+        COALESCE(CAST(UNIT_PRICE AS NUMBER(12,2)), 0) AS unit_price,
+        COALESCE(CAST(PRICE AS NUMBER(12,2)), 0) AS line_gross_amount,
+        COALESCE(CAST(ORDER_ITEM_DISCOUNT_AMOUNT AS NUMBER(12,2)), 0) AS line_discount_amount,
+        COALESCE(CAST(PRICE AS NUMBER(12,2)), 0) - COALESCE(CAST(ORDER_ITEM_DISCOUNT_AMOUNT AS NUMBER(12,2)), 0) AS line_net_amount,
+        COALESCE(CAST(ORDER_TAX_AMOUNT AS NUMBER(12,2)), 0) AS header_tax_amount,
+        COALESCE(TRIM(ORDER_CHANNEL), 'unknown') AS order_channel,
+        COALESCE(UPPER(ORDER_CURRENCY), 'USD') AS order_currency,
+        DISCOUNT_ID AS discount_id,
+        CURRENT_TIMESTAMP() AS dw_insert_ts,
+        CURRENT_TIMESTAMP() AS dw_update_ts
+    FROM joined
 )
 
-select
-    -- Primary identifiers
-    cast(order_detail_id as varchar) as order_item_id,
-    cast(order_id as varchar) as order_id,
-    
-    -- Date and time dimensions
-    cast(order_ts as timestamp) as order_ts,
-    cast(to_number(to_char(order_ts, 'YYYYMMDD')) as integer) as order_date_key,
-    
-    -- Dimension keys (lookups to be resolved via dimension tables)
-    cast(location_id as varchar) as location_key,
-    cast(truck_id as varchar) as truck_key,
-    cast(customer_id as varchar) as customer_key,
-    
-    -- Measures
-    quantity,
-    unit_price,
-    line_gross_amount,
-    line_discount_amount,
-    cast(line_gross_amount - coalesce(line_discount_amount, 0) as numeric) as line_net_amount,
-    header_tax_amount,
-    
-    -- Attributes
-    order_channel,
-    order_currency,
-    cast(discount_id as varchar) as discount_id,
-    
-    -- System metadata
-    current_timestamp() as dw_insert_ts,
-    current_timestamp() as dw_update_ts
-    
-from joined_data
+SELECT * FROM final
