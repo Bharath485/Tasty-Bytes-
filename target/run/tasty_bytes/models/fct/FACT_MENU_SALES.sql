@@ -8,51 +8,42 @@ create or replace transient table DBT_POC.DEV.FACT_MENU_SALES
     
     as (
 
-with order_detail_source as (
+-- Aggregated menu sales fact table combining order details and menu information
+with order_details as (
     select
-        cast(menu_item_id as varchar) as menu_item_id,
-        cast(quantity as integer) as quantity,
-        cast(price as decimal(10,2)) as price
+        menu_item_id,
+        quantity,
+        price
     from dbt_poc.RAW.ORDER_DETAIL
     
 ),
 
-menu_source as (
+menu_info as (
     select
-        cast(menu_item_id as varchar) as menu_item_id,
-        cast(sale_price_usd as decimal(10,2)) as sale_price_usd,
-        cast(item_category as varchar) as item_category
+        menu_item_id,
+        sale_price_usd,
+        item_category
     from dbt_poc.RAW.MENU
 ),
 
 aggregated_sales as (
     select
-        menu_item_id,
-        sum(quantity) as quantity_sold,
-        sum(price) as total_sales_amount
-    from order_detail_source
-    group by menu_item_id
-),
-
-final as (
-    select
-        a.menu_item_id,
-        a.quantity_sold,
-        a.total_sales_amount,
-        m.sale_price_usd as unit_sale_price,
-        m.item_category
-    from aggregated_sales a
-    left join menu_source m
-        on a.menu_item_id = m.menu_item_id
+        od.menu_item_id,
+        sum(od.quantity) as quantity_sold,
+        sum(od.price) as total_sales_amount
+    from order_details od
+    group by od.menu_item_id
 )
 
-select 
-    menu_item_id,
-    quantity_sold,
-    total_sales_amount,
-    unit_sale_price,
-    item_category
-from final
+select
+    cast(agg.menu_item_id as varchar) as menu_item_id,
+    cast(agg.quantity_sold as integer) as quantity_sold,
+    cast(agg.total_sales_amount as decimal(18,2)) as total_sales_amount,
+    cast(m.sale_price_usd as decimal(18,2)) as unit_sale_price,
+    cast(m.item_category as varchar) as item_category
+from aggregated_sales agg
+left join menu_info m
+    on agg.menu_item_id = m.menu_item_id
     )
 ;
 

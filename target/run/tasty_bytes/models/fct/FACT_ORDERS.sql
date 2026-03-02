@@ -1,45 +1,30 @@
-
+-- back compat for old kwarg name
   
+  begin;
+    
+        
+            
+	    
+	    
+            
+        
     
 
-create or replace transient table DBT_POC.DEV.FACT_ORDERS
     
-    
-    
-    as (
 
-with order_header as (
-    select
-        cast(ORDER_ID as varchar) as order_id,
-        cast(ORDER_TS as timestamp) as order_timestamp
-    from dbt_poc.RAW.ORDER_HEADER
+    merge into DBT_POC.DEV.FACT_ORDERS as DBT_INTERNAL_DEST
+        using DBT_POC.DEV.FACT_ORDERS__dbt_tmp as DBT_INTERNAL_SOURCE
+        on ((DBT_INTERNAL_SOURCE.order_id = DBT_INTERNAL_DEST.order_id))
+
     
-),
-
-order_detail_aggregated as (
-    select
-        cast(ORDER_ID as varchar) as order_id,
-        sum(cast(PRICE as decimal(18,2))) as total_line_amount,
-        sum(cast(QUANTITY as integer)) as total_quantity
-    from dbt_poc.RAW.ORDER_DETAIL
+    when matched then update set
+        "ORDER_ID" = DBT_INTERNAL_SOURCE."ORDER_ID","ORDER_TIMESTAMP" = DBT_INTERNAL_SOURCE."ORDER_TIMESTAMP","TOTAL_LINE_AMOUNT" = DBT_INTERNAL_SOURCE."TOTAL_LINE_AMOUNT","TOTAL_QUANTITY" = DBT_INTERNAL_SOURCE."TOTAL_QUANTITY"
     
-    group by ORDER_ID
-),
 
-final as (
-    select
-        oh.order_id,
-        oh.order_timestamp,
-        oda.total_line_amount,
-        oda.total_quantity
-    from order_header oh
-    left join order_detail_aggregated oda
-        on oh.order_id = oda.order_id
-)
+    when not matched then insert
+        ("ORDER_ID", "ORDER_TIMESTAMP", "TOTAL_LINE_AMOUNT", "TOTAL_QUANTITY")
+    values
+        ("ORDER_ID", "ORDER_TIMESTAMP", "TOTAL_LINE_AMOUNT", "TOTAL_QUANTITY")
 
-select * from final
-    )
 ;
-
-
-  
+    commit;

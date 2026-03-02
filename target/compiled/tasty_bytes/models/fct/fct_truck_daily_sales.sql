@@ -1,85 +1,88 @@
 
 
-with order_header_source as (
+with order_header as (
     select
-        cast(order_ts as timestamp) as order_ts,
-        cast(truck_id as varchar) as truck_id,
-        cast(location_id as varchar) as location_id,
-        cast(order_id as varchar) as order_id
-    from tasty_bytes_dbt_db.RAW.ORDER_HEADER
+        order_ts,
+        truck_id,
+        location_id,
+        order_id
+    from dbt_poc.RAW.ORDER_HEADER
     
-        where order_ts > (select max(order_ts) from tasty_bytes_dbt_db.DEV.fct_truck_daily_sales)
+        where order_ts > (select max(order_ts) from DBT_POC.DEV.fct_truck_daily_sales)
     
 ),
 
-order_detail_source as (
+order_detail as (
     select
-        cast(order_id as varchar) as order_id,
-        cast(price as decimal(10,2)) as price,
-        cast(order_item_discount_amount as decimal(10,2)) as order_item_discount_amount
-    from tasty_bytes_dbt_db.RAW.ORDER_DETAIL
+        order_id,
+        price,
+        order_item_discount_amount
+    from dbt_poc.RAW.ORDER_DETAIL
 ),
 
-date_lookup as (
+dim_date_lookup as (
     select
         date_key,
         date
-    from tasty_bytes_dbt_db.DEV.DIM_DATE
+    from DBT_POC.DEV.DIM_DATE
 ),
 
-truck_lookup as (
+dim_truck_lookup as (
     select
         truck_key,
         truck_id
-    from tasty_bytes_dbt_db.DEV.DIM_TRUCK
+    from DBT_POC.DEV.DIM_TRUCK
 ),
 
-location_lookup as (
+dim_location_lookup as (
     select
         location_key,
         location_id
-    from tasty_bytes_dbt_db.DEV.DIM_LOCATION
+    from DBT_POC.DEV.DIM_LOCATION
 ),
 
-order_aggregations as (
+order_data as (
     select
         oh.order_ts,
         oh.truck_id,
         oh.location_id,
-        count(distinct oh.order_id) as order_count,
-        sum(coalesce(od.price, 0)) as gross_sales_usd,
-        sum(coalesce(od.price, 0) - coalesce(od.order_item_discount_amount, 0)) as net_sales_usd
-    from order_header_source oh
-    left join order_detail_source od
+        oh.order_id,
+        od.price,
+        od.order_item_discount_amount
+    from order_header oh
+    inner join order_detail od
         on oh.order_id = od.order_id
-    group by
-        oh.order_ts,
-        oh.truck_id,
-        oh.location_id
 ),
 
-final as (
+aggregated_data as (
     select
-        dl.date_key,
-        tl.truck_key,
-        ll.location_key,
-        oa.order_count,
-        oa.gross_sales_usd,
-        oa.net_sales_usd
-    from order_aggregations oa
-    left join date_lookup dl
-        on date(oa.order_ts) = dl.date
-    left join truck_lookup tl
-        on oa.truck_id = tl.truck_id
-    left join location_lookup ll
-        on oa.location_id = ll.location_id
+        date(order_ts) as order_date,
+        truck_id,
+        location_id,
+        count(distinct order_id) as order_count,
+        sum(coalesce(price, 0)) as gross_sales_usd,
+        sum(coalesce(price, 0) - coalesce(order_item_discount_amount, 0)) as net_sales_usd
+    from order_data
+    group by
+        date(order_ts),
+        truck_id,
+        location_id
 )
 
 select
-    date_key,
-    truck_key,
-    location_key,
-    order_count,
-    gross_sales_usd,
-    net_sales_usd
-from final
+    dd.date_key,
+    dt.truck_key,
+    dl.location_key,
+    cast(ad.order_count as integer) as order_count,
+    cast(ad.gross_sales_usd as decimal(18,2)) as gross_sales_usd,
+    cast(ad.net_sales_usd as decimal(18,2)) as net_sales_usd
+from aggregated_data ad
+left join dim_date_lookup dd
+    on dd.date = ad.order_date
+left join dim_truck_lookup dt
+    on dt.truck_id = ad.truck_id
+left join dim_location_lookup dl
+    on dl.location_id = ad.location_id
+where dd.date_key is not null
+    and dt.truck_key is not null
+    and dl.location_key is not null

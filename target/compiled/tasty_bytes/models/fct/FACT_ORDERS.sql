@@ -2,31 +2,44 @@
 
 with order_header as (
     select
-        cast(ORDER_ID as varchar) as order_id,
-        cast(ORDER_TS as timestamp) as order_timestamp
+        order_id,
+        order_ts
     from dbt_poc.RAW.ORDER_HEADER
+    
+        where order_ts > (select max(order_timestamp) from DBT_POC.DEV.FACT_ORDERS)
     
 ),
 
 order_detail_aggregated as (
     select
-        cast(ORDER_ID as varchar) as order_id,
-        sum(cast(PRICE as decimal(18,2))) as total_line_amount,
-        sum(cast(QUANTITY as integer)) as total_quantity
+        order_id,
+        sum(price) as total_line_amount,
+        sum(quantity) as total_quantity
     from dbt_poc.RAW.ORDER_DETAIL
     
-    group by ORDER_ID
+        where order_id in (
+            select order_id 
+            from dbt_poc.RAW.ORDER_HEADER
+            where order_ts > (select max(order_timestamp) from DBT_POC.DEV.FACT_ORDERS)
+        )
+    
+    group by order_id
 ),
 
 final as (
     select
-        oh.order_id,
-        oh.order_timestamp,
-        oda.total_line_amount,
-        oda.total_quantity
+        cast(oh.order_id as varchar) as order_id,
+        cast(oh.order_ts as timestamp) as order_timestamp,
+        cast(oda.total_line_amount as decimal(18,2)) as total_line_amount,
+        cast(oda.total_quantity as integer) as total_quantity
     from order_header oh
     left join order_detail_aggregated oda
         on oh.order_id = oda.order_id
 )
 
-select * from final
+select 
+    order_id,
+    order_timestamp,
+    total_line_amount,
+    total_quantity
+from final

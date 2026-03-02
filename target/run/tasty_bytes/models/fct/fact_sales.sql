@@ -12,8 +12,8 @@
 
     
 
-    merge into tasty_bytes_dbt_db.DEV.FACT_SALES as DBT_INTERNAL_DEST
-        using tasty_bytes_dbt_db.DEV.FACT_SALES__dbt_tmp as DBT_INTERNAL_SOURCE
+    merge into DBT_POC.DEV.FACT_SALES as DBT_INTERNAL_DEST
+        using DBT_POC.DEV.FACT_SALES__dbt_tmp as DBT_INTERNAL_SOURCE
         on ((DBT_INTERNAL_SOURCE.order_item_id = DBT_INTERNAL_DEST.order_item_id))
 
     

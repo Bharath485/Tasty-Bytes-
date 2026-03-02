@@ -1,40 +1,38 @@
-{{ config(materialized='incremental', unique_key='menu_item_id') }}
-
--- Aggregated menu sales fact table combining order details and menu information
-with order_details as (
-    select
-        menu_item_id,
-        quantity,
-        price
-    from {{ source('tb_101', 'ORDER_DETAIL') }}
-    {% if is_incremental() %}
-        where updated_at > (select max(updated_at) from {{ this }})
-    {% endif %}
+WITH order_detail AS (
+    SELECT
+        MENU_ITEM_ID,
+        QUANTITY,
+        PRICE
+    FROM {{ source('tb_101', 'ORDER_DETAIL') }}
 ),
 
-menu_info as (
-    select
-        menu_item_id,
-        sale_price_usd,
-        item_category
-    from {{ source('tb_101', 'MENU') }}
+menu AS (
+    SELECT
+        MENU_ITEM_ID,
+        SALE_PRICE_USD,
+        ITEM_CATEGORY
+    FROM {{ source('tb_101', 'MENU') }}
 ),
 
-aggregated_sales as (
-    select
-        od.menu_item_id,
-        sum(od.quantity) as quantity_sold,
-        sum(od.price) as total_sales_amount
-    from order_details od
-    group by od.menu_item_id
+aggregated_sales AS (
+    SELECT
+        MENU_ITEM_ID,
+        SUM(QUANTITY) AS quantity_sold,
+        SUM(PRICE) AS total_sales_amount
+    FROM order_detail
+    GROUP BY MENU_ITEM_ID
+),
+
+final AS (
+    SELECT
+        agg.MENU_ITEM_ID AS menu_item_id,
+        COALESCE(agg.quantity_sold, 0) AS quantity_sold,
+        COALESCE(agg.total_sales_amount, 0) AS total_sales_amount,
+        COALESCE(m.SALE_PRICE_USD, 0) AS unit_sale_price,
+        m.ITEM_CATEGORY AS item_category
+    FROM aggregated_sales agg
+    LEFT JOIN menu m
+        ON agg.MENU_ITEM_ID = m.MENU_ITEM_ID
 )
 
-select
-    cast(agg.menu_item_id as varchar) as menu_item_id,
-    cast(agg.quantity_sold as integer) as quantity_sold,
-    cast(agg.total_sales_amount as decimal(18,2)) as total_sales_amount,
-    cast(m.sale_price_usd as decimal(18,2)) as unit_sale_price,
-    cast(m.item_category as varchar) as item_category
-from aggregated_sales agg
-left join menu_info m
-    on agg.menu_item_id = m.menu_item_id
+SELECT * FROM final
