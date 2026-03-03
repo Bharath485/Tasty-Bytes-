@@ -1,36 +1,36 @@
-WITH order_header AS (
-    SELECT
-        ORDER_ID,
-        ORDER_TS
-    FROM {{ source('tb_101', 'ORDER_HEADER') }}
+{{ config(
+    materialized='incremental',
+    unique_key='order_id'
+) }}
+
+with order_header as (
+    select
+        cast(ORDER_ID as INTEGER) as order_id,
+        cast(ORDER_TS as TIMESTAMP) as order_timestamp
+    from {{ source('tb_101', 'ORDER_HEADER') }}
 ),
 
-order_detail AS (
-    SELECT
-        ORDER_ID,
-        PRICE,
-        QUANTITY
-    FROM {{ source('tb_101', 'ORDER_DETAIL') }}
+order_detail_aggregated as (
+    select
+        cast(ORDER_ID as INTEGER) as order_id,
+        cast(sum(PRICE) as NUMERIC) as total_line_amount,
+        cast(sum(QUANTITY) as INTEGER) as total_quantity
+    from {{ source('tb_101', 'ORDER_DETAIL') }}
+    group by ORDER_ID
 ),
 
-order_detail_agg AS (
-    SELECT
-        ORDER_ID,
-        SUM(PRICE) AS total_line_amount,
-        SUM(QUANTITY) AS total_quantity
-    FROM order_detail
-    GROUP BY ORDER_ID
-),
-
-final AS (
-    SELECT
-        oh.ORDER_ID AS order_id,
-        COALESCE(oh.ORDER_TS, CURRENT_TIMESTAMP()) AS order_timestamp,
-        COALESCE(oda.total_line_amount, 0) AS total_line_amount,
-        COALESCE(oda.total_quantity, 0) AS total_quantity
-    FROM order_header oh
-    LEFT JOIN order_detail_agg oda
-        ON oh.ORDER_ID = oda.ORDER_ID
+final as (
+    select
+        oh.order_id,
+        oh.order_timestamp,
+        coalesce(od.total_line_amount, 0) as total_line_amount,
+        coalesce(od.total_quantity, 0) as total_quantity
+    from order_header oh
+    left join order_detail_aggregated od
+        on oh.order_id = od.order_id
+    {% if is_incremental() %}
+    where oh.order_timestamp > (select max(order_timestamp) from {{ this }})
+    {% endif %}
 )
 
-SELECT * FROM final
+select * from final
