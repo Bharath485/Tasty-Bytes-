@@ -1,0 +1,294 @@
+/*--------------------------------------------------------------------------------------------
+Command to run model:
+--dbt run --select ETL_MART_LOGISTICS_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+--dbt build --full-refresh --select +ETL_MART_LOGISTICS_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+--dbt build --select ETL_MART_LOGISTICS_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT --vars 'is_backfill: True'
+
+Version     Date            Author                Description
+-------     ----------      ----------------      ----------------------------------
+1.0         2026-03-05      Cortex Code           Initial Version - Auto-Generated from STTM
+
+----------------------------------------------------------------------------------------------*/
+
+{################# EDW Job Template Variables #################}
+{%-set v_pk_list = ['LOGISTICS_DASHBOARD_PO_QUANTITY_KEY']-%}
+{% if is_incremental() %}
+{%-set v_house_keeping_column = ['BIW_INS_DTTM','BIW_UPD_DTTM','BIW_BATCH_ID','BIW_MD5_KEY']-%}
+{%-set v_all_column_list =  edw_get_column_list( this ) -%}
+{%-set v_update_column_list =  edw_get_quoted_column_list( this ,v_pk_list|list + ['BIW_INS_DTTM']|list) -%}
+{% endif %}
+
+{################# Batch control insert and update SQL #################}
+{%- set v_dbt_job_name = 'DBT_ETL_MART_LOGISTICS_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT'-%}
+-- Step 1 Batch process info
+{%- set v_watermark = edw_batch_control(v_dbt_job_name,config.get('schema'),config.get('alias'),config.get('tags'),config.get('materialized') ) -%}
+{%- set V_LWM = v_watermark[0] -%}
+{%- set V_HWM = v_watermark[1] -%}
+{%- set V_START_DTTM = v_watermark[2] -%}
+{%- set V_BIW_BATCH_ID = v_watermark[3] -%}
+{%- set v_sql_upd_success_batch = "CALL UTILITY.EDW_BATCH_SUCCESS_PROC('"~v_dbt_job_name~"')" -%}
+
+{################# Snowflake Object Configuration #################}
+{{
+    config(
+        description = 'Building ETL MART table for LOGISTICS_DASHBOARD_PO_QUANTITY_RPT',
+        transient=true,
+        materialized='table',
+        schema ='ETL_MART_LOGISTICS',
+        alias='LOGISTICS_DASHBOARD_PO_QUANTITY_RPT',
+        tags =['MART_LOGISTICS'],
+        unique_key= v_pk_list,
+        post_hook= [v_sql_upd_success_batch]  
+    )
+}}
+
+{################# CTE Definitions #################}
+
+WITH PO_LINE_LOCATION_DIM AS (
+    SELECT 
+        LINE_LOCATION_ID,
+        PO_HEADER_ID,
+        PO_LINE_ID,
+        SHIPMENT_NUM,
+        SCHEDULE_STATUS,
+        PROMISED_DATE,
+        NEED_BY_DATE,
+        CREATION_DATE,
+        RECEIPT_REQUIRED_FLAG,
+        INSPECTION_REQUIRED_FLAG,
+        SHIP_TO_LOCATION_ID
+    FROM {{ref('MART_PROCUREMENT_PO_LINE_LOCATION_DIM')}}
+    WHERE 
+        IS_DELETE = 'N'
+        AND {% if var('is_backfill', false) %}
+                BIW_UPD_DTTM >= '{{var('refresh_start_ts')}}'
+            AND BIW_UPD_DTTM < '{{V_START_DTTM}}'
+            {% else %}
+                BIW_UPD_DTTM >= '{{V_LWM}}' 
+            AND BIW_UPD_DTTM <= '{{V_HWM}}'
+            {% endif %}
+)
+
+,PO_HEADER_DIM AS (
+    SELECT 
+        PO_HEADER_ID,
+        SEGMENT1,
+        APPROVED_DATE,
+        ATTRIBUTE7,
+        CURRENCY_CODE,
+        AUTHORIZATION_STATUS,
+        AGENT_ID,
+        ORG_ID
+    FROM {{ref('MART_PROCUREMENT_PO_HEADER_DIM')}}
+    WHERE IS_DELETE = 'N'
+)
+
+,PO_LINE_DIM AS (
+    SELECT 
+        PO_LINE_ID,
+        PO_HEADER_ID,
+        LINE_NUM,
+        ITEM_DESCRIPTION,
+        VENDOR_PRODUCT_NUM,
+        UOM_CODE,
+        ITEM_ID
+    FROM {{ref('MART_PROCUREMENT_PO_LINE_DIM')}}
+    WHERE IS_DELETE = 'N'
+)
+
+,PO_RELEASE_FACT AS (
+    SELECT 
+        PO_RELEASE_ID,
+        PO_HEADER_ID,
+        RELEASE_NUM,
+        AUTHORIZATION_STATUS
+    FROM {{ref('MART_PROCUREMENT_PO_RELEASE_FACT')}}
+    WHERE IS_DELETE = 'N'
+)
+
+,SUPPLIER_DIM AS (
+    SELECT 
+        VENDOR_ID,
+        SUPPLIER_NAME
+    FROM {{ref('MART_PROCUREMENT_SUPPLIER_DIM')}}
+    WHERE IS_DELETE = 'N'
+)
+
+,SUPPLIER_SITE_DIM AS (
+    SELECT 
+        VENDOR_SITE_ID,
+        VENDOR_ID,
+        SUPPLIER_SITE_CODE
+    FROM {{ref('MART_PROCUREMENT_SUPPLIER_SITE_DIM')}}
+    WHERE IS_DELETE = 'N'
+)
+
+,PDH_ITEM_ORGANIZATION_DIM AS (
+    SELECT 
+        INVENTORY_ITEM_ID,
+        ORGANIZATION_ID,
+        ITEM_NUMBER,
+        PLANNER_CODE
+    FROM {{ref('MART_PDM_PDH_ITEM_ORGANIZATION_DIM')}}
+    WHERE IS_DELETE = 'N'
+)
+
+,HR_LOCATIONS_ALL AS (
+    SELECT 
+        LOCATION_ID,
+        LOCATION_CODE
+    FROM {{ref('ODS_HCM_SHARED_HR_LOCATIONS_ALL')}}
+    WHERE IS_DELETE = 'N'
+)
+
+,PERSON_DIM AS (
+    SELECT 
+        PERSON_ID,
+        FULL_NAME
+    FROM {{ref('MART_PROCUREMENT_PERSON_DIM')}}
+    WHERE IS_DELETE = 'N'
+)
+
+,HR_ORGANIZATION_UNITS AS (
+    SELECT 
+        ORGANIZATION_ID,
+        NAME
+    FROM {{ref('ODS_HCM_SHARED_HR_ORGANIZATION_UNITS')}}
+    WHERE IS_DELETE = 'N'
+)
+
+,PO_LINE_LOCATION_CURR_FACT AS (
+    SELECT 
+        LINE_LOCATION_ID,
+        QUANTITY,
+        QUANTITY_RECEIVED,
+        QUANTITY_BILLED,
+        QUANTITY_CANCELLED,
+        PRICE_OVERRIDE
+    FROM {{ref('MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT')}}
+    WHERE IS_DELETE = 'N'
+)
+
+{################# Final SELECT #################}
+
+SELECT 
+    -- Primary Key
+    MD5(OBJECT_CONSTRUCT(
+        'COL1', PLL.PO_HEADER_ID::STRING,
+        'COL2', PLL.PO_LINE_ID::STRING,
+        'COL3', PLL.LINE_LOCATION_ID::STRING
+    )::STRING)::STRING AS LOGISTICS_DASHBOARD_PO_QUANTITY_KEY,
+    
+    -- Natural Keys
+    PLL.PO_HEADER_ID,
+    PLL.PO_LINE_ID,
+    PLL.LINE_LOCATION_ID,
+    
+    -- Business Columns
+    POH.SEGMENT1 || CASE WHEN PRA.RELEASE_NUM IS NOT NULL THEN '-' ELSE '' END || COALESCE(PRA.RELEASE_NUM::STRING, '') AS PO_NUMBER,
+    POL.LINE_NUM,
+    POL.LINE_NUM AS PO_LINE_NUMBER,
+    PLL.SHIPMENT_NUM AS SHIPMENT_NUMBER,
+    POH.SEGMENT1 || '-' || POL.LINE_NUM::STRING || '-' || PLL.SHIPMENT_NUM::STRING AS PO_NUM_LINE_SHIP,
+    NVL(PLL.SCHEDULE_STATUS, 'OPEN') AS STATUS,
+    SUP.SUPPLIER_NAME AS SUPPLIER,
+    SUPS.SUPPLIER_SITE_CODE AS SUPPLIER_SITE,
+    ITEM.ITEM_NUMBER AS ITEM_NUM,
+    POL.ITEM_DESCRIPTION,
+    POL.VENDOR_PRODUCT_NUM AS SUPPLIER_ITEM_NUM,
+    NVL(PLL.PROMISED_DATE, PLL.NEED_BY_DATE) AS DUE_DATE,
+    PLL.PROMISED_DATE,
+    PLL.CREATION_DATE AS LINE_CREATION_DATE,
+    POH.APPROVED_DATE AS PO_APPROVED_DATE,
+    POH.ATTRIBUTE7 AS PO_TYPE,
+    POH.CURRENCY_CODE,
+    POL.UOM_CODE AS UNIT_MEAS_LOOKUP_CODE,
+    LOC.LOCATION_CODE AS SHIP_TO_LOCATION,
+    DECODE(PLL.PO_LINE_ID, NULL, NVL(POH.AUTHORIZATION_STATUS, 'INCOMPLETE'),
+        NVL(PRA.AUTHORIZATION_STATUS, 'INCOMPLETE')) AS AUTHORIZATION_STATUS,
+    DECODE(PLL.RECEIPT_REQUIRED_FLAG,
+        'N', DECODE(PLL.INSPECTION_REQUIRED_FLAG, 'N', '2-Way', NULL),
+        'Y', DECODE(PLL.INSPECTION_REQUIRED_FLAG,
+            'N', '3-Way',
+            'Y', '4-Way',
+            NULL)) AS MATCHING_TYPE,
+    CASE
+        WHEN DATEDIFF(DAY, PLL.NEED_BY_DATE, CURRENT_DATE) BETWEEN 1 AND 29 THEN '1-30_PASTDUE'
+        WHEN DATEDIFF(DAY, PLL.NEED_BY_DATE, CURRENT_DATE) BETWEEN 30 AND 59 THEN '30-60_PASTDUE'
+        WHEN DATEDIFF(DAY, PLL.NEED_BY_DATE, CURRENT_DATE) BETWEEN 60 AND 89 THEN '60-90_PASTDUE'
+        WHEN DATEDIFF(DAY, PLL.NEED_BY_DATE, CURRENT_DATE) >= 90 THEN '90_PASTDUE'
+        ELSE NULL
+    END AS PAST_DUE,
+    PER.FULL_NAME AS BUYER,
+    ITEM.PLANNER_CODE,
+    ORG.NAME,
+    PLLF.QUANTITY - PLLF.QUANTITY_RECEIVED AS QUANTITY_DUE,
+    PLLF.QUANTITY AS QUANTITY_ORDERED,
+    PLLF.QUANTITY_RECEIVED,
+    PLLF.QUANTITY_BILLED,
+    PLLF.QUANTITY_CANCELLED,
+    PLLF.PRICE_OVERRIDE * (PLLF.QUANTITY - NVL(PLLF.QUANTITY_CANCELLED, 0)) AS SHIPMENT_AMOUNT,
+    
+    -- Housekeeping Columns
+    'N'::BOOLEAN AS IS_DELETE,
+    '{{V_START_DTTM}}'::TIMESTAMP_NTZ AS BIW_INS_DTTM,
+    '{{V_START_DTTM}}'::TIMESTAMP_NTZ AS BIW_UPD_DTTM,
+    '{{V_BIW_BATCH_ID}}'::NUMBER(38,0) AS BIW_BATCH_ID,
+    MD5(OBJECT_CONSTRUCT(
+        'COL1', PLL.PO_HEADER_ID::STRING,
+        'COL2', PLL.PO_LINE_ID::STRING,
+        'COL3', PLL.LINE_LOCATION_ID::STRING,
+        'COL4', POH.SEGMENT1::STRING,
+        'COL5', PRA.RELEASE_NUM::STRING,
+        'COL6', POL.LINE_NUM::STRING,
+        'COL7', PLL.SHIPMENT_NUM::STRING,
+        'COL8', PLL.SCHEDULE_STATUS::STRING,
+        'COL9', SUP.SUPPLIER_NAME::STRING,
+        'COL10', SUPS.SUPPLIER_SITE_CODE::STRING,
+        'COL11', ITEM.ITEM_NUMBER::STRING,
+        'COL12', POL.ITEM_DESCRIPTION::STRING,
+        'COL13', POL.VENDOR_PRODUCT_NUM::STRING,
+        'COL14', PLL.PROMISED_DATE::STRING,
+        'COL15', PLL.NEED_BY_DATE::STRING,
+        'COL16', PLL.CREATION_DATE::STRING,
+        'COL17', POH.APPROVED_DATE::STRING,
+        'COL18', POH.ATTRIBUTE7::STRING,
+        'COL19', POH.CURRENCY_CODE::STRING,
+        'COL20', POL.UOM_CODE::STRING,
+        'COL21', LOC.LOCATION_CODE::STRING,
+        'COL22', POH.AUTHORIZATION_STATUS::STRING,
+        'COL23', PRA.AUTHORIZATION_STATUS::STRING,
+        'COL24', PLL.RECEIPT_REQUIRED_FLAG::STRING,
+        'COL25', PLL.INSPECTION_REQUIRED_FLAG::STRING,
+        'COL26', PER.FULL_NAME::STRING,
+        'COL27', ITEM.PLANNER_CODE::STRING,
+        'COL28', ORG.NAME::STRING,
+        'COL29', PLLF.QUANTITY::STRING,
+        'COL30', PLLF.QUANTITY_RECEIVED::STRING,
+        'COL31', PLLF.QUANTITY_BILLED::STRING,
+        'COL32', PLLF.QUANTITY_CANCELLED::STRING,
+        'COL33', PLLF.PRICE_OVERRIDE::STRING,
+        'COL34', 'N'::STRING
+    )::STRING)::BINARY AS BIW_MD5_KEY
+
+FROM PO_LINE_LOCATION_DIM PLL
+LEFT OUTER JOIN PO_HEADER_DIM POH
+    ON PLL.PO_HEADER_ID = POH.PO_HEADER_ID
+LEFT OUTER JOIN PO_LINE_DIM POL
+    ON PLL.PO_LINE_ID = POL.PO_LINE_ID
+LEFT OUTER JOIN PO_RELEASE_FACT PRA
+    ON PLL.PO_HEADER_ID = PRA.PO_HEADER_ID
+LEFT OUTER JOIN SUPPLIER_DIM SUP
+    ON POH.AGENT_ID = SUP.VENDOR_ID
+LEFT OUTER JOIN SUPPLIER_SITE_DIM SUPS
+    ON SUP.VENDOR_ID = SUPS.VENDOR_ID
+LEFT OUTER JOIN PDH_ITEM_ORGANIZATION_DIM ITEM
+    ON POL.ITEM_ID = ITEM.INVENTORY_ITEM_ID
+LEFT OUTER JOIN HR_LOCATIONS_ALL LOC
+    ON PLL.SHIP_TO_LOCATION_ID = LOC.LOCATION_ID
+LEFT OUTER JOIN PERSON_DIM PER
+    ON POH.AGENT_ID = PER.PERSON_ID
+LEFT OUTER JOIN HR_ORGANIZATION_UNITS ORG
+    ON POH.ORG_ID = ORG.ORGANIZATION_ID
+LEFT OUTER JOIN PO_LINE_LOCATION_CURR_FACT PLLF
+    ON PLL.LINE_LOCATION_ID = PLLF.LINE_LOCATION_ID
