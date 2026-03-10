@@ -1,0 +1,6 @@
+{{ config(materialized='table', schema='DEV') }}
+
+SELECT column1 AS VENDOR_SITE_ID, column2 AS SUPPLIER_SITE_CODE
+FROM VALUES
+(2001, 'DALLAS-TX'),
+(2002, 'TOKYO-JP')

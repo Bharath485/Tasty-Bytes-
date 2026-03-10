@@ -39,9 +39,8 @@ dim_truck AS (
 
 dim_customer AS (
     SELECT
-        CUSTOMER_ID,
-        CUSTOMER_KEY
-    FROM {{ ref('dim_customers') }}
+        CUSTOMER_ID
+    FROM {{ ref('dim_customer') }}
 ),
 
 joined AS (
@@ -62,7 +61,7 @@ joined AS (
         od.DISCOUNT_ID,
         dl.LOCATION_KEY,
         dt.TRUCK_KEY,
-        dc.CUSTOMER_KEY
+        dc.CUSTOMER_ID AS CUSTOMER_KEY
     FROM order_detail od
     INNER JOIN order_header oh
         ON od.ORDER_ID = oh.ORDER_ID

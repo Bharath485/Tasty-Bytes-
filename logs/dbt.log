@@ -33437,3 +33437,47 @@ identifier: "FACT_SALES"
 [0m11:20:54.113918 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026B68DB9550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026B68DB8C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026B62575BD0>]}
 [0m11:20:54.115923 [debug] [MainThread]: Flushing usage events
 [0m11:20:56.049377 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:38:49.362121 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002500472A5D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002500472A890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002500472A8D0>]}
+
+
+============================== 13:38:49.383013 | b65e594e-9cd2-45c6-a6e3-0bccda4ed60e ==============================
+[0m13:38:49.383013 [info ] [MainThread]: Running with dbt=1.11.6
+[0m13:38:49.383013 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'target_path': 'None', 'cache_selected_only': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\10731399\\Documents\\Tasty-Bytes-', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'empty': 'None', 'quiet': 'False', 'log_format': 'default', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'C:\\Users\\10731399\\Documents\\Tasty-Bytes-\\logs', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'no_print': 'None', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'write_json': 'True'}
+[0m13:38:49.684415 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b65e594e-9cd2-45c6-a6e3-0bccda4ed60e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002500477FDD0>]}
+[0m13:38:49.752641 [debug] [MainThread]: Set downloads directory='C:\Users\10731399\AppData\Local\Temp\dbt-downloads-s6ie3j9t'
+[0m13:38:49.752641 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m13:38:50.276807 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m13:38:50.278821 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m13:38:50.615992 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m13:38:50.625599 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/Snowflake-Labs/dbt_semantic_view.json
+[0m13:38:51.317491 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/Snowflake-Labs/dbt_semantic_view.json 200
+[0m13:38:51.339295 [info ] [MainThread]: Updating lock file in file path: C:\Users\10731399\Documents\Tasty-Bytes-/package-lock.yml
+[0m13:38:51.477629 [debug] [MainThread]: Set downloads directory='C:\Users\10731399\AppData\Local\Temp\dbt-downloads-p2e4qh21'
+[0m13:38:51.485676 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m13:38:53.488995 [info ] [MainThread]: Installed from version 1.3.3
+[0m13:38:53.491006 [info ] [MainThread]: Up to date!
+[0m13:38:53.493531 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'b65e594e-9cd2-45c6-a6e3-0bccda4ed60e', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000250057E7C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000250058BA390>]}
+[0m13:38:53.493531 [info ] [MainThread]: Installing Snowflake-Labs/dbt_semantic_view
+[0m13:38:54.305228 [info ] [MainThread]: Installed from version 1.0.3
+[0m13:38:54.305228 [info ] [MainThread]: Up to date!
+[0m13:38:54.305228 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'b65e594e-9cd2-45c6-a6e3-0bccda4ed60e', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025005D04B50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025005D05910>]}
+[0m13:38:54.315237 [debug] [MainThread]: Command `cli deps` succeeded at 13:38:54.313226 after 5.11 seconds
+[0m13:38:54.315904 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025004705990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002507DC54290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002507DC54410>]}
+[0m13:38:54.315904 [debug] [MainThread]: Flushing usage events
+[0m13:38:54.460618 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:39:13.769086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001958C119650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001958C118E90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001958C118BD0>]}
+
+
+============================== 13:39:13.777193 | 37df9ae2-8cb6-4436-9353-b4b3c85f32e2 ==============================
+[0m13:39:13.777193 [info ] [MainThread]: Running with dbt=1.11.6
+[0m13:39:13.777193 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'target_path': 'None', 'cache_selected_only': 'False', 'warn_error': 'None', 'empty': 'False', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'profiles_dir': 'C:\\Users\\10731399\\Documents\\Tasty-Bytes-', 'quiet': 'False', 'log_format': 'default', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'C:\\Users\\10731399\\Documents\\Tasty-Bytes-\\logs', 'introspect': 'True', 'invocation_command': 'dbt ', 'fail_fast': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'write_json': 'True'}
+[0m13:39:16.871127 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m13:39:16.874226 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m13:39:16.876729 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m13:39:17.119771 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "tasty_bytes", target "dev" invalid: 'account' is a required property
+[0m13:39:17.123045 [debug] [MainThread]: Command `cli build` failed at 13:39:17.123045 after 3.52 seconds
+[0m13:39:17.125509 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001958C174550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001958C177C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001958C1744D0>]}
+[0m13:39:17.125509 [debug] [MainThread]: Flushing usage events
+[0m13:39:17.259853 [debug] [MainThread]: An error was encountered while trying to flush usage events
