@@ -1,4 +1,4 @@
-# STTM → dbt Model Generation Report
+# STTM to dbt Model Generation Report
 
 ## Summary
 | Metric | Value |
@@ -12,24 +12,22 @@
 | Table Type | DIM TABLE (SCD1) |
 | Primary Key | PO_DISTRIBUTION_KEY |
 | Natural Key | PO_DISTRIBUTION_ID |
-| Load Strategy | MERGE |
 | Total Columns | 49 |
 | Business Columns | 44 |
-| Housekeeping Columns | 5 (IS_DELETE, BIW_INS_DTTM, BIW_UPD_DTTM, BIW_BATCH_ID, BIW_MD5_KEY) |
+| Housekeeping Columns | 5 |
 | Source Tables | 5 |
 | CTEs Generated | 5 |
 | Pattern Applied | Enterprise (ONSEMI) |
 | Match Percentage | 90% |
-| Generated Date | 2026-03-10 |
 
 ## Source Tables
 | # | Source Table | CTE Name | Join Type |
 |---|-------------|----------|-----------|
-| 1 | PO_DISTRIBUTIONS_ALL | PO_DISTRIBUTIONS_ALL | Main Driver (incremental filter) |
+| 1 | PO_DISTRIBUTIONS_ALL | PO_DISTRIBUTIONS_ALL | Main Driver |
 | 2 | PJF_PROJECTS_ALL_B | PJF_PROJECTS_ALL_B | Pre-joined with _TL |
-| 3 | PJF_PROJECTS_ALL_TL | PJF_PROJECTS_ALL_TL | Joined in PJF_PROJECTS_ALL_B CTE |
+| 3 | PJF_PROJECTS_ALL_TL | (joined in PJF_PROJECTS_ALL_B) | - |
 | 4 | PJF_PROJ_ELEMENTS_B | PJF_PROJ_ELEMENTS_B | Pre-joined with _TL |
-| 5 | PJF_PROJ_ELEMENTS_TL | PJF_PROJ_ELEMENTS_TL | Joined in PJF_PROJ_ELEMENTS_B CTE |
+| 5 | PJF_PROJ_ELEMENTS_TL | (joined in PJF_PROJ_ELEMENTS_B) | - |
 
 ## Column Mapping
 | # | Column | Source Table | Source Field | Transformation |
@@ -70,42 +68,42 @@
 | 34 | ACCRUE_ON_RECEIPT_FLAG | PO_DISTRIBUTIONS_ALL | ACCRUE_ON_RECEIPT_FLAG | Direct |
 | 35 | PJC_PROJECT_ID | PO_DISTRIBUTIONS_ALL | PJC_PROJECT_ID | Direct |
 | 36 | PJC_TASK_ID | PO_DISTRIBUTIONS_ALL | PJC_TASK_ID | Direct |
-| 37 | PROJECT_NUMBER | PJF_PROJECTS_ALL_B | SEGMENT1 | Alias (SEGMENT1 AS PROJECT_NUMBER) |
-| 38 | PROJECT_NAME | PJF_PROJECTS_ALL_TL | NAME | Pre-joined via PJF_PROJECTS_ALL_B |
-| 39 | TASK_NUMBER | PJF_PROJ_ELEMENTS_B | ELEMENT_NUMBER | Alias (ELEMENT_NUMBER AS TASK_NUMBER) |
-| 40 | TASK_NAME | PJF_PROJ_ELEMENTS_TL | NAME | Pre-joined via PJF_PROJ_ELEMENTS_B |
+| 37 | PROJECT_NUMBER | PJF_PROJECTS_ALL_B | SEGMENT1 | Alias via Pre-joined CTE |
+| 38 | PROJECT_NAME | PJF_PROJECTS_ALL_TL | NAME | Alias via Pre-joined CTE |
+| 39 | TASK_NUMBER | PJF_PROJ_ELEMENTS_B | ELEMENT_NUMBER | Alias via Pre-joined CTE |
+| 40 | TASK_NAME | PJF_PROJ_ELEMENTS_TL | NAME | Alias via Pre-joined CTE |
 | 41 | WIP_OPERATION_SEQ_NUM | PO_DISTRIBUTIONS_ALL | WIP_OPERATION_SEQ_NUM | Direct |
 | 42 | WIP_REPETITIVE_SCHEDULE_ID | PO_DISTRIBUTIONS_ALL | WIP_REPETITIVE_SCHEDULE_ID | Direct |
 | 43 | WIP_RESOURCE_SEQ_NUM | PO_DISTRIBUTIONS_ALL | WIP_RESOURCE_SEQ_NUM | Direct |
 | 44 | PREVENT_ENCUMBRANCE_FLAG | PO_DISTRIBUTIONS_ALL | PREVENT_ENCUMBRANCE_FLAG | Direct |
-| 45 | IS_DELETE | - | - | Hard coded 'N'::BOOLEAN |
+| 45 | IS_DELETE | - | - | Hardcode 'N'::BOOLEAN |
 | 46 | BIW_INS_DTTM | - | - | V_START_DTTM::TIMESTAMP_NTZ |
 | 47 | BIW_UPD_DTTM | - | - | V_START_DTTM::TIMESTAMP_NTZ |
 | 48 | BIW_BATCH_ID | - | - | V_BIW_BATCH_ID::NUMBER(38,0) |
-| 49 | BIW_MD5_KEY | - | - | MD5(OBJECT_CONSTRUCT(COL1..COL44))::BINARY |
-
-## ONSEMI Pattern Validation
-| # | Check | Status |
-|---|-------|--------|
-| 1 | Header block present | ✅ |
-| 2 | v_pk_list defined | ✅ ['PO_DISTRIBUTION_KEY'] |
-| 3 | v_house_keeping_column in is_incremental | ✅ |
-| 4 | Job name format DBT_ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM | ✅ |
-| 5 | edw_batch_control with 5 params | ✅ |
-| 6 | Config has schema and alias | ✅ ETL_MART_PROCUREMENT / PO_DISTRIBUTION_DIM |
-| 7 | Source ref uses ODS_ORACLE_CLOUD_ prefix | ✅ |
-| 8 | IS_DELETE = 'N' (string filter) | ✅ |
-| 9 | _TL tables pre-joined in CTE | ✅ |
-| 10 | LANGUAGE = 'US' filter | ✅ |
-| 11 | MD5 uses COL1, COL2... pattern | ✅ 44 columns |
-| 12 | MD5 values cast to ::STRING | ✅ |
-| 13 | BIW_MD5_KEY cast to ::BINARY | ✅ |
-| 14 | BIW_INS_DTTM uses V_START_DTTM | ✅ |
-| 15 | LEFT OUTER JOIN | ✅ |
-| 16 | Elements use dual join (PROJECT_ID + ELEMENT_ID) | ✅ |
+| 49 | BIW_MD5_KEY | - | - | MD5(OBJECT_CONSTRUCT)::BINARY |
 
 ## Files Generated
 | File | Path | Status |
 |------|------|--------|
-| Model SQL | models\cortex_generated\ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM.sql | ✅ Created |
-| Report | reports\ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM_report.md | ✅ Created |
+| Model SQL | models/cortex_generated/ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM.sql | Created |
+| Report | reports/ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM_report.md | Created |
+
+## Validation Checklist
+| # | Check | Result |
+|---|-------|--------|
+| 1 | Header block present | PASS |
+| 2 | v_pk_list defined | PASS |
+| 3 | v_house_keeping_column in is_incremental | PASS |
+| 4 | Job name format DBT_ETL_ | PASS |
+| 5 | edw_batch_control with 5 params | PASS |
+| 6 | Config has schema and alias | PASS |
+| 7 | Source ref uses ODS_ORACLE_CLOUD_ prefix | PASS |
+| 8 | IS_DELETE = 'N' (string) | PASS |
+| 9 | _TL tables pre-joined in CTE | PASS |
+| 10 | LANGUAGE = 'US' filter | PASS |
+| 11 | MD5 uses COL1, COL2... pattern | PASS |
+| 12 | MD5 values cast to ::STRING | PASS |
+| 13 | BIW_MD5_KEY cast to ::BINARY | PASS |
+| 14 | BIW_INS_DTTM uses V_START_DTTM | PASS |
+| 15 | LEFT OUTER JOIN (not LEFT JOIN) | PASS |
+| 16 | Elements use dual join condition | PASS |

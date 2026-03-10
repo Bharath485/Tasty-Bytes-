@@ -87,7 +87,7 @@ SELECT
 FROM  {{ref('ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL')}} 
 WHERE 
   IS_DELETE = 'N'
-AND {% if var('is_backfill', false) %}
+AND {% if var('is_backfill') %}
         BIW_UPD_DTTM >= '{{var('refresh_start_ts')}}'
     AND BIW_UPD_DTTM < '{{V_START_DTTM}}'
     {% else %}
