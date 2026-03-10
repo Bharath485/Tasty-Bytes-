@@ -36,7 +36,7 @@ Version     Date            Author                Description
         materialized='table',
         schema ='ETL_MART_PROCUREMENT',
         alias='PO_DISTRIBUTION_DIM',
-        tags =['MART_PROCUREMENT'],
+        tags =['PO'],
         unique_key= v_pk_list,
         post_hook= [v_sql_upd_success_batch]  
     )
