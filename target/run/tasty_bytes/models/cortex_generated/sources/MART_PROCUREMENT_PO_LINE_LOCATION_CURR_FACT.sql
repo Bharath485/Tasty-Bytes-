@@ -1,0 +1,20 @@
+
+  
+    
+
+create or replace transient table DBT_POC.DEV.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT
+    
+    
+    
+    as (
+
+SELECT column1 AS LINE_LOCATION_ID, column2 AS QUANTITY, column3 AS QUANTITY_RECEIVED, column4 AS QUANTITY_BILLED, column5 AS QUANTITY_CANCELLED, column6 AS PRICE_OVERRIDE
+FROM VALUES
+(4001, 1000.0, 750.0, 700.0, 0.0, 25.50),
+(4002, 5000.0, 5000.0, 5000.0, 0.0, 0.15),
+(4003, 200.0, 0.0, 0.0, 50.0, 150.00)
+    )
+;
+
+
+  

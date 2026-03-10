@@ -1,0 +1,19 @@
+
+  
+    
+
+create or replace transient table DBT_POC.DEV.MART_PROCUREMENT_PO_RELEASE_FACT
+    
+    
+    
+    as (
+
+SELECT column1 AS PO_RELEASE_ID, column2 AS PO_HEADER_ID, column3 AS RELEASE_NUM, column4 AS AUTHORIZATION_STATUS
+FROM VALUES
+(6001, 2001, 1, 'APPROVED'),
+(6002, 2002, NULL, 'IN PROCESS')
+    )
+;
+
+
+  

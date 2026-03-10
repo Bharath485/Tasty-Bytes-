@@ -10,16 +10,8 @@ Version     Date            Author                Description
 
 ----------------------------------------------------------------------------------------------*/
 
-{################# Snowflake Object Configuration #################}
-{{
-    config(
-        description = 'Building ANA view for PO_DISTRIBUTION_DIM',
-        materialized='view',
-        schema ='ANA_PROCUREMENT',
-        alias='PO_DISTRIBUTION_DIM',
-        tags =['ANA_PROCUREMENT']
-    )
-}}
+
+
 
 SELECT 
     PO_DISTRIBUTION_KEY,
@@ -71,4 +63,4 @@ SELECT
     BIW_BATCH_ID,
     BIW_MD5_KEY
 
-FROM {{ref('ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM')}}
+FROM DBT_POC.ETL_MART_PROCUREMENT.PO_DISTRIBUTION_DIM

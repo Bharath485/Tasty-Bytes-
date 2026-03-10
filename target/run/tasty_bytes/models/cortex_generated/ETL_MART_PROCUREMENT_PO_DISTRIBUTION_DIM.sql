@@ -1,4 +1,12 @@
-/*--------------------------------------------------------------------------------------------
+
+  
+    
+
+create or replace transient table DBT_POC.ETL_MART_PROCUREMENT.PO_DISTRIBUTION_DIM
+    
+    
+    
+    as (/*--------------------------------------------------------------------------------------------
 Command to run model:
 --dbt run --select ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM
 --dbt build --full-refresh --select +ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM
@@ -10,37 +18,10 @@ Version     Date            Author                Description
 
 ----------------------------------------------------------------------------------------------*/
 
-{################# EDW Job Template Variables #################}
-{%-set v_pk_list = ['PO_DISTRIBUTION_KEY']-%}
-{% if is_incremental() %}
-{%-set v_house_keeping_column = ['BIW_INS_DTTM','BIW_UPD_DTTM','BIW_BATCH_ID','BIW_MD5_KEY']-%}
-{%-set v_all_column_list =  edw_get_column_list( this ) -%}
-{%-set v_update_column_list =  edw_get_quoted_column_list( this ,v_pk_list|list + ['BIW_INS_DTTM']|list) -%}
-{% endif %}
 
-{################# Batch control insert and update SQL #################}
-{%- set v_dbt_job_name = 'DBT_ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM'-%}
+
 -- Step 1 Batch process info
-{%- set v_watermark = edw_batch_control(v_dbt_job_name,config.get('schema'),config.get('alias'),config.get('tags'),config.get('materialized') ) -%}
-{%- set V_LWM = v_watermark[0] -%}
-{%- set V_HWM = v_watermark[1] -%}
-{%- set V_START_DTTM = v_watermark[2] -%}
-{%- set V_BIW_BATCH_ID = v_watermark[3] -%}
-{%- set v_sql_upd_success_batch = "CALL UTILITY.EDW_BATCH_SUCCESS_PROC('"~v_dbt_job_name~"')" -%}
 
-{################# Snowflake Object Configuration #################}
-{{
-    config(
-        description = 'Building ETL MART table for PO_DISTRIBUTION_DIM',
-        transient=true,
-        materialized='table',
-        schema ='ETL_MART_PROCUREMENT',
-        alias='PO_DISTRIBUTION_DIM',
-        tags =['MART_PROCUREMENT'],
-        unique_key= v_pk_list,
-        post_hook= [v_sql_upd_success_batch]  
-    )
-}}
 
 
 WITH PO_DISTRIBUTIONS_ALL AS(
@@ -84,16 +65,13 @@ SELECT
     WIP_REPETITIVE_SCHEDULE_ID,
     WIP_RESOURCE_SEQ_NUM,
     PREVENT_ENCUMBRANCE_FLAG
-FROM  {{ref('ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL')}} 
+FROM  DBT_POC.DEV.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL 
 WHERE 
   IS_DELETE = 'N'
-AND {% if var('is_backfill') %}
-        BIW_UPD_DTTM >= '{{var('refresh_start_ts')}}'
-    AND BIW_UPD_DTTM < '{{V_START_DTTM}}'
-    {% else %}
-        BIW_UPD_DTTM >= '{{V_LWM}}' 
-    AND BIW_UPD_DTTM <= '{{V_HWM}}'
-    {% endif %}      
+AND 
+        BIW_UPD_DTTM >= '2020-01-01 00:00:00.000' 
+    AND BIW_UPD_DTTM <= '2099-12-31 23:59:59.999'
+          
 )
 
 ,PJF_PROJECTS_ALL_TL AS(
@@ -101,7 +79,7 @@ SELECT
     NAME,
     LANGUAGE,
     PROJECT_ID
-FROM {{ref('ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL')}}  
+FROM DBT_POC.DEV.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL  
 )
 
 ,PJF_PROJECTS_ALL_B AS
@@ -110,7 +88,7 @@ SELECT
    PJF_PROJECTS_ALL_B.PROJECT_ID,
    PJF_PROJECTS_ALL_B.SEGMENT1 AS PROJECT_NUMBER,
    PJF_PROJECTS_ALL_TL.NAME     AS PROJECT_NAME
-FROM {{ref('ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B')}} PJF_PROJECTS_ALL_B
+FROM DBT_POC.DEV.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B PJF_PROJECTS_ALL_B
 JOIN PJF_PROJECTS_ALL_TL 
 ON PJF_PROJECTS_ALL_B.PROJECT_ID = PJF_PROJECTS_ALL_TL.PROJECT_ID
 WHERE PJF_PROJECTS_ALL_TL.LANGUAGE = 'US'
@@ -122,7 +100,7 @@ SELECT
     NAME,
     LANGUAGE,
     PROJ_ELEMENT_ID
-FROM {{ref('ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL')}}  
+FROM DBT_POC.DEV.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL  
 )
 
 ,PJF_PROJ_ELEMENTS_B AS
@@ -132,7 +110,7 @@ SELECT
    PJF_PROJ_ELEMENTS_B.ELEMENT_NUMBER AS TASK_NUMBER, 
    PJF_PROJ_ELEMENTS_TL.NAME       AS TASK_NAME,
    PJF_PROJ_ELEMENTS_B.PROJ_ELEMENT_ID
-FROM {{ref('ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B')}} PJF_PROJ_ELEMENTS_B
+FROM DBT_POC.DEV.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B PJF_PROJ_ELEMENTS_B
 JOIN PJF_PROJ_ELEMENTS_TL  
 ON PJF_PROJ_ELEMENTS_B.PROJ_ELEMENT_ID = PJF_PROJ_ELEMENTS_TL.PROJ_ELEMENT_ID
 AND PJF_PROJ_ELEMENTS_TL.LANGUAGE = 'US' 
@@ -187,9 +165,9 @@ SELECT
     PDA.WIP_RESOURCE_SEQ_NUM,
     PDA.PREVENT_ENCUMBRANCE_FLAG,
     'N'::BOOLEAN as IS_DELETE,
-    '{{V_START_DTTM}}'::TIMESTAMP_NTZ AS BIW_INS_DTTM,
-    '{{V_START_DTTM}}'::TIMESTAMP_NTZ AS BIW_UPD_DTTM,
-    '{{V_BIW_BATCH_ID}}'::NUMBER(38,0) AS BIW_BATCH_ID,
+    '2026-03-10 13:58:09.000'::TIMESTAMP_NTZ AS BIW_INS_DTTM,
+    '2026-03-10 13:58:09.000'::TIMESTAMP_NTZ AS BIW_UPD_DTTM,
+    '1'::NUMBER(38,0) AS BIW_BATCH_ID,
     MD5(OBJECT_CONSTRUCT (
         'COL1',PDA.PO_DISTRIBUTION_ID::STRING,
         'COL2',PDA.DISTRIBUTION_NUM::STRING,
@@ -242,3 +220,8 @@ ON PDA.PJC_PROJECT_ID = PJF_PROJECTS_ALL_B.PROJECT_ID
 LEFT OUTER JOIN PJF_PROJ_ELEMENTS_B
 ON PDA.PJC_PROJECT_ID = PJF_PROJ_ELEMENTS_B.PROJECT_ID
 AND PDA.PJC_TASK_ID = PJF_PROJ_ELEMENTS_B.PROJ_ELEMENT_ID
+    )
+;
+
+
+  

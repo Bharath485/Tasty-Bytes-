@@ -100,7 +100,7 @@ WITH PO_DISTRIBUTION_DIM AS (
         BIW_UPD_DTTM,
         BIW_BATCH_ID,
         BIW_MD5_KEY
-    FROM {{ref('MART_PROCUREMENT_PO_DISTRIBUTION_DIM')}}
+    FROM {{ref('ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM')}}
     WHERE 
         {% if var('is_backfill', false) %}
             BIW_UPD_DTTM >= '{{var('refresh_start_ts')}}'

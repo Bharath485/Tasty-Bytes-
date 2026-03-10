@@ -1,8 +1,15 @@
-/*--------------------------------------------------------------------------------------------
+
+  create or replace   view DBT_POC.ANA_PROCUREMENT.PO_DISTRIBUTION_HIST_DIM
+  
+  
+  
+  
+  as (
+    /*--------------------------------------------------------------------------------------------
 Command to run model:
---dbt run --select ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
---dbt build --full-refresh --select +ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
---dbt build --select ANA_PROCUREMENT_PO_DISTRIBUTION_DIM --vars 'is_backfill: True'
+--dbt run --select ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+--dbt build --full-refresh --select +ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+--dbt build --select ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM --vars 'is_backfill: True'
 
 Version     Date            Author                Description
 -------     ----------      ----------------      ----------------------------------
@@ -10,16 +17,8 @@ Version     Date            Author                Description
 
 ----------------------------------------------------------------------------------------------*/
 
-{################# Snowflake Object Configuration #################}
-{{
-    config(
-        description = 'Building ANA view for PO_DISTRIBUTION_DIM',
-        materialized='view',
-        schema ='ANA_PROCUREMENT',
-        alias='PO_DISTRIBUTION_DIM',
-        tags =['ANA_PROCUREMENT']
-    )
-}}
+
+
 
 SELECT 
     PO_DISTRIBUTION_KEY,
@@ -69,6 +68,12 @@ SELECT
     BIW_INS_DTTM,
     BIW_UPD_DTTM,
     BIW_BATCH_ID,
-    BIW_MD5_KEY
+    BIW_MD5_KEY,
+    DBT_SCD_ID,
+    DBT_UPDATED_AT,
+    DBT_VALID_FROM,
+    DBT_VALID_TO
 
-FROM {{ref('ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM')}}
+FROM DBT_POC.ETL_MART_PROCUREMENT.PO_DISTRIBUTION_HIST_DIM
+  );
+

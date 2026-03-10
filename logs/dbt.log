@@ -33481,3 +33481,1931 @@ Runtime Error
 [0m13:39:17.125509 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001958C174550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001958C177C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001958C1744D0>]}
 [0m13:39:17.125509 [debug] [MainThread]: Flushing usage events
 [0m13:39:17.259853 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:48:11.839381 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E879EE98D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E879F184D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E879F18750>]}
+
+
+============================== 13:48:11.844844 | c89a4d1c-00ef-45a7-9c2a-ed7cfa043966 ==============================
+[0m13:48:11.844844 [info ] [MainThread]: Running with dbt=1.11.6
+[0m13:48:11.844844 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'empty': 'None', 'log_format': 'default', 'quiet': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'C:\\Users\\10731399\\Documents\\Tasty-Bytes-\\logs', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'no_print': 'None', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'write_json': 'True', 'target_path': 'None'}
+[0m13:48:11.892937 [info ] [MainThread]: dbt version: 1.11.6
+[0m13:48:11.893990 [info ] [MainThread]: python version: 3.11.9
+[0m13:48:11.893990 [info ] [MainThread]: python path: C:\Users\10731399\AppData\Local\Python\pythoncore-3.11-64\python.exe
+[0m13:48:11.895467 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m13:48:13.007948 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m13:48:13.015177 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m13:48:13.015177 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m13:48:13.103554 [info ] [MainThread]: Using profiles dir at C:\Users\10731399\.dbt
+[0m13:48:13.103554 [info ] [MainThread]: Using profiles.yml file at C:\Users\10731399\.dbt\profiles.yml
+[0m13:48:13.103554 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\10731399\Documents\Tasty-Bytes-\dbt_project.yml
+[0m13:48:13.105562 [info ] [MainThread]: adapter type: snowflake
+[0m13:48:13.105562 [info ] [MainThread]: adapter version: 1.11.2
+[0m13:48:13.240253 [info ] [MainThread]: Configuration:
+[0m13:48:13.240253 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:48:13.240253 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m13:48:13.240253 [info ] [MainThread]: Required dependencies:
+[0m13:48:13.247202 [debug] [MainThread]: Executing "git --help"
+[0m13:48:13.329580 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:48:13.332147 [debug] [MainThread]: STDERR: "b''"
+[0m13:48:13.332147 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:48:13.332147 [info ] [MainThread]: Connection:
+[0m13:48:13.335056 [info ] [MainThread]:   account: ZQISEAM-LTIDATACOE
+[0m13:48:13.335056 [info ] [MainThread]:   user: KBharath.reddy@ltimindtree.com
+[0m13:48:13.335056 [info ] [MainThread]:   database: DBT_POC
+[0m13:48:13.335056 [info ] [MainThread]:   warehouse: DBT_POC
+[0m13:48:13.338967 [info ] [MainThread]:   role: DBT_POC
+[0m13:48:13.338967 [info ] [MainThread]:   schema: DEV
+[0m13:48:13.340495 [info ] [MainThread]:   authenticator: None
+[0m13:48:13.340495 [info ] [MainThread]:   oauth_client_id: None
+[0m13:48:13.342180 [info ] [MainThread]:   query_tag: None
+[0m13:48:13.342180 [info ] [MainThread]:   client_session_keep_alive: False
+[0m13:48:13.344191 [info ] [MainThread]:   host: None
+[0m13:48:13.346206 [info ] [MainThread]:   port: None
+[0m13:48:13.346206 [info ] [MainThread]:   proxy_host: None
+[0m13:48:13.346206 [info ] [MainThread]:   proxy_port: None
+[0m13:48:13.348532 [info ] [MainThread]:   protocol: None
+[0m13:48:13.348532 [info ] [MainThread]:   connect_retries: 1
+[0m13:48:13.349833 [info ] [MainThread]:   connect_timeout: None
+[0m13:48:13.349833 [info ] [MainThread]:   retry_on_database_errors: False
+[0m13:48:13.350848 [info ] [MainThread]:   retry_all: False
+[0m13:48:13.350848 [info ] [MainThread]:   insecure_mode: False
+[0m13:48:13.350848 [info ] [MainThread]:   reuse_connections: True
+[0m13:48:13.350848 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m13:48:13.350848 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m13:48:13.350848 [info ] [MainThread]: Registered adapter: snowflake=1.11.2
+[0m13:48:14.099866 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m13:48:14.547715 [debug] [MainThread]: Using snowflake connection "debug"
+[0m13:48:14.547715 [debug] [MainThread]: On debug: select 1 as id
+[0m13:48:14.547715 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:48:17.540628 [debug] [MainThread]: SQL status: SUCCESS 1 in 2.992 seconds
+[0m13:48:17.540628 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m13:48:17.548272 [info ] [MainThread]: [32mAll checks passed![0m
+[0m13:48:17.552315 [debug] [MainThread]: Command `cli debug` succeeded at 13:48:17.552315 after 5.88 seconds
+[0m13:48:17.556358 [debug] [MainThread]: Connection 'debug' was left open.
+[0m13:48:17.558380 [debug] [MainThread]: On debug: Close
+[0m13:48:18.229977 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E80DD72410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E873414450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E80E31BD10>]}
+[0m13:48:18.229977 [debug] [MainThread]: Flushing usage events
+[0m13:48:18.428898 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:48:31.441774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001381F348390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001381F34BAD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001381F34A710>]}
+
+
+============================== 13:48:31.448618 | 4d17dd75-bdfe-4187-90ab-4e02f427bfa0 ==============================
+[0m13:48:31.448618 [info ] [MainThread]: Running with dbt=1.11.6
+[0m13:48:31.448618 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'write_json': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'empty': 'False', 'quiet': 'False', 'log_format': 'default', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'C:\\Users\\10731399\\Documents\\Tasty-Bytes-\\logs', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'invocation_command': 'dbt ', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'target_path': 'None'}
+[0m13:48:32.664434 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m13:48:32.668153 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m13:48:32.668153 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m13:48:32.974639 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4d17dd75-bdfe-4187-90ab-4e02f427bfa0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001381E30DCD0>]}
+[0m13:48:33.054225 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4d17dd75-bdfe-4187-90ab-4e02f427bfa0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001381E309850>]}
+[0m13:48:33.054225 [info ] [MainThread]: Registered adapter: snowflake=1.11.2
+[0m13:48:33.820956 [debug] [MainThread]: checksum: ec27062d18352e9cfca161c166fcc73d2201661a23a3cf3c89196a27f32cfcb8, vars: {}, profile: , target: , version: 1.11.6
+[0m13:48:34.047403 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m13:48:34.047403 [debug] [MainThread]: previous checksum: ec27062d18352e9cfca161c166fcc73d2201661a23a3cf3c89196a27f32cfcb8, current checksum: c8b6b59961f1a44cdae45abf5547d0e7461bf6d514dde67ea6b1b10a452c5f5b
+[0m13:48:34.049412 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '4d17dd75-bdfe-4187-90ab-4e02f427bfa0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001383360D0D0>]}
+[0m13:48:36.498931 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on
+'tb_101_ORDER_DETAIL' in package 'tasty_bytes' (models\staging\__sources.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+[0m13:48:36.498931 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '4d17dd75-bdfe-4187-90ab-4e02f427bfa0', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000138339DC390>]}
+[0m13:48:36.595595 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.tasty_bytes.ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT' (models\cortex_generated\ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT.sql) depends on a node named 'MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT' which was not found
+[0m13:48:36.595595 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m13:48:36.598112 [debug] [MainThread]: Command `cli build` failed at 13:48:36.598112 after 5.30 seconds
+[0m13:48:36.599133 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001381C8E1290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013833A61090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013818864710>]}
+[0m13:48:36.601029 [debug] [MainThread]: Flushing usage events
+[0m13:48:36.847974 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:55:53.590181 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E73A893ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E73A893390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E73A893450>]}
+
+
+============================== 13:55:53.590181 | 732856b1-5f33-422e-b71f-a46e923fb93b ==============================
+[0m13:55:53.590181 [info ] [MainThread]: Running with dbt=1.11.6
+[0m13:55:53.590181 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'write_json': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'empty': 'False', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'log_format': 'default', 'quiet': 'False', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'C:\\Users\\10731399\\Documents\\Tasty-Bytes-\\logs', 'introspect': 'True', 'invocation_command': 'dbt ', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'target_path': 'None', 'use_experimental_parser': 'False'}
+[0m13:55:54.746909 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m13:55:54.746909 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m13:55:54.746909 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m13:55:55.048699 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74E6694D0>]}
+[0m13:55:55.128301 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E73A8CDFD0>]}
+[0m13:55:55.128301 [info ] [MainThread]: Registered adapter: snowflake=1.11.2
+[0m13:55:55.873841 [debug] [MainThread]: checksum: ec27062d18352e9cfca161c166fcc73d2201661a23a3cf3c89196a27f32cfcb8, vars: {}, profile: , target: , version: 1.11.6
+[0m13:55:56.096935 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m13:55:56.096935 [debug] [MainThread]: previous checksum: ec27062d18352e9cfca161c166fcc73d2201661a23a3cf3c89196a27f32cfcb8, current checksum: c8b6b59961f1a44cdae45abf5547d0e7461bf6d514dde67ea6b1b10a452c5f5b
+[0m13:55:56.096935 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E73985E210>]}
+[0m13:55:58.364100 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on
+'tb_101_ORDER_DETAIL' in package 'tasty_bytes' (models\staging\__sources.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+[0m13:55:58.364100 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74EF2AD10>]}
+[0m13:55:58.586176 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.tasty_bytes.dims
+- models.tasty_bytes.facts
+[0m13:55:58.601919 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74EEBCED0>]}
+[0m13:55:58.745484 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Documents\Tasty-Bytes-\target\manifest.json
+[0m13:55:58.745484 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Documents\Tasty-Bytes-\target\semantic_manifest.json
+[0m13:55:58.872510 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74EA32590>]}
+[0m13:55:58.872510 [info ] [MainThread]: Found 41 models, 69 data tests, 8 sources, 649 macros
+[0m13:55:58.881903 [info ] [MainThread]: 
+[0m13:55:58.881903 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m13:55:58.886581 [info ] [MainThread]: 
+[0m13:55:58.886581 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m13:55:58.898924 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC'
+[0m13:55:58.898924 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC'
+[0m13:55:59.126972 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m13:55:59.136206 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m13:55:59.136206 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m13:55:59.137216 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m13:55:59.137216 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:55:59.137216 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:56:03.501930 [debug] [ThreadPool]: SQL status: SUCCESS 9 in 4.365 seconds
+[0m13:56:03.506607 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m13:56:03.506607 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m13:56:03.515441 [debug] [ThreadPool]: SQL status: SUCCESS 9 in 4.382 seconds
+[0m13:56:03.522061 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m13:56:03.522061 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m13:56:03.871143 [debug] [ThreadPool]: SQL status: SUCCESS 9 in 0.363 seconds
+[0m13:56:03.903318 [debug] [ThreadPool]: SQL status: SUCCESS 9 in 0.378 seconds
+[0m13:56:03.915238 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DBT_POC, now create_DBT_POC_PROCUREMENT)
+[0m13:56:03.915238 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DBT_POC, now create_DBT_POC_ANA_PROCUREMENT)
+[0m13:56:03.920565 [debug] [ThreadPool]: Creating schema "database: "DBT_POC"
+schema: "PROCUREMENT"
+"
+[0m13:56:03.923666 [debug] [ThreadPool]: Creating schema "database: "DBT_POC"
+schema: "ANA_PROCUREMENT"
+"
+[0m13:56:03.930532 [debug] [ThreadPool]: Using snowflake connection "create_DBT_POC_PROCUREMENT"
+[0m13:56:03.937075 [debug] [ThreadPool]: Using snowflake connection "create_DBT_POC_ANA_PROCUREMENT"
+[0m13:56:03.937075 [debug] [ThreadPool]: On create_DBT_POC_PROCUREMENT: create schema if not exists DBT_POC.PROCUREMENT
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "create_DBT_POC_PROCUREMENT"} */
+[0m13:56:03.939625 [debug] [ThreadPool]: On create_DBT_POC_ANA_PROCUREMENT: create schema if not exists DBT_POC.ANA_PROCUREMENT
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "create_DBT_POC_ANA_PROCUREMENT"} */
+[0m13:56:04.362931 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.433 seconds
+[0m13:56:04.362931 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_DBT_POC_PROCUREMENT, now create_DBT_POC_ETL_MART_PROCUREMENT)
+[0m13:56:04.378701 [debug] [ThreadPool]: Creating schema "database: "DBT_POC"
+schema: "ETL_MART_PROCUREMENT"
+"
+[0m13:56:04.378701 [debug] [ThreadPool]: Using snowflake connection "create_DBT_POC_ETL_MART_PROCUREMENT"
+[0m13:56:04.378701 [debug] [ThreadPool]: On create_DBT_POC_ETL_MART_PROCUREMENT: create schema if not exists DBT_POC.ETL_MART_PROCUREMENT
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "create_DBT_POC_ETL_MART_PROCUREMENT"} */
+[0m13:56:04.515008 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.578 seconds
+[0m13:56:04.792303 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.412 seconds
+[0m13:56:04.808034 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_PROCUREMENT'
+[0m13:56:04.815268 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_ANA_PROCUREMENT'
+[0m13:56:04.839613 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_PROCUREMENT"
+[0m13:56:04.839613 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_ANA_PROCUREMENT"
+[0m13:56:04.839613 [debug] [ThreadPool]: On list_DBT_POC_PROCUREMENT: show objects in DBT_POC.PROCUREMENT
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_PROCUREMENT"} */;
+[0m13:56:04.839613 [debug] [ThreadPool]: On list_DBT_POC_ANA_PROCUREMENT: show objects in DBT_POC.ANA_PROCUREMENT
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_ANA_PROCUREMENT"} */;
+[0m13:56:04.855438 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:56:04.855438 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:56:06.365276 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 1.520 seconds
+[0m13:56:06.365276 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DBT_POC_PROCUREMENT, now list_DBT_POC_ETL_MART_PROCUREMENT)
+[0m13:56:06.382615 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_ETL_MART_PROCUREMENT"
+[0m13:56:06.382615 [debug] [ThreadPool]: On list_DBT_POC_ETL_MART_PROCUREMENT: show objects in DBT_POC.ETL_MART_PROCUREMENT
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_ETL_MART_PROCUREMENT"} */;
+[0m13:56:06.668835 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 1.820 seconds
+[0m13:56:06.668835 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DBT_POC_ANA_PROCUREMENT, now list_DBT_POC_DEV)
+[0m13:56:06.693664 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_DEV"
+[0m13:56:06.693664 [debug] [ThreadPool]: On list_DBT_POC_DEV: show objects in DBT_POC.DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_DEV"} */;
+[0m13:56:06.732448 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.350 seconds
+[0m13:56:07.194618 [debug] [ThreadPool]: SQL status: SUCCESS 19 in 0.497 seconds
+[0m13:56:07.210561 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74ED20C90>]}
+[0m13:56:07.229759 [debug] [Thread-1 (]: Began running node model.tasty_bytes.MART_PDM_PDH_ITEM_ORGANIZATION_DIM
+[0m13:56:07.231343 [debug] [Thread-2 (]: Began running node model.tasty_bytes.MART_PROCUREMENT_PERSON_DIM
+[0m13:56:07.231343 [info ] [Thread-1 (]: 1 of 22 START sql table model DEV.MART_PDM_PDH_ITEM_ORGANIZATION_DIM ........... [RUN]
+[0m13:56:07.231343 [info ] [Thread-2 (]: 2 of 22 START sql table model DEV.MART_PROCUREMENT_PERSON_DIM .................. [RUN]
+[0m13:56:07.235549 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.tasty_bytes.MART_PDM_PDH_ITEM_ORGANIZATION_DIM'
+[0m13:56:07.235549 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.tasty_bytes.MART_PROCUREMENT_PERSON_DIM'
+[0m13:56:07.239085 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.MART_PDM_PDH_ITEM_ORGANIZATION_DIM
+[0m13:56:07.240332 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.MART_PROCUREMENT_PERSON_DIM
+[0m13:56:07.247415 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.MART_PDM_PDH_ITEM_ORGANIZATION_DIM"
+[0m13:56:07.258335 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.MART_PROCUREMENT_PERSON_DIM"
+[0m13:56:07.265187 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.MART_PROCUREMENT_PERSON_DIM
+[0m13:56:07.265187 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.MART_PDM_PDH_ITEM_ORGANIZATION_DIM
+[0m13:56:07.305850 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.MART_PROCUREMENT_PERSON_DIM"
+[0m13:56:07.315012 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.MART_PDM_PDH_ITEM_ORGANIZATION_DIM"
+[0m13:56:07.322470 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.MART_PDM_PDH_ITEM_ORGANIZATION_DIM"
+[0m13:56:07.322470 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.MART_PROCUREMENT_PERSON_DIM"
+[0m13:56:07.322470 [debug] [Thread-1 (]: On model.tasty_bytes.MART_PDM_PDH_ITEM_ORGANIZATION_DIM: create or replace transient table DBT_POC.DEV.MART_PDM_PDH_ITEM_ORGANIZATION_DIM
+    
+    
+    
+    as (
+
+SELECT column1 AS INVENTORY_ITEM_ID, column2 AS ORGANIZATION_ID, column3 AS ITEM_NUMBER, column4 AS PLANNER_CODE
+FROM VALUES
+(3001, 701, 'CHIP-A100', 'PL-001'),
+(3002, 701, 'RES-10K', 'PL-002'),
+(3003, 702, 'PCB-V3', 'PL-003')
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.MART_PDM_PDH_ITEM_ORGANIZATION_DIM"} */;
+[0m13:56:07.322470 [debug] [Thread-2 (]: On model.tasty_bytes.MART_PROCUREMENT_PERSON_DIM: create or replace transient table DBT_POC.DEV.MART_PROCUREMENT_PERSON_DIM
+    
+    
+    
+    as (
+
+SELECT column1 AS PERSON_ID, column2 AS FULL_NAME
+FROM VALUES
+(501, 'John Smith'),
+(502, 'Jane Doe')
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.MART_PROCUREMENT_PERSON_DIM"} */;
+[0m13:56:07.322470 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m13:56:07.326537 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m13:56:10.632244 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 3.305 seconds
+[0m13:56:10.644590 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74F452F10>]}
+[0m13:56:10.660565 [info ] [Thread-2 (]: 2 of 22 OK created sql table model DEV.MART_PROCUREMENT_PERSON_DIM ............. [[32mSUCCESS 1[0m in 3.41s]
+[0m13:56:10.660565 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.MART_PROCUREMENT_PERSON_DIM
+[0m13:56:10.660565 [debug] [Thread-2 (]: Began running node model.tasty_bytes.MART_PROCUREMENT_PO_HEADER_DIM
+[0m13:56:10.660565 [info ] [Thread-2 (]: 3 of 22 START sql table model DEV.MART_PROCUREMENT_PO_HEADER_DIM ............... [RUN]
+[0m13:56:10.660565 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.MART_PROCUREMENT_PERSON_DIM, now model.tasty_bytes.MART_PROCUREMENT_PO_HEADER_DIM)
+[0m13:56:10.660565 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.MART_PROCUREMENT_PO_HEADER_DIM
+[0m13:56:10.660565 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.MART_PROCUREMENT_PO_HEADER_DIM"
+[0m13:56:10.660565 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.MART_PROCUREMENT_PO_HEADER_DIM
+[0m13:56:10.677537 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.MART_PROCUREMENT_PO_HEADER_DIM"
+[0m13:56:10.681639 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.MART_PROCUREMENT_PO_HEADER_DIM"
+[0m13:56:10.681639 [debug] [Thread-2 (]: On model.tasty_bytes.MART_PROCUREMENT_PO_HEADER_DIM: create or replace transient table DBT_POC.DEV.MART_PROCUREMENT_PO_HEADER_DIM
+    
+    
+    
+    as (
+
+SELECT column1 AS PO_HEADER_ID, column2 AS SEGMENT1, column3 AS APPROVED_DATE, column4 AS ATTRIBUTE7, column5 AS CURRENCY_CODE, column6 AS AUTHORIZATION_STATUS, column7 AS AGENT_ID
+FROM VALUES
+(2001, 'PO-10001', '2025-01-05'::TIMESTAMP_TZ, 'STANDARD', 'USD', 'APPROVED', 501),
+(2002, 'PO-10002', '2025-02-10'::TIMESTAMP_TZ, 'BLANKET', 'EUR', 'APPROVED', 502)
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.MART_PROCUREMENT_PO_HEADER_DIM"} */;
+[0m13:56:10.740288 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 3.416 seconds
+[0m13:56:10.745193 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74FAC3450>]}
+[0m13:56:10.747204 [info ] [Thread-1 (]: 1 of 22 OK created sql table model DEV.MART_PDM_PDH_ITEM_ORGANIZATION_DIM ...... [[32mSUCCESS 1[0m in 3.51s]
+[0m13:56:10.747204 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.MART_PDM_PDH_ITEM_ORGANIZATION_DIM
+[0m13:56:10.749216 [debug] [Thread-1 (]: Began running node model.tasty_bytes.MART_PROCUREMENT_PO_LINE_DIM
+[0m13:56:10.749216 [info ] [Thread-1 (]: 4 of 22 START sql table model DEV.MART_PROCUREMENT_PO_LINE_DIM ................. [RUN]
+[0m13:56:10.749216 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.MART_PDM_PDH_ITEM_ORGANIZATION_DIM, now model.tasty_bytes.MART_PROCUREMENT_PO_LINE_DIM)
+[0m13:56:10.749216 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.MART_PROCUREMENT_PO_LINE_DIM
+[0m13:56:10.756412 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.MART_PROCUREMENT_PO_LINE_DIM"
+[0m13:56:10.756412 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.MART_PROCUREMENT_PO_LINE_DIM
+[0m13:56:10.759674 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.MART_PROCUREMENT_PO_LINE_DIM"
+[0m13:56:10.759674 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.MART_PROCUREMENT_PO_LINE_DIM"
+[0m13:56:10.766721 [debug] [Thread-1 (]: On model.tasty_bytes.MART_PROCUREMENT_PO_LINE_DIM: create or replace transient table DBT_POC.DEV.MART_PROCUREMENT_PO_LINE_DIM
+    
+    
+    
+    as (
+
+SELECT column1 AS PO_LINE_ID, column2 AS PO_HEADER_ID, column3 AS LINE_NUM, column4 AS ITEM_DESCRIPTION, column5 AS VENDOR_PRODUCT_NUM, column6 AS UOM_CODE
+FROM VALUES
+(3001, 2001, 1, 'Semiconductor Chip A100', 'VP-001', 'EA'),
+(3002, 2001, 2, 'Resistor Pack 10K', 'VP-002', 'PK'),
+(3003, 2002, 1, 'PCB Board v3', 'VP-003', 'EA')
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.MART_PROCUREMENT_PO_LINE_DIM"} */;
+[0m13:56:11.562915 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.795 seconds
+[0m13:56:11.564877 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74FB15210>]}
+[0m13:56:11.567308 [info ] [Thread-1 (]: 4 of 22 OK created sql table model DEV.MART_PROCUREMENT_PO_LINE_DIM ............ [[32mSUCCESS 1[0m in 0.82s]
+[0m13:56:11.567308 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.MART_PROCUREMENT_PO_LINE_DIM
+[0m13:56:11.569498 [debug] [Thread-1 (]: Began running node model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT
+[0m13:56:11.572479 [info ] [Thread-1 (]: 5 of 22 START sql table model DEV.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT .. [RUN]
+[0m13:56:11.572479 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.890 seconds
+[0m13:56:11.572479 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.MART_PROCUREMENT_PO_LINE_DIM, now model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT)
+[0m13:56:11.576456 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74F087590>]}
+[0m13:56:11.576456 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT
+[0m13:56:11.580136 [info ] [Thread-2 (]: 3 of 22 OK created sql table model DEV.MART_PROCUREMENT_PO_HEADER_DIM .......... [[32mSUCCESS 1[0m in 0.92s]
+[0m13:56:11.583127 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT"
+[0m13:56:11.586665 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.MART_PROCUREMENT_PO_HEADER_DIM
+[0m13:56:11.587756 [debug] [Thread-2 (]: Began running node model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_DIM
+[0m13:56:11.590081 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT
+[0m13:56:11.588780 [info ] [Thread-2 (]: 6 of 22 START sql table model DEV.MART_PROCUREMENT_PO_LINE_LOCATION_DIM ........ [RUN]
+[0m13:56:11.594079 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT"
+[0m13:56:11.595106 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.MART_PROCUREMENT_PO_HEADER_DIM, now model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_DIM)
+[0m13:56:11.595106 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_DIM
+[0m13:56:11.603159 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_DIM"
+[0m13:56:11.604181 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT"
+[0m13:56:11.604181 [debug] [Thread-1 (]: On model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT: create or replace transient table DBT_POC.DEV.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT
+    
+    
+    
+    as (
+
+SELECT column1 AS LINE_LOCATION_ID, column2 AS QUANTITY, column3 AS QUANTITY_RECEIVED, column4 AS QUANTITY_BILLED, column5 AS QUANTITY_CANCELLED, column6 AS PRICE_OVERRIDE
+FROM VALUES
+(4001, 1000.0, 750.0, 700.0, 0.0, 25.50),
+(4002, 5000.0, 5000.0, 5000.0, 0.0, 0.15),
+(4003, 200.0, 0.0, 0.0, 50.0, 150.00)
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT"} */;
+[0m13:56:11.606163 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_DIM
+[0m13:56:11.610464 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_DIM"
+[0m13:56:11.617165 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_DIM"
+[0m13:56:11.617165 [debug] [Thread-2 (]: On model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_DIM: create or replace transient table DBT_POC.DEV.MART_PROCUREMENT_PO_LINE_LOCATION_DIM
+    
+    
+    
+    as (
+
+SELECT column1 AS LINE_LOCATION_ID, column2 AS PO_HEADER_ID, column3 AS PO_LINE_ID, column4 AS SHIPMENT_NUM, column5 AS SCHEDULE_STATUS, column6 AS PROMISED_DATE, column7 AS NEED_BY_DATE, column8 AS CREATION_DATE, column9 AS RECEIPT_REQUIRED_FLAG, column10 AS INSPECTION_REQUIRED_FLAG, column11 AS BIW_UPD_DTTM
+FROM VALUES
+(4001, 2001, 3001, 1, 'OPEN', '2025-04-01'::TIMESTAMP_TZ, '2025-03-25'::TIMESTAMP_TZ, '2025-01-10'::TIMESTAMP_TZ, 'Y', 'N', '2020-01-01'::TIMESTAMP_NTZ),
+(4002, 2001, 3002, 2, 'CLOSED', '2025-05-15'::TIMESTAMP_TZ, '2025-05-10'::TIMESTAMP_TZ, '2025-02-15'::TIMESTAMP_TZ, 'N', 'N', '2020-01-01'::TIMESTAMP_NTZ),
+(4003, 2002, 3003, 1, 'OPEN', '2025-06-20'::TIMESTAMP_TZ, '2025-06-15'::TIMESTAMP_TZ, '2025-03-05'::TIMESTAMP_TZ, 'Y', 'Y', '2020-01-01'::TIMESTAMP_NTZ)
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_DIM"} */;
+[0m13:56:13.027373 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.420 seconds
+[0m13:56:13.039774 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74FABD5D0>]}
+[0m13:56:13.043818 [info ] [Thread-1 (]: 5 of 22 OK created sql table model DEV.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT  [[32mSUCCESS 1[0m in 1.47s]
+[0m13:56:13.045333 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT
+[0m13:56:13.045333 [debug] [Thread-1 (]: Began running node model.tasty_bytes.MART_PROCUREMENT_PO_RELEASE_FACT
+[0m13:56:13.050397 [info ] [Thread-1 (]: 7 of 22 START sql table model DEV.MART_PROCUREMENT_PO_RELEASE_FACT ............. [RUN]
+[0m13:56:13.053338 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT, now model.tasty_bytes.MART_PROCUREMENT_PO_RELEASE_FACT)
+[0m13:56:13.056642 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.437 seconds
+[0m13:56:13.056642 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.MART_PROCUREMENT_PO_RELEASE_FACT
+[0m13:56:13.060658 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E750BAC6D0>]}
+[0m13:56:13.060658 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.MART_PROCUREMENT_PO_RELEASE_FACT"
+[0m13:56:13.060658 [info ] [Thread-2 (]: 6 of 22 OK created sql table model DEV.MART_PROCUREMENT_PO_LINE_LOCATION_DIM ... [[32mSUCCESS 1[0m in 1.47s]
+[0m13:56:13.060658 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_DIM
+[0m13:56:13.060658 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.MART_PROCUREMENT_PO_RELEASE_FACT
+[0m13:56:13.070332 [debug] [Thread-2 (]: Began running node model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_DIM
+[0m13:56:13.070332 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.MART_PROCUREMENT_PO_RELEASE_FACT"
+[0m13:56:13.070332 [info ] [Thread-2 (]: 8 of 22 START sql table model DEV.MART_PROCUREMENT_SUPPLIER_DIM ................ [RUN]
+[0m13:56:13.077634 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.MART_PROCUREMENT_PO_LINE_LOCATION_DIM, now model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_DIM)
+[0m13:56:13.077634 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.MART_PROCUREMENT_PO_RELEASE_FACT"
+[0m13:56:13.077634 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_DIM
+[0m13:56:13.080311 [debug] [Thread-1 (]: On model.tasty_bytes.MART_PROCUREMENT_PO_RELEASE_FACT: create or replace transient table DBT_POC.DEV.MART_PROCUREMENT_PO_RELEASE_FACT
+    
+    
+    
+    as (
+
+SELECT column1 AS PO_RELEASE_ID, column2 AS PO_HEADER_ID, column3 AS RELEASE_NUM, column4 AS AUTHORIZATION_STATUS
+FROM VALUES
+(6001, 2001, 1, 'APPROVED'),
+(6002, 2002, NULL, 'IN PROCESS')
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.MART_PROCUREMENT_PO_RELEASE_FACT"} */;
+[0m13:56:13.080311 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_DIM"
+[0m13:56:13.088160 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_DIM
+[0m13:56:13.092330 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_DIM"
+[0m13:56:13.092330 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_DIM"
+[0m13:56:13.092330 [debug] [Thread-2 (]: On model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_DIM: create or replace transient table DBT_POC.DEV.MART_PROCUREMENT_SUPPLIER_DIM
+    
+    
+    
+    as (
+
+SELECT column1 AS VENDOR_ID, column2 AS SUPPLIER_NAME
+FROM VALUES
+(2001, 'Texas Instruments'),
+(2002, 'Murata Manufacturing')
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_DIM"} */;
+[0m13:56:14.336481 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.240 seconds
+[0m13:56:14.336481 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74FB15F90>]}
+[0m13:56:14.336481 [info ] [Thread-2 (]: 8 of 22 OK created sql table model DEV.MART_PROCUREMENT_SUPPLIER_DIM ........... [[32mSUCCESS 1[0m in 1.26s]
+[0m13:56:14.336481 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_DIM
+[0m13:56:14.336481 [debug] [Thread-2 (]: Began running node model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_SITE_DIM
+[0m13:56:14.336481 [info ] [Thread-2 (]: 9 of 22 START sql table model DEV.MART_PROCUREMENT_SUPPLIER_SITE_DIM ........... [RUN]
+[0m13:56:14.336481 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.264 seconds
+[0m13:56:14.336481 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_DIM, now model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_SITE_DIM)
+[0m13:56:14.354496 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74FAB2890>]}
+[0m13:56:14.356510 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_SITE_DIM
+[0m13:56:14.356510 [info ] [Thread-1 (]: 7 of 22 OK created sql table model DEV.MART_PROCUREMENT_PO_RELEASE_FACT ........ [[32mSUCCESS 1[0m in 1.30s]
+[0m13:56:14.356510 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_SITE_DIM"
+[0m13:56:14.356510 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.MART_PROCUREMENT_PO_RELEASE_FACT
+[0m13:56:14.356510 [debug] [Thread-1 (]: Began running node model.tasty_bytes.ODS_HCM_SHARED_HR_LOCATIONS_ALL
+[0m13:56:14.366177 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_SITE_DIM
+[0m13:56:14.366177 [info ] [Thread-1 (]: 10 of 22 START sql table model DEV.ODS_HCM_SHARED_HR_LOCATIONS_ALL ............. [RUN]
+[0m13:56:14.369521 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_SITE_DIM"
+[0m13:56:14.369521 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.MART_PROCUREMENT_PO_RELEASE_FACT, now model.tasty_bytes.ODS_HCM_SHARED_HR_LOCATIONS_ALL)
+[0m13:56:14.369521 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.ODS_HCM_SHARED_HR_LOCATIONS_ALL
+[0m13:56:14.376296 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.ODS_HCM_SHARED_HR_LOCATIONS_ALL"
+[0m13:56:14.376296 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_SITE_DIM"
+[0m13:56:14.376296 [debug] [Thread-2 (]: On model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_SITE_DIM: create or replace transient table DBT_POC.DEV.MART_PROCUREMENT_SUPPLIER_SITE_DIM
+    
+    
+    
+    as (
+
+SELECT column1 AS VENDOR_SITE_ID, column2 AS SUPPLIER_SITE_CODE
+FROM VALUES
+(2001, 'DALLAS-TX'),
+(2002, 'TOKYO-JP')
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_SITE_DIM"} */;
+[0m13:56:14.384169 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.ODS_HCM_SHARED_HR_LOCATIONS_ALL
+[0m13:56:14.384676 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.ODS_HCM_SHARED_HR_LOCATIONS_ALL"
+[0m13:56:14.391944 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.ODS_HCM_SHARED_HR_LOCATIONS_ALL"
+[0m13:56:14.391944 [debug] [Thread-1 (]: On model.tasty_bytes.ODS_HCM_SHARED_HR_LOCATIONS_ALL: create or replace transient table DBT_POC.DEV.ODS_HCM_SHARED_HR_LOCATIONS_ALL
+    
+    
+    
+    as (
+
+SELECT column1 AS LOCATION_ID, column2 AS LOCATION_CODE
+FROM VALUES
+(4001, 'PHX-AZ-PLANT1'),
+(4002, 'POCATELLO-ID'),
+(4003, 'GRESHAM-OR')
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ODS_HCM_SHARED_HR_LOCATIONS_ALL"} */;
+[0m13:56:15.480405 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.089 seconds
+[0m13:56:15.480405 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E750BF9B10>]}
+[0m13:56:15.480405 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.107 seconds
+[0m13:56:15.480405 [info ] [Thread-1 (]: 10 of 22 OK created sql table model DEV.ODS_HCM_SHARED_HR_LOCATIONS_ALL ........ [[32mSUCCESS 1[0m in 1.11s]
+[0m13:56:15.496334 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E750B9CD90>]}
+[0m13:56:15.496334 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.ODS_HCM_SHARED_HR_LOCATIONS_ALL
+[0m13:56:15.496334 [info ] [Thread-2 (]: 9 of 22 OK created sql table model DEV.MART_PROCUREMENT_SUPPLIER_SITE_DIM ...... [[32mSUCCESS 1[0m in 1.16s]
+[0m13:56:15.496334 [debug] [Thread-1 (]: Began running node model.tasty_bytes.ODS_HCM_SHARED_HR_ORGANIZATION_UNITS
+[0m13:56:15.505571 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_SITE_DIM
+[0m13:56:15.505571 [info ] [Thread-1 (]: 11 of 22 START sql table model DEV.ODS_HCM_SHARED_HR_ORGANIZATION_UNITS ........ [RUN]
+[0m13:56:15.508730 [debug] [Thread-2 (]: Began running node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B
+[0m13:56:15.508730 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.ODS_HCM_SHARED_HR_LOCATIONS_ALL, now model.tasty_bytes.ODS_HCM_SHARED_HR_ORGANIZATION_UNITS)
+[0m13:56:15.512355 [info ] [Thread-2 (]: 12 of 22 START sql table model DEV.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B ......... [RUN]
+[0m13:56:15.512355 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.ODS_HCM_SHARED_HR_ORGANIZATION_UNITS
+[0m13:56:15.514961 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.MART_PROCUREMENT_SUPPLIER_SITE_DIM, now model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B)
+[0m13:56:15.515470 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.ODS_HCM_SHARED_HR_ORGANIZATION_UNITS"
+[0m13:56:15.515470 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B
+[0m13:56:15.523524 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B"
+[0m13:56:15.523524 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.ODS_HCM_SHARED_HR_ORGANIZATION_UNITS
+[0m13:56:15.530944 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.ODS_HCM_SHARED_HR_ORGANIZATION_UNITS"
+[0m13:56:15.530944 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B
+[0m13:56:15.538443 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B"
+[0m13:56:15.538443 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.ODS_HCM_SHARED_HR_ORGANIZATION_UNITS"
+[0m13:56:15.538443 [debug] [Thread-1 (]: On model.tasty_bytes.ODS_HCM_SHARED_HR_ORGANIZATION_UNITS: create or replace transient table DBT_POC.DEV.ODS_HCM_SHARED_HR_ORGANIZATION_UNITS
+    
+    
+    
+    as (
+
+SELECT column1 AS ORGANIZATION_ID, column2 AS NAME
+FROM VALUES
+(701, 'Semiconductor Division'),
+(702, 'PCB Assembly Unit')
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ODS_HCM_SHARED_HR_ORGANIZATION_UNITS"} */;
+[0m13:56:15.543345 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B"
+[0m13:56:15.543345 [debug] [Thread-2 (]: On model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B: create or replace transient table DBT_POC.DEV.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B
+    
+    
+    
+    as (
+
+SELECT column1 AS PROJECT_ID, column2 AS SEGMENT1
+FROM VALUES
+(9001, 'PRJ-001'),
+(9002, 'PRJ-002')
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B"} */;
+[0m13:56:16.578504 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.040 seconds
+[0m13:56:16.578504 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74FB9ED10>]}
+[0m13:56:16.578504 [info ] [Thread-1 (]: 11 of 22 OK created sql table model DEV.ODS_HCM_SHARED_HR_ORGANIZATION_UNITS ... [[32mSUCCESS 1[0m in 1.07s]
+[0m13:56:16.578504 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.ODS_HCM_SHARED_HR_ORGANIZATION_UNITS
+[0m13:56:16.578504 [debug] [Thread-1 (]: Began running node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL
+[0m13:56:16.578504 [info ] [Thread-1 (]: 13 of 22 START sql table model DEV.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL ........ [RUN]
+[0m13:56:16.592699 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.ODS_HCM_SHARED_HR_ORGANIZATION_UNITS, now model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL)
+[0m13:56:16.594534 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL
+[0m13:56:16.596705 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL"
+[0m13:56:16.596705 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL
+[0m13:56:16.604481 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL"
+[0m13:56:16.608201 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL"
+[0m13:56:16.608201 [debug] [Thread-1 (]: On model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL: create or replace transient table DBT_POC.DEV.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL
+    
+    
+    
+    as (
+
+SELECT column1 AS PROJECT_ID, column2 AS NAME, column3 AS LANGUAGE
+FROM VALUES
+(9001, 'Alpha Project', 'US'),
+(9002, 'Beta Project', 'US')
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL"} */;
+[0m13:56:17.296124 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.758 seconds
+[0m13:56:17.308127 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E750BFA4D0>]}
+[0m13:56:17.310651 [info ] [Thread-2 (]: 12 of 22 OK created sql table model DEV.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B .... [[32mSUCCESS 1[0m in 1.80s]
+[0m13:56:17.313465 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B
+[0m13:56:17.315489 [debug] [Thread-2 (]: Began running node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B
+[0m13:56:17.315489 [info ] [Thread-2 (]: 14 of 22 START sql table model DEV.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B ........ [RUN]
+[0m13:56:17.317498 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B, now model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B)
+[0m13:56:17.319507 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B
+[0m13:56:17.325655 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B"
+[0m13:56:17.327665 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B
+[0m13:56:17.331681 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B"
+[0m13:56:17.335704 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B"
+[0m13:56:17.335704 [debug] [Thread-2 (]: On model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B: create or replace transient table DBT_POC.DEV.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B
+    
+    
+    
+    as (
+
+SELECT column1 AS PROJECT_ID, column2 AS PROJ_ELEMENT_ID, column3 AS ELEMENT_NUMBER
+FROM VALUES
+(9001, 9501, 'TASK-001'),
+(9002, 9502, 'TASK-002')
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B"} */;
+[0m13:56:17.882189 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.271 seconds
+[0m13:56:17.886219 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E750BE4CD0>]}
+[0m13:56:17.888231 [info ] [Thread-1 (]: 13 of 22 OK created sql table model DEV.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL ... [[32mSUCCESS 1[0m in 1.29s]
+[0m13:56:17.889747 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL
+[0m13:56:17.891765 [debug] [Thread-1 (]: Began running node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL
+[0m13:56:17.893782 [info ] [Thread-1 (]: 15 of 22 START sql table model DEV.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL ....... [RUN]
+[0m13:56:17.895799 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL, now model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL)
+[0m13:56:17.898280 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL
+[0m13:56:17.910870 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL"
+[0m13:56:17.924348 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL
+[0m13:56:17.929978 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL"
+[0m13:56:17.931989 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL"
+[0m13:56:17.933999 [debug] [Thread-1 (]: On model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL: create or replace transient table DBT_POC.DEV.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL
+    
+    
+    
+    as (
+
+SELECT column1 AS PROJ_ELEMENT_ID, column2 AS NAME, column3 AS LANGUAGE
+FROM VALUES
+(9501, 'Design Phase', 'US'),
+(9502, 'Build Phase', 'US')
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL"} */;
+[0m13:56:18.413835 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.077 seconds
+[0m13:56:18.415374 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74FB91F90>]}
+[0m13:56:18.415374 [info ] [Thread-2 (]: 14 of 22 OK created sql table model DEV.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B ... [[32mSUCCESS 1[0m in 1.10s]
+[0m13:56:18.420973 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B
+[0m13:56:18.420973 [debug] [Thread-2 (]: Began running node model.tasty_bytes.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL
+[0m13:56:18.420973 [info ] [Thread-2 (]: 16 of 22 START sql table model DEV.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL ....... [RUN]
+[0m13:56:18.420973 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B, now model.tasty_bytes.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL)
+[0m13:56:18.420973 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL
+[0m13:56:18.431239 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL"
+[0m13:56:18.431239 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL
+[0m13:56:18.436814 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL"
+[0m13:56:18.442462 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL"
+[0m13:56:18.442462 [debug] [Thread-2 (]: On model.tasty_bytes.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL: create or replace transient table DBT_POC.DEV.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL
+    
+    
+    
+    as (
+
+SELECT column1 AS PO_DISTRIBUTION_ID, column2 AS DISTRIBUTION_NUM, column3 AS PO_HEADER_ID, column4 AS PO_LINE_ID, column5 AS LINE_LOCATION_ID, column6 AS REQ_DISTRIBUTION_ID, column7 AS WIP_ENTITY_ID, column8 AS BUDGET_DATE, column9 AS CANCEL_BUDGET_DATE, column10 AS CLOSE_BUDGET_DATE, column11 AS CREATION_DATE, column12 AS LAST_UPDATE_DATE, column13 AS RATE_DATE, column14 AS SET_OF_BOOKS_ID, column15 AS DELIVER_TO_LOCATION_ID, column16 AS CODE_COMBINATION_ID, column17 AS DELIVER_TO_PERSON_ID, column18 AS REQ_HEADER_REFERENCE_NUM, column19 AS REQ_LINE_REFERENCE_NUM, column20 AS PRC_BU_ID, column21 AS REQ_BU_ID, column22 AS WIP_LINE_ID, column23 AS DESTINATION_ORGANIZATION_ID, column24 AS SOLDTO_BU_ID, column25 AS DESTINATION_TYPE_CODE, column26 AS RATE, column27 AS DESTINATION_SUBINVENTORY, column28 AS DESTINATION_CONTEXT, column29 AS DISTRIBUTION_TYPE, column30 AS INVOICE_ADJUSTMENT_FLAG, column31 AS ACCRUED_FLAG, column32 AS ENCUMBERED_FLAG, column33 AS ACCRUE_ON_RECEIPT_FLAG, column34 AS PJC_PROJECT_ID, column35 AS PJC_TASK_ID, column36 AS WIP_OPERATION_SEQ_NUM, column37 AS WIP_REPETITIVE_SCHEDULE_ID, column38 AS WIP_RESOURCE_SEQ_NUM, column39 AS PREVENT_ENCUMBRANCE_FLAG, column40 AS IS_DELETE, column41 AS BIW_UPD_DTTM
+FROM VALUES
+(1001, 1, 2001, 3001, 4001, 5001, NULL, '2025-01-15'::TIMESTAMP_NTZ, NULL, NULL, '2025-01-10'::TIMESTAMP_NTZ, '2025-06-01'::TIMESTAMP_NTZ, '2025-01-10'::TIMESTAMP_NTZ, 101, 201, 301, 401, 'REQ001', 'RL001', 501, 601, NULL, 701, 801, 'EXPENSE', 1.0, 'SUB-A', 'CTX1', 'STANDARD', 'N', 'N', 'Y', 'N', 9001, 9501, NULL, NULL, NULL, 'N', 'N', '2020-01-01'::TIMESTAMP_NTZ),
+(1002, 2, 2001, 3002, 4002, 5002, NULL, '2025-02-20'::TIMESTAMP_NTZ, NULL, NULL, '2025-02-15'::TIMESTAMP_NTZ, '2025-06-02'::TIMESTAMP_NTZ, '2025-02-15'::TIMESTAMP_NTZ, 101, 202, 302, 402, 'REQ002', 'RL002', 501, 601, NULL, 702, 801, 'INVENTORY', 1.0, 'SUB-B', 'CTX2', 'STANDARD', 'N', 'Y', 'N', 'Y', 9002, 9502, NULL, NULL, NULL, 'N', 'N', '2020-01-01'::TIMESTAMP_NTZ),
+(1003, 1, 2002, 3003, 4003, NULL, NULL, '2025-03-10'::TIMESTAMP_NTZ, NULL, NULL, '2025-03-05'::TIMESTAMP_NTZ, '2025-06-03'::TIMESTAMP_NTZ, '2025-03-05'::TIMESTAMP_NTZ, 102, 203, 303, 403, 'REQ003', 'RL003', 502, 602, NULL, 703, 802, 'EXPENSE', 0.85, 'SUB-C', 'CTX3', 'PLANNED', 'N', 'N', 'N', 'N', NULL, NULL, NULL, NULL, NULL, 'Y', 'N', '2020-01-01'::TIMESTAMP_NTZ)
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL"} */;
+[0m13:56:18.812210 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.878 seconds
+[0m13:56:18.815344 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74F3FFD50>]}
+[0m13:56:18.815344 [info ] [Thread-1 (]: 15 of 22 OK created sql table model DEV.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL .. [[32mSUCCESS 1[0m in 0.92s]
+[0m13:56:18.815344 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL
+[0m13:56:18.818932 [debug] [Thread-1 (]: Began running node model.tasty_bytes.ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+[0m13:56:18.820479 [info ] [Thread-1 (]: 17 of 22 START sql table model ETL_MART_PROCUREMENT.LOGISTICS_DASHBOARD_PO_QUANTITY_RPT  [RUN]
+[0m13:56:18.820479 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL, now model.tasty_bytes.ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT)
+[0m13:56:18.820479 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+[0m13:56:18.835968 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT"
+[0m13:56:18.835968 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+[0m13:56:18.838749 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT"
+[0m13:56:18.854774 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT"
+[0m13:56:18.856782 [debug] [Thread-1 (]: On model.tasty_bytes.ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT: create or replace transient table DBT_POC.ETL_MART_PROCUREMENT.LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+    
+    
+    
+    as (/*--------------------------------------------------------------------------------------------
+Command to run model:
+--dbt run --select ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+--dbt build --full-refresh --select +ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+--dbt build --select ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT --vars 'is_backfill: True'
+
+Version     Date            Author                Description
+-------     ----------      ----------------      ----------------------------------
+1.0         2026-03-06      Cortex Code           Initial Version - Auto-Generated from STTM
+
+----------------------------------------------------------------------------------------------*/
+
+
+
+-- Step 1 Batch process info
+
+
+
+
+WITH PO_LINE_LOCATION_DIM AS (
+    SELECT 
+        LINE_LOCATION_ID,
+        PO_HEADER_ID,
+        PO_LINE_ID,
+        SHIPMENT_NUM,
+        SCHEDULE_STATUS,
+        PROMISED_DATE,
+        NEED_BY_DATE,
+        CREATION_DATE,
+        RECEIPT_REQUIRED_FLAG,
+        INSPECTION_REQUIRED_FLAG
+    FROM DBT_POC.DEV.MART_PROCUREMENT_PO_LINE_LOCATION_DIM
+    WHERE 
+        
+                BIW_UPD_DTTM >= '2020-01-01 00:00:00.000' 
+            AND BIW_UPD_DTTM <= '2099-12-31 23:59:59.999'
+            
+)
+
+,PO_HEADER_DIM AS (
+    SELECT 
+        PO_HEADER_ID,
+        SEGMENT1,
+        APPROVED_DATE,
+        ATTRIBUTE7,
+        CURRENCY_CODE,
+        AUTHORIZATION_STATUS,
+        AGENT_ID
+    FROM DBT_POC.DEV.MART_PROCUREMENT_PO_HEADER_DIM
+)
+
+,PO_LINE_DIM AS (
+    SELECT 
+        PO_LINE_ID,
+        PO_HEADER_ID,
+        LINE_NUM,
+        ITEM_DESCRIPTION,
+        VENDOR_PRODUCT_NUM,
+        UOM_CODE
+    FROM DBT_POC.DEV.MART_PROCUREMENT_PO_LINE_DIM
+)
+
+,PO_RELEASE_FACT AS (
+    SELECT 
+        PO_RELEASE_ID,
+        PO_HEADER_ID,
+        RELEASE_NUM,
+        AUTHORIZATION_STATUS
+    FROM DBT_POC.DEV.MART_PROCUREMENT_PO_RELEASE_FACT
+)
+
+,SUPPLIER_DIM AS (
+    SELECT 
+        VENDOR_ID,
+        SUPPLIER_NAME
+    FROM DBT_POC.DEV.MART_PROCUREMENT_SUPPLIER_DIM
+)
+
+,SUPPLIER_SITE_DIM AS (
+    SELECT 
+        VENDOR_SITE_ID,
+        SUPPLIER_SITE_CODE
+    FROM DBT_POC.DEV.MART_PROCUREMENT_SUPPLIER_SITE_DIM
+)
+
+,PDH_ITEM_ORGANIZATION_DIM AS (
+    SELECT 
+        INVENTORY_ITEM_ID,
+        ORGANIZATION_ID,
+        ITEM_NUMBER,
+        PLANNER_CODE
+    FROM DBT_POC.DEV.MART_PDM_PDH_ITEM_ORGANIZATION_DIM
+)
+
+,HR_LOCATIONS_ALL AS (
+    SELECT 
+        LOCATION_ID,
+        LOCATION_CODE
+    FROM DBT_POC.DEV.ODS_HCM_SHARED_HR_LOCATIONS_ALL
+)
+
+,PERSON_DIM AS (
+    SELECT 
+        PERSON_ID,
+        FULL_NAME
+    FROM DBT_POC.DEV.MART_PROCUREMENT_PERSON_DIM
+)
+
+,HR_ORGANIZATION_UNITS AS (
+    SELECT 
+        ORGANIZATION_ID,
+        NAME
+    FROM DBT_POC.DEV.ODS_HCM_SHARED_HR_ORGANIZATION_UNITS
+)
+
+,PO_LINE_LOCATION_CURR_FACT AS (
+    SELECT 
+        LINE_LOCATION_ID,
+        QUANTITY,
+        QUANTITY_RECEIVED,
+        QUANTITY_BILLED,
+        QUANTITY_CANCELLED,
+        PRICE_OVERRIDE
+    FROM DBT_POC.DEV.MART_PROCUREMENT_PO_LINE_LOCATION_CURR_FACT
+)
+
+
+
+SELECT 
+    -- Primary Key
+    MD5(OBJECT_CONSTRUCT(
+        'COL1', PLL.PO_HEADER_ID::STRING,
+        'COL2', PLL.PO_LINE_ID::STRING,
+        'COL3', PLL.LINE_LOCATION_ID::STRING
+    )::STRING)::STRING AS LOGISTICS_DASHBOARD_PO_QUANTITY_KEY,
+    
+    -- Natural Keys
+    POH.PO_HEADER_ID,
+    POL.PO_LINE_ID,
+    PLL.LINE_LOCATION_ID,
+    
+    -- Business Columns
+    POH.SEGMENT1 || CASE WHEN PRA.RELEASE_NUM IS NOT NULL THEN '-' ELSE '' END || PRA.RELEASE_NUM AS PO_NUMBER,
+    POL.LINE_NUM,
+    POL.LINE_NUM AS PO_LINE_NUMBER,
+    PLL.SHIPMENT_NUM AS SHIPMENT_NUMBER,
+    POH.SEGMENT1 || '-' || POL.LINE_NUM || '-' || PLL.SHIPMENT_NUM AS PO_NUM_LINE_SHIP,
+    NVL(PLL.SCHEDULE_STATUS, 'OPEN') AS STATUS,
+    SUP.SUPPLIER_NAME AS SUPPLIER,
+    SS.SUPPLIER_SITE_CODE AS SUPPLIER_SITE,
+    ITM.ITEM_NUMBER AS ITEM_NUM,
+    POL.ITEM_DESCRIPTION,
+    POL.VENDOR_PRODUCT_NUM AS SUPPLIER_ITEM_NUM,
+    NVL(PLL.PROMISED_DATE, PLL.NEED_BY_DATE) AS DUE_DATE,
+    PLL.PROMISED_DATE,
+    PLL.CREATION_DATE AS LINE_CREATION_DATE,
+    POH.APPROVED_DATE AS PO_APPROVED_DATE,
+    POH.ATTRIBUTE7 AS PO_TYPE,
+    POH.CURRENCY_CODE,
+    POL.UOM_CODE AS UNIT_MEAS_LOOKUP_CODE,
+    LOC.LOCATION_CODE AS SHIP_TO_LOCATION,
+    DECODE(PLL.PO_LINE_ID, NULL, NVL(POH.AUTHORIZATION_STATUS, 'INCOMPLETE'),
+        NVL(PRA.AUTHORIZATION_STATUS, 'INCOMPLETE')) AS AUTHORIZATION_STATUS,
+    DECODE(PLL.RECEIPT_REQUIRED_FLAG,
+        'N',
+        DECODE(PLL.INSPECTION_REQUIRED_FLAG,
+                'N',
+                '2-Way',
+                NULL), 'Y',
+                       DECODE(PLL.INSPECTION_REQUIRED_FLAG,
+                               'N',
+                               '3-Way',
+                               'Y',
+                               '4-Way',
+                               NULL)) AS MATCHING_TYPE,
+    CASE
+        WHEN DATEDIFF(DAY, PLL.NEED_BY_DATE, CURRENT_DATE) BETWEEN 1 AND 29 THEN '1-30_PASTDUE'
+        WHEN DATEDIFF(DAY, PLL.NEED_BY_DATE, CURRENT_DATE) BETWEEN 30 AND 59 THEN '30-60_PASTDUE'
+        WHEN DATEDIFF(DAY, PLL.NEED_BY_DATE, CURRENT_DATE) BETWEEN 60 AND 89 THEN '60-90_PASTDUE'
+        WHEN DATEDIFF(DAY, PLL.NEED_BY_DATE, CURRENT_DATE) >= 90 THEN '90_PASTDUE'
+        ELSE NULL
+    END AS PAST_DUE,
+    PER.FULL_NAME AS BUYER,
+    ITM.PLANNER_CODE,
+    ORG.NAME,
+    PLLF.QUANTITY - PLLF.QUANTITY_RECEIVED AS QUANTITY_DUE,
+    PLLF.QUANTITY AS QUANTITY_ORDERED,
+    PLLF.QUANTITY_RECEIVED,
+    PLLF.QUANTITY_BILLED,
+    PLLF.QUANTITY_CANCELLED,
+    PLLF.PRICE_OVERRIDE * (PLLF.QUANTITY - NVL(PLLF.QUANTITY_CANCELLED, 0)) AS SHIPMENT_AMOUNT,
+    
+    -- Housekeeping Columns
+    'N'::BOOLEAN AS IS_DELETE,
+    '2026-03-10 13:56:18.000'::TIMESTAMP_NTZ AS BIW_INS_DTTM,
+    '2026-03-10 13:56:18.000'::TIMESTAMP_NTZ AS BIW_UPD_DTTM,
+    '1'::NUMBER(38,0) AS BIW_BATCH_ID,
+    MD5(OBJECT_CONSTRUCT(
+        'COL1', PLL.PO_HEADER_ID::STRING,
+        'COL2', POL.PO_LINE_ID::STRING,
+        'COL3', PLL.LINE_LOCATION_ID::STRING,
+        'COL4', POH.SEGMENT1::STRING,
+        'COL5', POL.LINE_NUM::STRING,
+        'COL6', PLL.SHIPMENT_NUM::STRING,
+        'COL7', NVL(PLL.SCHEDULE_STATUS, 'OPEN')::STRING,
+        'COL8', SUP.SUPPLIER_NAME::STRING,
+        'COL9', SS.SUPPLIER_SITE_CODE::STRING,
+        'COL10', ITM.ITEM_NUMBER::STRING,
+        'COL11', POL.ITEM_DESCRIPTION::STRING,
+        'COL12', POL.VENDOR_PRODUCT_NUM::STRING,
+        'COL13', NVL(PLL.PROMISED_DATE, PLL.NEED_BY_DATE)::STRING,
+        'COL14', PLL.PROMISED_DATE::STRING,
+        'COL15', PLL.CREATION_DATE::STRING,
+        'COL16', POH.APPROVED_DATE::STRING,
+        'COL17', POH.ATTRIBUTE7::STRING,
+        'COL18', POH.CURRENCY_CODE::STRING,
+        'COL19', POL.UOM_CODE::STRING,
+        'COL20', LOC.LOCATION_CODE::STRING,
+        'COL21', POH.AUTHORIZATION_STATUS::STRING,
+        'COL22', PLL.RECEIPT_REQUIRED_FLAG::STRING,
+        'COL23', PLL.INSPECTION_REQUIRED_FLAG::STRING,
+        'COL24', PLL.NEED_BY_DATE::STRING,
+        'COL25', PER.FULL_NAME::STRING,
+        'COL26', ITM.PLANNER_CODE::STRING,
+        'COL27', ORG.NAME::STRING,
+        'COL28', PLLF.QUANTITY::STRING,
+        'COL29', PLLF.QUANTITY_RECEIVED::STRING,
+        'COL30', PLLF.QUANTITY_BILLED::STRING,
+        'COL31', PLLF.QUANTITY_CANCELLED::STRING,
+        'COL32', PLLF.PRICE_OVERRIDE::STRING,
+        'COL33', PRA.RELEASE_NUM::STRING,
+        'COL34', PRA.AUTHORIZATION_STATUS::STRING
+    )::STRING)::BINARY AS BIW_MD5_KEY
+
+FROM PO_LINE_LOCATION_DIM PLL
+LEFT OUTER JOIN PO_HEADER_DIM POH
+    ON PLL.PO_HEADER_ID = POH.PO_HEADER_ID
+LEFT OUTER JOIN PO_LINE_DIM POL
+    ON PLL.PO_LINE_ID = POL.PO_LINE_ID
+LEFT OUTER JOIN PO_RELEASE_FACT PRA
+    ON PLL.PO_HEADER_ID = PRA.PO_HEADER_ID
+LEFT OUTER JOIN SUPPLIER_DIM SUP
+    ON POH.PO_HEADER_ID = SUP.VENDOR_ID
+LEFT OUTER JOIN SUPPLIER_SITE_DIM SS
+    ON POH.PO_HEADER_ID = SS.VENDOR_SITE_ID
+LEFT OUTER JOIN PDH_ITEM_ORGANIZATION_DIM ITM
+    ON POL.PO_LINE_ID = ITM.INVENTORY_ITEM_ID
+LEFT OUTER JOIN HR_LOCATIONS_ALL LOC
+    ON PLL.LINE_LOCATION_ID = LOC.LOCATION_ID
+LEFT OUTER JOIN PERSON_DIM PER
+    ON POH.AGENT_ID = PER.PERSON_ID
+LEFT OUTER JOIN HR_ORGANIZATION_UNITS ORG
+    ON ITM.ORGANIZATION_ID = ORG.ORGANIZATION_ID
+LEFT OUTER JOIN PO_LINE_LOCATION_CURR_FACT PLLF
+    ON PLL.LINE_LOCATION_ID = PLLF.LINE_LOCATION_ID
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT"} */;
+[0m13:56:19.346820 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.905 seconds
+[0m13:56:19.346820 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E750BD4D50>]}
+[0m13:56:19.346820 [info ] [Thread-2 (]: 16 of 22 OK created sql table model DEV.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL .. [[32mSUCCESS 1[0m in 0.93s]
+[0m13:56:19.346820 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL
+[0m13:56:19.359680 [debug] [Thread-2 (]: Began running node model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:56:19.361007 [info ] [Thread-2 (]: 18 of 22 START sql table model ETL_MART_PROCUREMENT.PO_DISTRIBUTION_DIM ........ [RUN]
+[0m13:56:19.363017 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL, now model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM)
+[0m13:56:19.363017 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:56:19.391164 [debug] [Thread-2 (]: Compilation Error in model ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM (models\cortex_generated\ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM.sql)
+  Required var 'is_backfill' not found in config:
+  Vars supplied to ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM = {}
+[0m13:56:19.391164 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E736656F50>]}
+[0m13:56:19.391164 [error] [Thread-2 (]: 18 of 22 ERROR creating sql table model ETL_MART_PROCUREMENT.PO_DISTRIBUTION_DIM  [[31mERROR[0m in 0.03s]
+[0m13:56:19.391164 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:56:19.391164 [debug] [Thread-5 (]: Marking all children of 'model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM' to be skipped because of status 'error'.  Reason: Compilation Error in model ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM (models\cortex_generated\ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM.sql)
+  Required var 'is_backfill' not found in config:
+  Vars supplied to ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM = {}.
+[0m13:56:19.391164 [debug] [Thread-2 (]: Began running node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:56:19.391164 [info ] [Thread-2 (]: 19 of 22 SKIP relation PROCUREMENT.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM ......... [[33mSKIP[0m]
+[0m13:56:19.391164 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:56:19.391164 [debug] [Thread-2 (]: Began running node model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+[0m13:56:19.391164 [debug] [Thread-5 (]: Marking all children of 'model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM' to be skipped because of status 'skipped'. 
+[0m13:56:19.391164 [info ] [Thread-2 (]: 20 of 22 SKIP relation ETL_MART_PROCUREMENT.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM  [[33mSKIP[0m]
+[0m13:56:19.391164 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+[0m13:56:19.406952 [debug] [Thread-5 (]: Marking all children of 'model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM' to be skipped because of status 'skipped'. 
+[0m13:56:19.406952 [debug] [Thread-2 (]: Began running node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+[0m13:56:19.406952 [info ] [Thread-2 (]: 21 of 22 SKIP relation ANA_PROCUREMENT.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM  [[33mSKIP[0m]
+[0m13:56:19.406952 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+[0m13:56:19.406952 [debug] [Thread-5 (]: Marking all children of 'model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM' to be skipped because of status 'skipped'. 
+[0m13:56:22.298689 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 3.446 seconds
+[0m13:56:22.298689 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT"
+[0m13:56:22.298689 [debug] [Thread-1 (]: On model.tasty_bytes.ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT: CALL UTILITY.EDW_BATCH_SUCCESS_PROC('DBT_ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT')
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT"} */
+[0m13:56:23.763295 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.464 seconds
+[0m13:56:23.763295 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E74F9C5E10>]}
+[0m13:56:23.778935 [info ] [Thread-1 (]: 17 of 22 OK created sql table model ETL_MART_PROCUREMENT.LOGISTICS_DASHBOARD_PO_QUANTITY_RPT  [[32mSUCCESS 1[0m in 4.94s]
+[0m13:56:23.781461 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+[0m13:56:23.781461 [debug] [Thread-2 (]: Began running node model.tasty_bytes.ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+[0m13:56:23.781461 [info ] [Thread-2 (]: 22 of 22 START sql view model ANA_PROCUREMENT.LOGISTICS_DASHBOARD_PO_QUANTITY_RPT  [RUN]
+[0m13:56:23.781461 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM, now model.tasty_bytes.ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT)
+[0m13:56:23.781461 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+[0m13:56:23.796019 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT"
+[0m13:56:23.796019 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+[0m13:56:23.827313 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT"
+[0m13:56:23.842341 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT"
+[0m13:56:23.842341 [debug] [Thread-2 (]: On model.tasty_bytes.ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT: create or replace   view DBT_POC.ANA_PROCUREMENT.LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+  
+  
+  
+  
+  as (
+    /*--------------------------------------------------------------------------------------------
+Command to run model:
+--dbt run --select ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+--dbt build --full-refresh --select +ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+--dbt build --select ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT --vars 'is_backfill: True'
+
+Version     Date            Author                Description
+-------     ----------      ----------------      ----------------------------------
+1.0         2026-03-06      Cortex Code           Initial Version - Auto-Generated from STTM
+
+----------------------------------------------------------------------------------------------*/
+
+
+
+
+SELECT 
+    LOGISTICS_DASHBOARD_PO_QUANTITY_KEY,
+    PO_HEADER_ID,
+    PO_LINE_ID,
+    LINE_LOCATION_ID,
+    PO_NUMBER,
+    LINE_NUM,
+    PO_LINE_NUMBER,
+    SHIPMENT_NUMBER,
+    PO_NUM_LINE_SHIP,
+    STATUS,
+    SUPPLIER,
+    SUPPLIER_SITE,
+    ITEM_NUM,
+    ITEM_DESCRIPTION,
+    SUPPLIER_ITEM_NUM,
+    DUE_DATE,
+    PROMISED_DATE,
+    LINE_CREATION_DATE,
+    PO_APPROVED_DATE,
+    PO_TYPE,
+    CURRENCY_CODE,
+    UNIT_MEAS_LOOKUP_CODE,
+    SHIP_TO_LOCATION,
+    AUTHORIZATION_STATUS,
+    MATCHING_TYPE,
+    PAST_DUE,
+    BUYER,
+    PLANNER_CODE,
+    NAME,
+    QUANTITY_DUE,
+    QUANTITY_ORDERED,
+    QUANTITY_RECEIVED,
+    QUANTITY_BILLED,
+    QUANTITY_CANCELLED,
+    SHIPMENT_AMOUNT,
+    BIW_INS_DTTM,
+    BIW_UPD_DTTM,
+    BIW_BATCH_ID,
+    BIW_MD5_KEY
+
+FROM DBT_POC.ETL_MART_PROCUREMENT.LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+  )
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT"} */;
+[0m13:56:24.598139 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.754 seconds
+[0m13:56:24.602155 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '732856b1-5f33-422e-b71f-a46e923fb93b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E750BD8F10>]}
+[0m13:56:24.602155 [info ] [Thread-2 (]: 22 of 22 OK created sql view model ANA_PROCUREMENT.LOGISTICS_DASHBOARD_PO_QUANTITY_RPT  [[32mSUCCESS 1[0m in 0.82s]
+[0m13:56:24.604167 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+[0m13:56:24.605918 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:56:24.605918 [debug] [MainThread]: Connection 'create_DBT_POC_ETL_MART_PROCUREMENT' was left open.
+[0m13:56:24.605918 [debug] [MainThread]: On create_DBT_POC_ETL_MART_PROCUREMENT: Close
+[0m13:56:25.245373 [debug] [MainThread]: Connection 'create_DBT_POC_ANA_PROCUREMENT' was left open.
+[0m13:56:25.245373 [debug] [MainThread]: On create_DBT_POC_ANA_PROCUREMENT: Close
+[0m13:56:25.861382 [debug] [MainThread]: Connection 'list_DBT_POC_ETL_MART_PROCUREMENT' was left open.
+[0m13:56:25.863405 [debug] [MainThread]: On list_DBT_POC_ETL_MART_PROCUREMENT: Close
+[0m13:56:26.476107 [debug] [MainThread]: Connection 'list_DBT_POC_DEV' was left open.
+[0m13:56:26.480149 [debug] [MainThread]: On list_DBT_POC_DEV: Close
+[0m13:56:27.120764 [debug] [MainThread]: Connection 'model.tasty_bytes.ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT' was left open.
+[0m13:56:27.120764 [debug] [MainThread]: On model.tasty_bytes.ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT: Close
+[0m13:56:27.744781 [debug] [MainThread]: Connection 'model.tasty_bytes.ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT' was left open.
+[0m13:56:27.746792 [debug] [MainThread]: On model.tasty_bytes.ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT: Close
+[0m13:56:28.331581 [info ] [MainThread]: 
+[0m13:56:28.331581 [info ] [MainThread]: Finished running 1 incremental model, 18 table models, 3 view models in 0 hours 0 minutes and 29.44 seconds (29.44s).
+[0m13:56:28.339641 [debug] [MainThread]: Command end result
+[0m13:56:28.487280 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Documents\Tasty-Bytes-\target\manifest.json
+[0m13:56:28.500314 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Documents\Tasty-Bytes-\target\semantic_manifest.json
+[0m13:56:28.500314 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\10731399\Documents\Tasty-Bytes-\target\run_results.json
+[0m13:56:28.500314 [info ] [MainThread]: 
+[0m13:56:28.514145 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m13:56:28.515154 [info ] [MainThread]: 
+[0m13:56:28.516165 [error] [MainThread]: [31mFailure in model ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM (models\cortex_generated\ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM.sql)[0m
+[0m13:56:28.518256 [error] [MainThread]:   Compilation Error in model ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM (models\cortex_generated\ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM.sql)
+  Required var 'is_backfill' not found in config:
+  Vars supplied to ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM = {}
+[0m13:56:28.518256 [info ] [MainThread]: 
+[0m13:56:28.518256 [info ] [MainThread]: Done. PASS=18 WARN=0 ERROR=1 SKIP=3 NO-OP=0 TOTAL=22
+[0m13:56:28.520267 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m13:56:28.521864 [debug] [MainThread]: Command `cli build` failed at 13:56:28.521864 after 35.09 seconds
+[0m13:56:28.523155 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E733E94990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E733E94610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E733E94750>]}
+[0m13:56:28.523155 [debug] [MainThread]: Flushing usage events
+[0m13:56:28.675561 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:57:58.052665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027063558550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002706351F050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002706351ED50>]}
+
+
+============================== 13:57:58.054170 | b0523fbf-6452-49ae-9215-81bdef39c1ba ==============================
+[0m13:57:58.054170 [info ] [MainThread]: Running with dbt=1.11.6
+[0m13:57:58.054170 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'target_path': 'None', 'cache_selected_only': 'False', 'warn_error': 'None', 'empty': 'False', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'quiet': 'False', 'log_format': 'default', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'C:\\Users\\10731399\\Documents\\Tasty-Bytes-\\logs', 'introspect': 'True', 'no_print': 'None', 'fail_fast': 'False', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'write_json': 'True'}
+[0m13:57:59.215475 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m13:57:59.215475 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m13:57:59.215475 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m13:57:59.505309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b0523fbf-6452-49ae-9215-81bdef39c1ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027077325450>]}
+[0m13:57:59.572223 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b0523fbf-6452-49ae-9215-81bdef39c1ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270624D7450>]}
+[0m13:57:59.572223 [info ] [MainThread]: Registered adapter: snowflake=1.11.2
+[0m13:58:00.342268 [debug] [MainThread]: checksum: ec27062d18352e9cfca161c166fcc73d2201661a23a3cf3c89196a27f32cfcb8, vars: {}, profile: , target: , version: 1.11.6
+[0m13:58:00.757932 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m13:58:00.757932 [debug] [MainThread]: Partial parsing: updated file: tasty_bytes://models\cortex_generated\ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM.sql
+[0m13:58:01.139279 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.tasty_bytes.dims
+- models.tasty_bytes.facts
+[0m13:58:01.158341 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b0523fbf-6452-49ae-9215-81bdef39c1ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027077A5D110>]}
+[0m13:58:01.326038 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Documents\Tasty-Bytes-\target\manifest.json
+[0m13:58:01.332000 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Documents\Tasty-Bytes-\target\semantic_manifest.json
+[0m13:58:01.398724 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b0523fbf-6452-49ae-9215-81bdef39c1ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027077CD5810>]}
+[0m13:58:01.398724 [info ] [MainThread]: Found 41 models, 69 data tests, 8 sources, 649 macros
+[0m13:58:01.405781 [info ] [MainThread]: 
+[0m13:58:01.405781 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m13:58:01.405781 [info ] [MainThread]: 
+[0m13:58:01.405781 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m13:58:01.415446 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC'
+[0m13:58:01.421559 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC'
+[0m13:58:01.706757 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m13:58:01.706757 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m13:58:01.715390 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m13:58:01.715390 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m13:58:01.715390 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:58:01.715390 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:58:06.005194 [debug] [ThreadPool]: SQL status: SUCCESS 12 in 4.291 seconds
+[0m13:58:06.015377 [debug] [ThreadPool]: SQL status: SUCCESS 12 in 4.298 seconds
+[0m13:58:06.033686 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m13:58:06.039986 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m13:58:06.415297 [debug] [ThreadPool]: SQL status: SUCCESS 12 in 0.377 seconds
+[0m13:58:06.425495 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_DEV'
+[0m13:58:06.425495 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_ETL_MART_PROCUREMENT'
+[0m13:58:06.456355 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_DEV"
+[0m13:58:06.456355 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_ETL_MART_PROCUREMENT"
+[0m13:58:06.456355 [debug] [ThreadPool]: On list_DBT_POC_DEV: show objects in DBT_POC.DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_DEV"} */;
+[0m13:58:06.456355 [debug] [ThreadPool]: On list_DBT_POC_ETL_MART_PROCUREMENT: show objects in DBT_POC.ETL_MART_PROCUREMENT
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_ETL_MART_PROCUREMENT"} */;
+[0m13:58:06.465899 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:58:06.465899 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:58:09.010508 [debug] [ThreadPool]: SQL status: SUCCESS 35 in 2.547 seconds
+[0m13:58:09.018776 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DBT_POC_DEV, now list_DBT_POC_ANA_PROCUREMENT)
+[0m13:58:09.043450 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_ANA_PROCUREMENT"
+[0m13:58:09.043450 [debug] [ThreadPool]: On list_DBT_POC_ANA_PROCUREMENT: show objects in DBT_POC.ANA_PROCUREMENT
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_ANA_PROCUREMENT"} */;
+[0m13:58:09.234096 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 2.767 seconds
+[0m13:58:09.235683 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DBT_POC_ETL_MART_PROCUREMENT, now list_DBT_POC_PROCUREMENT)
+[0m13:58:09.241252 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_PROCUREMENT"
+[0m13:58:09.241252 [debug] [ThreadPool]: On list_DBT_POC_PROCUREMENT: show objects in DBT_POC.PROCUREMENT
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_PROCUREMENT"} */;
+[0m13:58:09.427200 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.381 seconds
+[0m13:58:09.596164 [debug] [ThreadPool]: SQL status: SUCCESS 0 in 0.352 seconds
+[0m13:58:09.607479 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b0523fbf-6452-49ae-9215-81bdef39c1ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027077B15910>]}
+[0m13:58:09.615748 [debug] [Thread-1 (]: Began running node model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:58:09.615748 [info ] [Thread-1 (]: 1 of 4 START sql table model ETL_MART_PROCUREMENT.PO_DISTRIBUTION_DIM .......... [RUN]
+[0m13:58:09.624398 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM'
+[0m13:58:09.624398 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:58:09.638907 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM"
+[0m13:58:09.638907 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:58:09.686233 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM"
+[0m13:58:09.694263 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM"
+[0m13:58:09.694263 [debug] [Thread-1 (]: On model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM: create or replace transient table DBT_POC.ETL_MART_PROCUREMENT.PO_DISTRIBUTION_DIM
+    
+    
+    
+    as (/*--------------------------------------------------------------------------------------------
+Command to run model:
+--dbt run --select ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM
+--dbt build --full-refresh --select +ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM
+--dbt build --select ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM --vars 'is_backfill: True'
+
+Version     Date            Author                Description
+-------     ----------      ----------------      ----------------------------------
+1.0         2026-03-09      Cortex Code           Initial Version - Auto-Generated from STTM
+
+----------------------------------------------------------------------------------------------*/
+
+
+
+-- Step 1 Batch process info
+
+
+
+WITH PO_DISTRIBUTIONS_ALL AS(
+SELECT 
+    PO_DISTRIBUTION_ID,
+    DISTRIBUTION_NUM,
+    PO_HEADER_ID,
+    PO_LINE_ID,
+    LINE_LOCATION_ID,
+    REQ_DISTRIBUTION_ID,
+    WIP_ENTITY_ID,
+    BUDGET_DATE,
+    CANCEL_BUDGET_DATE,
+    CLOSE_BUDGET_DATE,
+    CREATION_DATE,
+    LAST_UPDATE_DATE,
+    RATE_DATE,
+    SET_OF_BOOKS_ID,
+    DELIVER_TO_LOCATION_ID,
+    CODE_COMBINATION_ID,
+    DELIVER_TO_PERSON_ID,
+    REQ_HEADER_REFERENCE_NUM,
+    REQ_LINE_REFERENCE_NUM,
+    PRC_BU_ID,
+    REQ_BU_ID,
+    WIP_LINE_ID,
+    DESTINATION_ORGANIZATION_ID,
+    SOLDTO_BU_ID,
+    DESTINATION_TYPE_CODE,
+    RATE,
+    DESTINATION_SUBINVENTORY,
+    DESTINATION_CONTEXT,
+    DISTRIBUTION_TYPE,
+    INVOICE_ADJUSTMENT_FLAG,
+    ACCRUED_FLAG,
+    ENCUMBERED_FLAG,
+    ACCRUE_ON_RECEIPT_FLAG,
+    PJC_PROJECT_ID,
+    PJC_TASK_ID,
+    WIP_OPERATION_SEQ_NUM,
+    WIP_REPETITIVE_SCHEDULE_ID,
+    WIP_RESOURCE_SEQ_NUM,
+    PREVENT_ENCUMBRANCE_FLAG
+FROM  DBT_POC.DEV.ODS_ORACLE_CLOUD_PO_DISTRIBUTIONS_ALL 
+WHERE 
+  IS_DELETE = 'N'
+AND 
+        BIW_UPD_DTTM >= '2020-01-01 00:00:00.000' 
+    AND BIW_UPD_DTTM <= '2099-12-31 23:59:59.999'
+          
+)
+
+,PJF_PROJECTS_ALL_TL AS(
+SELECT    
+    NAME,
+    LANGUAGE,
+    PROJECT_ID
+FROM DBT_POC.DEV.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_TL  
+)
+
+,PJF_PROJECTS_ALL_B AS
+(
+SELECT 
+   PJF_PROJECTS_ALL_B.PROJECT_ID,
+   PJF_PROJECTS_ALL_B.SEGMENT1 AS PROJECT_NUMBER,
+   PJF_PROJECTS_ALL_TL.NAME     AS PROJECT_NAME
+FROM DBT_POC.DEV.ODS_ORACLE_CLOUD_PJF_PROJECTS_ALL_B PJF_PROJECTS_ALL_B
+JOIN PJF_PROJECTS_ALL_TL 
+ON PJF_PROJECTS_ALL_B.PROJECT_ID = PJF_PROJECTS_ALL_TL.PROJECT_ID
+WHERE PJF_PROJECTS_ALL_TL.LANGUAGE = 'US'
+AND PROJECT_NUMBER IS NOT NULL
+)
+
+,PJF_PROJ_ELEMENTS_TL AS(
+SELECT    
+    NAME,
+    LANGUAGE,
+    PROJ_ELEMENT_ID
+FROM DBT_POC.DEV.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_TL  
+)
+
+,PJF_PROJ_ELEMENTS_B AS
+(
+SELECT
+   PJF_PROJ_ELEMENTS_B.PROJECT_ID,
+   PJF_PROJ_ELEMENTS_B.ELEMENT_NUMBER AS TASK_NUMBER, 
+   PJF_PROJ_ELEMENTS_TL.NAME       AS TASK_NAME,
+   PJF_PROJ_ELEMENTS_B.PROJ_ELEMENT_ID
+FROM DBT_POC.DEV.ODS_ORACLE_CLOUD_PJF_PROJ_ELEMENTS_B PJF_PROJ_ELEMENTS_B
+JOIN PJF_PROJ_ELEMENTS_TL  
+ON PJF_PROJ_ELEMENTS_B.PROJ_ELEMENT_ID = PJF_PROJ_ELEMENTS_TL.PROJ_ELEMENT_ID
+AND PJF_PROJ_ELEMENTS_TL.LANGUAGE = 'US' 
+)
+
+SELECT 
+    MD5(OBJECT_CONSTRUCT (
+    'COL1',PDA.PO_DISTRIBUTION_ID::STRING
+    )::STRING
+    )::STRING AS PO_DISTRIBUTION_KEY,
+    PDA.PO_DISTRIBUTION_ID,
+    PDA.DISTRIBUTION_NUM,
+    PDA.PO_HEADER_ID,
+    PDA.PO_LINE_ID,
+    PDA.LINE_LOCATION_ID,
+    PDA.REQ_DISTRIBUTION_ID,
+    PDA.WIP_ENTITY_ID,
+    PDA.BUDGET_DATE,
+    PDA.CANCEL_BUDGET_DATE,
+    PDA.CLOSE_BUDGET_DATE,
+    PDA.CREATION_DATE,
+    PDA.LAST_UPDATE_DATE,
+    PDA.RATE_DATE,
+    PDA.SET_OF_BOOKS_ID,
+    PDA.DELIVER_TO_LOCATION_ID,
+    PDA.CODE_COMBINATION_ID,
+    PDA.DELIVER_TO_PERSON_ID,
+    PDA.REQ_HEADER_REFERENCE_NUM,
+    PDA.REQ_LINE_REFERENCE_NUM,
+    PDA.PRC_BU_ID,
+    PDA.REQ_BU_ID,
+    PDA.WIP_LINE_ID,
+    PDA.DESTINATION_ORGANIZATION_ID,
+    PDA.SOLDTO_BU_ID,
+    PDA.DESTINATION_TYPE_CODE,
+    PDA.RATE,
+    PDA.DESTINATION_SUBINVENTORY,
+    PDA.DESTINATION_CONTEXT,
+    PDA.DISTRIBUTION_TYPE,
+    PDA.INVOICE_ADJUSTMENT_FLAG,
+    PDA.ACCRUED_FLAG,
+    PDA.ENCUMBERED_FLAG,
+    PDA.ACCRUE_ON_RECEIPT_FLAG,
+    PDA.PJC_PROJECT_ID,
+    PDA.PJC_TASK_ID,
+    PJF_PROJECTS_ALL_B.PROJECT_NUMBER,
+    PJF_PROJECTS_ALL_B.PROJECT_NAME,
+    PJF_PROJ_ELEMENTS_B.TASK_NUMBER,
+    PJF_PROJ_ELEMENTS_B.TASK_NAME,
+    PDA.WIP_OPERATION_SEQ_NUM,
+    PDA.WIP_REPETITIVE_SCHEDULE_ID,
+    PDA.WIP_RESOURCE_SEQ_NUM,
+    PDA.PREVENT_ENCUMBRANCE_FLAG,
+    'N'::BOOLEAN as IS_DELETE,
+    '2026-03-10 13:58:09.000'::TIMESTAMP_NTZ AS BIW_INS_DTTM,
+    '2026-03-10 13:58:09.000'::TIMESTAMP_NTZ AS BIW_UPD_DTTM,
+    '1'::NUMBER(38,0) AS BIW_BATCH_ID,
+    MD5(OBJECT_CONSTRUCT (
+        'COL1',PDA.PO_DISTRIBUTION_ID::STRING,
+        'COL2',PDA.DISTRIBUTION_NUM::STRING,
+        'COL3',PDA.PO_HEADER_ID::STRING,
+        'COL4',PDA.PO_LINE_ID::STRING,
+        'COL5',PDA.LINE_LOCATION_ID::STRING,
+        'COL6',PDA.REQ_DISTRIBUTION_ID::STRING,
+        'COL7',PDA.WIP_ENTITY_ID::STRING,
+        'COL8',PDA.BUDGET_DATE::STRING,
+        'COL9',PDA.CANCEL_BUDGET_DATE::STRING,
+        'COL10',PDA.CLOSE_BUDGET_DATE::STRING,
+        'COL11',PDA.CREATION_DATE::STRING,
+        'COL12',PDA.LAST_UPDATE_DATE::STRING,
+        'COL13',PDA.RATE_DATE::STRING,
+        'COL14',PDA.SET_OF_BOOKS_ID::STRING,
+        'COL15',PDA.DELIVER_TO_LOCATION_ID::STRING,
+        'COL16',PDA.CODE_COMBINATION_ID::STRING,
+        'COL17',PDA.DELIVER_TO_PERSON_ID::STRING,
+        'COL18',PDA.REQ_HEADER_REFERENCE_NUM::STRING,
+        'COL19',PDA.REQ_LINE_REFERENCE_NUM::STRING,
+        'COL20',PDA.PRC_BU_ID::STRING,
+        'COL21',PDA.REQ_BU_ID::STRING,
+        'COL22',PDA.WIP_LINE_ID::STRING,
+        'COL23',PDA.DESTINATION_ORGANIZATION_ID::STRING,
+        'COL24',PDA.SOLDTO_BU_ID::STRING,
+        'COL25',PDA.DESTINATION_TYPE_CODE::STRING,
+        'COL26',PDA.RATE::STRING,
+        'COL27',PDA.DESTINATION_SUBINVENTORY::STRING,
+        'COL28',PDA.DESTINATION_CONTEXT::STRING,
+        'COL29',PDA.DISTRIBUTION_TYPE::STRING,
+        'COL30',PDA.INVOICE_ADJUSTMENT_FLAG::STRING,
+        'COL31',PDA.ACCRUED_FLAG::STRING,
+        'COL32',PDA.ENCUMBERED_FLAG::STRING,
+        'COL33',PDA.ACCRUE_ON_RECEIPT_FLAG::STRING,
+        'COL34',PDA.PJC_PROJECT_ID::STRING,
+        'COL35',PDA.PJC_TASK_ID::STRING,
+        'COL36',PJF_PROJECTS_ALL_B.PROJECT_NUMBER::STRING,
+        'COL37',PJF_PROJECTS_ALL_B.PROJECT_NAME::STRING,
+        'COL38',PJF_PROJ_ELEMENTS_B.TASK_NUMBER::STRING,
+        'COL39',PJF_PROJ_ELEMENTS_B.TASK_NAME::STRING,
+        'COL40',PDA.WIP_OPERATION_SEQ_NUM::STRING,
+        'COL41',PDA.WIP_REPETITIVE_SCHEDULE_ID::STRING,
+        'COL42',PDA.WIP_RESOURCE_SEQ_NUM::STRING,
+        'COL43',PDA.PREVENT_ENCUMBRANCE_FLAG::STRING,
+        'COL44',IS_DELETE::STRING
+    )::STRING )::BINARY as BIW_MD5_KEY
+FROM PO_DISTRIBUTIONS_ALL PDA
+LEFT OUTER JOIN PJF_PROJECTS_ALL_B
+ON PDA.PJC_PROJECT_ID = PJF_PROJECTS_ALL_B.PROJECT_ID
+LEFT OUTER JOIN PJF_PROJ_ELEMENTS_B
+ON PDA.PJC_PROJECT_ID = PJF_PROJ_ELEMENTS_B.PROJECT_ID
+AND PDA.PJC_TASK_ID = PJF_PROJ_ELEMENTS_B.PROJ_ELEMENT_ID
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM"} */;
+[0m13:58:09.697342 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m13:58:12.569961 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.872 seconds
+[0m13:58:12.571975 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM"
+[0m13:58:12.571975 [debug] [Thread-1 (]: On model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM: CALL UTILITY.EDW_BATCH_SUCCESS_PROC('DBT_ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM')
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM"} */
+[0m13:58:13.243806 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.669 seconds
+[0m13:58:13.279240 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b0523fbf-6452-49ae-9215-81bdef39c1ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027078585DD0>]}
+[0m13:58:13.279240 [info ] [Thread-1 (]: 1 of 4 OK created sql table model ETL_MART_PROCUREMENT.PO_DISTRIBUTION_DIM ..... [[32mSUCCESS 1[0m in 3.65s]
+[0m13:58:13.282798 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:58:13.285446 [debug] [Thread-2 (]: Began running node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:58:13.285446 [debug] [Thread-1 (]: Began running node model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+[0m13:58:13.287458 [info ] [Thread-2 (]: 2 of 4 START sql view model PROCUREMENT.PO_DISTRIBUTION_DIM .................... [RUN]
+[0m13:58:13.289466 [info ] [Thread-1 (]: 3 of 4 START sql incremental model ETL_MART_PROCUREMENT.PO_DISTRIBUTION_HIST_DIM  [RUN]
+[0m13:58:13.289466 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM'
+[0m13:58:13.289466 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM, now model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM)
+[0m13:58:13.293198 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:58:13.293198 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+[0m13:58:13.300449 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM"
+[0m13:58:13.316061 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM"
+[0m13:58:13.316061 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:58:13.324960 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+[0m13:58:13.357040 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM"
+[0m13:58:13.408423 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM"
+[0m13:58:13.416223 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM"
+[0m13:58:13.421541 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM"
+[0m13:58:13.421541 [debug] [Thread-2 (]: On model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM: create or replace   view DBT_POC.PROCUREMENT.PO_DISTRIBUTION_DIM
+  
+  
+  
+  
+  as (
+    /*--------------------------------------------------------------------------------------------
+Command to run model:
+--dbt run --select ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
+--dbt build --full-refresh --select +ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
+--dbt build --select ANA_PROCUREMENT_PO_DISTRIBUTION_DIM --vars 'is_backfill: True'
+
+Version     Date            Author                Description
+-------     ----------      ----------------      ----------------------------------
+1.0         2026-03-05      Cortex Code           Initial Version - Auto-Generated from STTM
+
+----------------------------------------------------------------------------------------------*/
+
+
+
+
+SELECT 
+    PO_DISTRIBUTION_KEY,
+    PO_DISTRIBUTION_ID,
+    DISTRIBUTION_NUM,
+    PO_HEADER_ID,
+    PO_LINE_ID,
+    LINE_LOCATION_ID,
+    REQ_DISTRIBUTION_ID,
+    WIP_ENTITY_ID,
+    BUDGET_DATE,
+    CANCEL_BUDGET_DATE,
+    CLOSE_BUDGET_DATE,
+    CREATION_DATE,
+    LAST_UPDATE_DATE,
+    RATE_DATE,
+    SET_OF_BOOKS_ID,
+    DELIVER_TO_LOCATION_ID,
+    CODE_COMBINATION_ID,
+    DELIVER_TO_PERSON_ID,
+    REQ_HEADER_REFERENCE_NUM,
+    REQ_LINE_REFERENCE_NUM,
+    PRC_BU_ID,
+    REQ_BU_ID,
+    WIP_LINE_ID,
+    DESTINATION_ORGANIZATION_ID,
+    SOLDTO_BU_ID,
+    DESTINATION_TYPE_CODE,
+    RATE,
+    DESTINATION_SUBINVENTORY,
+    DESTINATION_CONTEXT,
+    DISTRIBUTION_TYPE,
+    INVOICE_ADJUSTMENT_FLAG,
+    ACCRUED_FLAG,
+    ENCUMBERED_FLAG,
+    ACCRUE_ON_RECEIPT_FLAG,
+    PJC_PROJECT_ID,
+    PJC_TASK_ID,
+    PROJECT_NUMBER,
+    PROJECT_NAME,
+    TASK_NUMBER,
+    TASK_NAME,
+    WIP_OPERATION_SEQ_NUM,
+    WIP_REPETITIVE_SCHEDULE_ID,
+    WIP_RESOURCE_SEQ_NUM,
+    PREVENT_ENCUMBRANCE_FLAG,
+    BIW_INS_DTTM,
+    BIW_UPD_DTTM,
+    BIW_BATCH_ID,
+    BIW_MD5_KEY
+
+FROM DBT_POC.ETL_MART_PROCUREMENT.PO_DISTRIBUTION_DIM
+  )
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM"} */;
+[0m13:58:13.421541 [debug] [Thread-1 (]: On model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM: create or replace transient table DBT_POC.ETL_MART_PROCUREMENT.PO_DISTRIBUTION_HIST_DIM
+    
+    
+    
+    as (/*--------------------------------------------------------------------------------------------
+Command to run model:
+--dbt run --select ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+--dbt build --full-refresh --select +ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+--dbt build --select ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM --vars 'is_backfill: True'
+
+Version     Date            Author                Description
+-------     ----------      ----------------      ----------------------------------
+1.0         2026-03-05      Cortex Code           Initial Version - Auto-Generated from STTM
+1.1         2026-03-05      Cortex Code           Updated to MERGE load strategy for SCD2
+
+----------------------------------------------------------------------------------------------*/
+
+
+
+-- Step 1 Batch process info
+
+
+
+
+WITH PO_DISTRIBUTION_DIM AS (
+    -- Source: Current dimension table with changed/new records
+    SELECT 
+        PO_DISTRIBUTION_KEY,
+        PO_DISTRIBUTION_ID,
+        DISTRIBUTION_NUM,
+        PO_HEADER_ID,
+        PO_LINE_ID,
+        LINE_LOCATION_ID,
+        REQ_DISTRIBUTION_ID,
+        WIP_ENTITY_ID,
+        BUDGET_DATE,
+        CANCEL_BUDGET_DATE,
+        CLOSE_BUDGET_DATE,
+        CREATION_DATE,
+        LAST_UPDATE_DATE,
+        RATE_DATE,
+        SET_OF_BOOKS_ID,
+        DELIVER_TO_LOCATION_ID,
+        CODE_COMBINATION_ID,
+        DELIVER_TO_PERSON_ID,
+        REQ_HEADER_REFERENCE_NUM,
+        REQ_LINE_REFERENCE_NUM,
+        PRC_BU_ID,
+        REQ_BU_ID,
+        WIP_LINE_ID,
+        DESTINATION_ORGANIZATION_ID,
+        SOLDTO_BU_ID,
+        DESTINATION_TYPE_CODE,
+        RATE,
+        DESTINATION_SUBINVENTORY,
+        DESTINATION_CONTEXT,
+        DISTRIBUTION_TYPE,
+        INVOICE_ADJUSTMENT_FLAG,
+        ACCRUED_FLAG,
+        ENCUMBERED_FLAG,
+        ACCRUE_ON_RECEIPT_FLAG,
+        PJC_PROJECT_ID,
+        PJC_TASK_ID,
+        PROJECT_NUMBER,
+        PROJECT_NAME,
+        TASK_NUMBER,
+        TASK_NAME,
+        WIP_OPERATION_SEQ_NUM,
+        WIP_REPETITIVE_SCHEDULE_ID,
+        WIP_RESOURCE_SEQ_NUM,
+        PREVENT_ENCUMBRANCE_FLAG,
+        IS_DELETE,
+        BIW_INS_DTTM,
+        BIW_UPD_DTTM,
+        BIW_BATCH_ID,
+        BIW_MD5_KEY
+    FROM DBT_POC.ETL_MART_PROCUREMENT.PO_DISTRIBUTION_DIM
+    WHERE 
+        
+            BIW_UPD_DTTM >= '2020-01-01 00:00:00.000' 
+        AND BIW_UPD_DTTM <= '2099-12-31 23:59:59.999'
+        
+)
+
+
+
+-- New records to INSERT (new versions of changed records + brand new records)
+,RECORDS_TO_INSERT AS (
+    SELECT 
+        -- Business Columns
+        SRC.PO_DISTRIBUTION_KEY,
+        SRC.PO_DISTRIBUTION_ID,
+        SRC.DISTRIBUTION_NUM,
+        SRC.PO_HEADER_ID,
+        SRC.PO_LINE_ID,
+        SRC.LINE_LOCATION_ID,
+        SRC.REQ_DISTRIBUTION_ID,
+        SRC.WIP_ENTITY_ID,
+        SRC.BUDGET_DATE,
+        SRC.CANCEL_BUDGET_DATE,
+        SRC.CLOSE_BUDGET_DATE,
+        SRC.CREATION_DATE,
+        SRC.LAST_UPDATE_DATE,
+        SRC.RATE_DATE,
+        SRC.SET_OF_BOOKS_ID,
+        SRC.DELIVER_TO_LOCATION_ID,
+        SRC.CODE_COMBINATION_ID,
+        SRC.DELIVER_TO_PERSON_ID,
+        SRC.REQ_HEADER_REFERENCE_NUM,
+        SRC.REQ_LINE_REFERENCE_NUM,
+        SRC.PRC_BU_ID,
+        SRC.REQ_BU_ID,
+        SRC.WIP_LINE_ID,
+        SRC.DESTINATION_ORGANIZATION_ID,
+        SRC.SOLDTO_BU_ID,
+        SRC.DESTINATION_TYPE_CODE,
+        SRC.RATE,
+        SRC.DESTINATION_SUBINVENTORY,
+        SRC.DESTINATION_CONTEXT,
+        SRC.DISTRIBUTION_TYPE,
+        SRC.INVOICE_ADJUSTMENT_FLAG,
+        SRC.ACCRUED_FLAG,
+        SRC.ENCUMBERED_FLAG,
+        SRC.ACCRUE_ON_RECEIPT_FLAG,
+        SRC.PJC_PROJECT_ID,
+        SRC.PJC_TASK_ID,
+        SRC.PROJECT_NUMBER,
+        SRC.PROJECT_NAME,
+        SRC.TASK_NUMBER,
+        SRC.TASK_NAME,
+        SRC.WIP_OPERATION_SEQ_NUM,
+        SRC.WIP_REPETITIVE_SCHEDULE_ID,
+        SRC.WIP_RESOURCE_SEQ_NUM,
+        SRC.PREVENT_ENCUMBRANCE_FLAG,
+        
+        -- Housekeeping Columns
+        SRC.IS_DELETE,
+        '2026-03-10 13:58:13.000'::TIMESTAMP_NTZ AS BIW_INS_DTTM,
+        '2026-03-10 13:58:13.000'::TIMESTAMP_NTZ AS BIW_UPD_DTTM,
+        '1'::NUMBER(38,0) AS BIW_BATCH_ID,
+        SRC.BIW_MD5_KEY,
+        
+        -- SCD2 Columns
+        MD5(OBJECT_CONSTRUCT(
+            'COL1', SRC.PO_DISTRIBUTION_KEY::STRING,
+            'COL2', '2026-03-10 13:58:13.000'::STRING
+        )::STRING)::STRING AS DBT_SCD_ID,
+        '2026-03-10 13:58:13.000'::DATE AS DBT_UPDATED_AT,
+        '2026-03-10 13:58:13.000'::DATE AS DBT_VALID_FROM,
+        '9999-12-31'::DATE AS DBT_VALID_TO
+    FROM PO_DISTRIBUTION_DIM SRC
+    
+)
+
+
+
+
+-- Full refresh: Insert all records
+SELECT * FROM RECORDS_TO_INSERT
+
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM"} */;
+[0m13:58:13.421541 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m13:58:14.473138 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.048 seconds
+[0m13:58:14.490990 [debug] [Thread-1 (]: Applying DROP to: DBT_POC.ETL_MART_PROCUREMENT.PO_DISTRIBUTION_HIST_DIM__dbt_tmp
+[0m13:58:14.493002 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM"
+[0m13:58:14.493002 [debug] [Thread-1 (]: On model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM: drop view if exists DBT_POC.ETL_MART_PROCUREMENT.PO_DISTRIBUTION_HIST_DIM__dbt_tmp cascade
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM"} */
+[0m13:58:14.838281 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.340 seconds
+[0m13:58:14.838281 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM"
+[0m13:58:14.838281 [debug] [Thread-1 (]: On model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM: CALL UTILITY.EDW_BATCH_SUCCESS_PROC('DBT_ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM')
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM"} */
+[0m13:58:15.602312 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 2.186 seconds
+[0m13:58:15.615847 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b0523fbf-6452-49ae-9215-81bdef39c1ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027078587450>]}
+[0m13:58:15.620012 [info ] [Thread-2 (]: 2 of 4 OK created sql view model PROCUREMENT.PO_DISTRIBUTION_DIM ............... [[32mSUCCESS 1[0m in 2.33s]
+[0m13:58:15.620012 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:58:15.683034 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.834 seconds
+[0m13:58:15.683034 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b0523fbf-6452-49ae-9215-81bdef39c1ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002707808F250>]}
+[0m13:58:15.683034 [info ] [Thread-1 (]: 3 of 4 OK created sql incremental model ETL_MART_PROCUREMENT.PO_DISTRIBUTION_HIST_DIM  [[32mSUCCESS 1[0m in 2.39s]
+[0m13:58:15.683034 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+[0m13:58:15.683034 [debug] [Thread-2 (]: Began running node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+[0m13:58:15.683034 [info ] [Thread-2 (]: 4 of 4 START sql view model ANA_PROCUREMENT.PO_DISTRIBUTION_HIST_DIM ........... [RUN]
+[0m13:58:15.697509 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM, now model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM)
+[0m13:58:15.697509 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+[0m13:58:15.697509 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM"
+[0m13:58:15.697509 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+[0m13:58:15.697509 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM"
+[0m13:58:15.713277 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM"
+[0m13:58:15.715324 [debug] [Thread-2 (]: On model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM: create or replace   view DBT_POC.ANA_PROCUREMENT.PO_DISTRIBUTION_HIST_DIM
+  
+  
+  
+  
+  as (
+    /*--------------------------------------------------------------------------------------------
+Command to run model:
+--dbt run --select ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+--dbt build --full-refresh --select +ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+--dbt build --select ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM --vars 'is_backfill: True'
+
+Version     Date            Author                Description
+-------     ----------      ----------------      ----------------------------------
+1.0         2026-03-05      Cortex Code           Initial Version - Auto-Generated from STTM
+
+----------------------------------------------------------------------------------------------*/
+
+
+
+
+SELECT 
+    PO_DISTRIBUTION_KEY,
+    PO_DISTRIBUTION_ID,
+    DISTRIBUTION_NUM,
+    PO_HEADER_ID,
+    PO_LINE_ID,
+    LINE_LOCATION_ID,
+    REQ_DISTRIBUTION_ID,
+    WIP_ENTITY_ID,
+    BUDGET_DATE,
+    CANCEL_BUDGET_DATE,
+    CLOSE_BUDGET_DATE,
+    CREATION_DATE,
+    LAST_UPDATE_DATE,
+    RATE_DATE,
+    SET_OF_BOOKS_ID,
+    DELIVER_TO_LOCATION_ID,
+    CODE_COMBINATION_ID,
+    DELIVER_TO_PERSON_ID,
+    REQ_HEADER_REFERENCE_NUM,
+    REQ_LINE_REFERENCE_NUM,
+    PRC_BU_ID,
+    REQ_BU_ID,
+    WIP_LINE_ID,
+    DESTINATION_ORGANIZATION_ID,
+    SOLDTO_BU_ID,
+    DESTINATION_TYPE_CODE,
+    RATE,
+    DESTINATION_SUBINVENTORY,
+    DESTINATION_CONTEXT,
+    DISTRIBUTION_TYPE,
+    INVOICE_ADJUSTMENT_FLAG,
+    ACCRUED_FLAG,
+    ENCUMBERED_FLAG,
+    ACCRUE_ON_RECEIPT_FLAG,
+    PJC_PROJECT_ID,
+    PJC_TASK_ID,
+    PROJECT_NUMBER,
+    PROJECT_NAME,
+    TASK_NUMBER,
+    TASK_NAME,
+    WIP_OPERATION_SEQ_NUM,
+    WIP_REPETITIVE_SCHEDULE_ID,
+    WIP_RESOURCE_SEQ_NUM,
+    PREVENT_ENCUMBRANCE_FLAG,
+    BIW_INS_DTTM,
+    BIW_UPD_DTTM,
+    BIW_BATCH_ID,
+    BIW_MD5_KEY,
+    DBT_SCD_ID,
+    DBT_UPDATED_AT,
+    DBT_VALID_FROM,
+    DBT_VALID_TO
+
+FROM DBT_POC.ETL_MART_PROCUREMENT.PO_DISTRIBUTION_HIST_DIM
+  )
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM"} */;
+[0m13:58:16.347829 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.634 seconds
+[0m13:58:16.347829 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b0523fbf-6452-49ae-9215-81bdef39c1ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027079748A90>]}
+[0m13:58:16.347829 [info ] [Thread-2 (]: 4 of 4 OK created sql view model ANA_PROCUREMENT.PO_DISTRIBUTION_HIST_DIM ...... [[32mSUCCESS 1[0m in 0.65s]
+[0m13:58:16.347829 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM
+[0m13:58:16.347829 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:58:16.362385 [debug] [MainThread]: Connection 'list_DBT_POC' was left open.
+[0m13:58:16.362385 [debug] [MainThread]: On list_DBT_POC: Close
+[0m13:58:17.095289 [debug] [MainThread]: Connection 'list_DBT_POC' was left open.
+[0m13:58:17.095289 [debug] [MainThread]: On list_DBT_POC: Close
+[0m13:58:17.715585 [debug] [MainThread]: Connection 'list_DBT_POC_ANA_PROCUREMENT' was left open.
+[0m13:58:17.722655 [debug] [MainThread]: On list_DBT_POC_ANA_PROCUREMENT: Close
+[0m13:58:18.423604 [debug] [MainThread]: Connection 'list_DBT_POC_PROCUREMENT' was left open.
+[0m13:58:18.428654 [debug] [MainThread]: On list_DBT_POC_PROCUREMENT: Close
+[0m13:58:19.115852 [debug] [MainThread]: Connection 'model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM' was left open.
+[0m13:58:19.115852 [debug] [MainThread]: On model.tasty_bytes.ETL_MART_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM: Close
+[0m13:58:19.766251 [debug] [MainThread]: Connection 'model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM' was left open.
+[0m13:58:19.766251 [debug] [MainThread]: On model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_HIST_DIM: Close
+[0m13:58:20.452248 [info ] [MainThread]: 
+[0m13:58:20.455168 [info ] [MainThread]: Finished running 1 incremental model, 1 table model, 2 view models in 0 hours 0 minutes and 19.04 seconds (19.04s).
+[0m13:58:20.455168 [debug] [MainThread]: Command end result
+[0m13:58:20.548609 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Documents\Tasty-Bytes-\target\manifest.json
+[0m13:58:20.548609 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Documents\Tasty-Bytes-\target\semantic_manifest.json
+[0m13:58:20.560828 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\10731399\Documents\Tasty-Bytes-\target\run_results.json
+[0m13:58:20.560828 [info ] [MainThread]: 
+[0m13:58:20.560828 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:58:20.560828 [info ] [MainThread]: 
+[0m13:58:20.560828 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=4
+[0m13:58:20.560828 [debug] [MainThread]: Command `cli build` succeeded at 13:58:20.560828 after 22.67 seconds
+[0m13:58:20.560828 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027063597DD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000270634FFD90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002705CA44590>]}
+[0m13:58:20.560828 [debug] [MainThread]: Flushing usage events
+[0m13:58:20.762793 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:59:15.592091 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC7BBE2B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC7BBE25D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC7BBE3E10>]}
+
+
+============================== 13:59:15.592091 | 5865068e-d796-4695-8e52-96a8411447ca ==============================
+[0m13:59:15.592091 [info ] [MainThread]: Running with dbt=1.11.6
+[0m13:59:15.592091 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'write_json': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\10731399\\.dbt', 'debug': 'False', 'static_parser': 'True', 'log_cache_events': 'False', 'empty': 'False', 'quiet': 'False', 'log_format': 'default', 'use_colors': 'True', 'partial_parse': 'True', 'version_check': 'True', 'log_path': 'C:\\Users\\10731399\\Documents\\Tasty-Bytes-\\logs', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'invocation_command': 'dbt ', 'no_print': 'None', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'target_path': 'None'}
+[0m13:59:16.758173 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m13:59:16.758173 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m13:59:16.758173 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m13:59:17.028714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5865068e-d796-4695-8e52-96a8411447ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC0F9F1C90>]}
+[0m13:59:17.108207 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5865068e-d796-4695-8e52-96a8411447ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC7BC1DB50>]}
+[0m13:59:17.110772 [info ] [MainThread]: Registered adapter: snowflake=1.11.2
+[0m13:59:17.854594 [debug] [MainThread]: checksum: ec27062d18352e9cfca161c166fcc73d2201661a23a3cf3c89196a27f32cfcb8, vars: {}, profile: , target: , version: 1.11.6
+[0m13:59:18.267767 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m13:59:18.267767 [debug] [MainThread]: Partial parsing: updated file: tasty_bytes://models\cortex_generated\ANA_PROCUREMENT_PO_DISTRIBUTION_DIM.sql
+[0m13:59:18.601018 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.tasty_bytes.facts
+- models.tasty_bytes.dims
+[0m13:59:18.629461 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5865068e-d796-4695-8e52-96a8411447ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC0F9336D0>]}
+[0m13:59:18.776199 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Documents\Tasty-Bytes-\target\manifest.json
+[0m13:59:18.789446 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Documents\Tasty-Bytes-\target\semantic_manifest.json
+[0m13:59:18.834665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5865068e-d796-4695-8e52-96a8411447ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC104B3ED0>]}
+[0m13:59:18.834665 [info ] [MainThread]: Found 41 models, 69 data tests, 8 sources, 649 macros
+[0m13:59:18.834665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5865068e-d796-4695-8e52-96a8411447ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC0FF582D0>]}
+[0m13:59:18.844074 [info ] [MainThread]: 
+[0m13:59:18.844074 [info ] [MainThread]: Concurrency: 2 threads (target='dev')
+[0m13:59:18.844074 [info ] [MainThread]: 
+[0m13:59:18.844074 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m13:59:18.844074 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC'
+[0m13:59:19.078344 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC"
+[0m13:59:19.078344 [debug] [ThreadPool]: On list_DBT_POC: show terse schemas in database DBT_POC
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC"} */
+[0m13:59:19.078344 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:59:32.260415 [debug] [ThreadPool]: SQL status: SUCCESS 12 in 13.170 seconds
+[0m13:59:32.300616 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_ETL_MART_PROCUREMENT'
+[0m13:59:32.311012 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_POC_DEV'
+[0m13:59:32.350583 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_ETL_MART_PROCUREMENT"
+[0m13:59:32.359435 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_DEV"
+[0m13:59:32.359435 [debug] [ThreadPool]: On list_DBT_POC_ETL_MART_PROCUREMENT: show objects in DBT_POC.ETL_MART_PROCUREMENT
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_ETL_MART_PROCUREMENT"} */;
+[0m13:59:32.361481 [debug] [ThreadPool]: On list_DBT_POC_DEV: show objects in DBT_POC.DEV
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_DEV"} */;
+[0m13:59:32.362642 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:59:32.364650 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:59:34.424359 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 2.061 seconds
+[0m13:59:34.429940 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DBT_POC_ETL_MART_PROCUREMENT, now list_DBT_POC_ANA_PROCUREMENT)
+[0m13:59:34.440073 [debug] [ThreadPool]: Using snowflake connection "list_DBT_POC_ANA_PROCUREMENT"
+[0m13:59:34.441088 [debug] [ThreadPool]: On list_DBT_POC_ANA_PROCUREMENT: show objects in DBT_POC.ANA_PROCUREMENT
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "connection_name": "list_DBT_POC_ANA_PROCUREMENT"} */;
+[0m13:59:34.506303 [debug] [ThreadPool]: SQL status: SUCCESS 35 in 2.143 seconds
+[0m13:59:34.941683 [debug] [ThreadPool]: SQL status: SUCCESS 2 in 0.500 seconds
+[0m13:59:34.948568 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5865068e-d796-4695-8e52-96a8411447ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC10381690>]}
+[0m13:59:34.956544 [debug] [Thread-1 (]: Began running node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:59:34.959406 [info ] [Thread-1 (]: 1 of 1 START sql view model ANA_PROCUREMENT.PO_DISTRIBUTION_DIM ................ [RUN]
+[0m13:59:34.962380 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM'
+[0m13:59:34.962380 [debug] [Thread-1 (]: Began compiling node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:59:34.982625 [debug] [Thread-1 (]: Writing injected SQL for node "model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM"
+[0m13:59:34.985152 [debug] [Thread-1 (]: Began executing node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:59:35.129643 [debug] [Thread-1 (]: Writing runtime sql for node "model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM"
+[0m13:59:35.137882 [debug] [Thread-1 (]: Using snowflake connection "model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM"
+[0m13:59:35.137882 [debug] [Thread-1 (]: On model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM: create or replace   view DBT_POC.ANA_PROCUREMENT.PO_DISTRIBUTION_DIM
+  
+  
+  
+  
+  as (
+    /*--------------------------------------------------------------------------------------------
+Command to run model:
+--dbt run --select ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
+--dbt build --full-refresh --select +ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
+--dbt build --select ANA_PROCUREMENT_PO_DISTRIBUTION_DIM --vars 'is_backfill: True'
+
+Version     Date            Author                Description
+-------     ----------      ----------------      ----------------------------------
+1.0         2026-03-05      Cortex Code           Initial Version - Auto-Generated from STTM
+
+----------------------------------------------------------------------------------------------*/
+
+
+
+
+SELECT 
+    PO_DISTRIBUTION_KEY,
+    PO_DISTRIBUTION_ID,
+    DISTRIBUTION_NUM,
+    PO_HEADER_ID,
+    PO_LINE_ID,
+    LINE_LOCATION_ID,
+    REQ_DISTRIBUTION_ID,
+    WIP_ENTITY_ID,
+    BUDGET_DATE,
+    CANCEL_BUDGET_DATE,
+    CLOSE_BUDGET_DATE,
+    CREATION_DATE,
+    LAST_UPDATE_DATE,
+    RATE_DATE,
+    SET_OF_BOOKS_ID,
+    DELIVER_TO_LOCATION_ID,
+    CODE_COMBINATION_ID,
+    DELIVER_TO_PERSON_ID,
+    REQ_HEADER_REFERENCE_NUM,
+    REQ_LINE_REFERENCE_NUM,
+    PRC_BU_ID,
+    REQ_BU_ID,
+    WIP_LINE_ID,
+    DESTINATION_ORGANIZATION_ID,
+    SOLDTO_BU_ID,
+    DESTINATION_TYPE_CODE,
+    RATE,
+    DESTINATION_SUBINVENTORY,
+    DESTINATION_CONTEXT,
+    DISTRIBUTION_TYPE,
+    INVOICE_ADJUSTMENT_FLAG,
+    ACCRUED_FLAG,
+    ENCUMBERED_FLAG,
+    ACCRUE_ON_RECEIPT_FLAG,
+    PJC_PROJECT_ID,
+    PJC_TASK_ID,
+    PROJECT_NUMBER,
+    PROJECT_NAME,
+    TASK_NUMBER,
+    TASK_NAME,
+    WIP_OPERATION_SEQ_NUM,
+    WIP_REPETITIVE_SCHEDULE_ID,
+    WIP_RESOURCE_SEQ_NUM,
+    PREVENT_ENCUMBRANCE_FLAG,
+    BIW_INS_DTTM,
+    BIW_UPD_DTTM,
+    BIW_BATCH_ID,
+    BIW_MD5_KEY
+
+FROM DBT_POC.ETL_MART_PROCUREMENT.PO_DISTRIBUTION_DIM
+  )
+/* {"app": "dbt", "dbt_version": "1.11.6", "profile_name": "tasty_bytes", "target_name": "dev", "node_id": "model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM"} */;
+[0m13:59:35.143781 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m13:59:37.895229 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.751 seconds
+[0m13:59:37.986397 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5865068e-d796-4695-8e52-96a8411447ca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC0FDEB690>]}
+[0m13:59:37.990456 [info ] [Thread-1 (]: 1 of 1 OK created sql view model ANA_PROCUREMENT.PO_DISTRIBUTION_DIM ........... [[32mSUCCESS 1[0m in 3.02s]
+[0m13:59:37.992474 [debug] [Thread-1 (]: Finished running node model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM
+[0m13:59:37.996620 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:59:37.998662 [debug] [MainThread]: Connection 'list_DBT_POC' was left open.
+[0m13:59:38.000685 [debug] [MainThread]: On list_DBT_POC: Close
+[0m13:59:38.717614 [debug] [MainThread]: Connection 'list_DBT_POC_ANA_PROCUREMENT' was left open.
+[0m13:59:38.720219 [debug] [MainThread]: On list_DBT_POC_ANA_PROCUREMENT: Close
+[0m13:59:39.508721 [debug] [MainThread]: Connection 'list_DBT_POC_DEV' was left open.
+[0m13:59:39.511372 [debug] [MainThread]: On list_DBT_POC_DEV: Close
+[0m13:59:40.451897 [debug] [MainThread]: Connection 'model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM' was left open.
+[0m13:59:40.451897 [debug] [MainThread]: On model.tasty_bytes.ANA_PROCUREMENT_PO_DISTRIBUTION_DIM: Close
+[0m13:59:41.168522 [info ] [MainThread]: 
+[0m13:59:41.171628 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 22.32 seconds (22.32s).
+[0m13:59:41.179914 [debug] [MainThread]: Command end result
+[0m13:59:41.496984 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\10731399\Documents\Tasty-Bytes-\target\manifest.json
+[0m13:59:41.510911 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\10731399\Documents\Tasty-Bytes-\target\semantic_manifest.json
+[0m13:59:41.535424 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\10731399\Documents\Tasty-Bytes-\target\run_results.json
+[0m13:59:41.537436 [info ] [MainThread]: 
+[0m13:59:41.539433 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:59:41.543268 [info ] [MainThread]: 
+[0m13:59:41.547236 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m13:59:41.551159 [debug] [MainThread]: Command `cli run` succeeded at 13:59:41.551159 after 26.13 seconds
+[0m13:59:41.553689 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC7BC42690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC7BBC3D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC75154550>]}
+[0m13:59:41.555702 [debug] [MainThread]: Flushing usage events
+[0m13:59:41.764973 [debug] [MainThread]: An error was encountered while trying to flush usage events

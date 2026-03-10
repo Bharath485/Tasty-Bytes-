@@ -1,4 +1,11 @@
-/*--------------------------------------------------------------------------------------------
+
+  create or replace   view DBT_POC.ANA_PROCUREMENT.LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+  
+  
+  
+  
+  as (
+    /*--------------------------------------------------------------------------------------------
 Command to run model:
 --dbt run --select ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
 --dbt build --full-refresh --select +ANA_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
@@ -10,16 +17,8 @@ Version     Date            Author                Description
 
 ----------------------------------------------------------------------------------------------*/
 
-{################# Snowflake Object Configuration #################}
-{{
-    config(
-        description = 'Building ANA view for LOGISTICS_DASHBOARD_PO_QUANTITY_RPT',
-        materialized='view',
-        schema ='ANA_PROCUREMENT',
-        alias='LOGISTICS_DASHBOARD_PO_QUANTITY_RPT',
-        tags =['ANA_PROCUREMENT']
-    )
-}}
+
+
 
 SELECT 
     LOGISTICS_DASHBOARD_PO_QUANTITY_KEY,
@@ -62,4 +61,6 @@ SELECT
     BIW_BATCH_ID,
     BIW_MD5_KEY
 
-FROM {{ref('ETL_MART_PROCUREMENT_LOGISTICS_DASHBOARD_PO_QUANTITY_RPT')}}
+FROM DBT_POC.ETL_MART_PROCUREMENT.LOGISTICS_DASHBOARD_PO_QUANTITY_RPT
+  );
+
