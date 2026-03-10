@@ -12,6 +12,11 @@ seed-paths: [seeds]
 macro-paths: [macros]
 snapshot-paths: [snapshots]
 
+## Vars
+vars:
+  is_backfill: false
+  refresh_start_ts: '1900-01-01'
+
 ## Target
 target-path: target
 clean-targets: [target, dbt_modules]
