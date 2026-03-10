@@ -1,0 +1,9 @@
+tasty_bytes:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      database: DBT_POC
+      schema: DEV
+      warehouse: DBT_POC
+      role: dbt_poc
