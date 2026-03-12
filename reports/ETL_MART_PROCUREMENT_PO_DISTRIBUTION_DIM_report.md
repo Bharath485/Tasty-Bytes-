@@ -10,7 +10,6 @@
 | Target Schema | ETL_MART_PROCUREMENT |
 | Target Table | PO_DISTRIBUTION_DIM |
 | Table Type | DIM TABLE (SCD1) |
-| Load Strategy | MERGE |
 | Primary Key | PO_DISTRIBUTION_KEY |
 | Natural Key | PO_DISTRIBUTION_ID |
 | Total Columns | 49 |
@@ -23,7 +22,7 @@
 
 ## Source Tables
 | # | Source Table | CTE Name | Join Type |
-|---|--------------|----------|-----------|
+|---|-------------|----------|-----------|
 | 1 | PO_DISTRIBUTIONS_ALL | PO_DISTRIBUTIONS_ALL | Main Driver |
 | 2 | PJF_PROJECTS_ALL_B | PJF_PROJECTS_ALL_B | Pre-joined with _TL |
 | 3 | PJF_PROJECTS_ALL_TL | (joined in PJF_PROJECTS_ALL_B) | - |
@@ -32,7 +31,7 @@
 
 ## Column Mapping
 | # | Column | Source Table | Source Field | Transformation |
-|---|--------|--------------|--------------|----------------|
+|---|--------|-------------|--------------|----------------|
 | 1 | PO_DISTRIBUTION_KEY | PO_DISTRIBUTIONS_ALL | PO_DISTRIBUTION_ID | MD5(OBJECT_CONSTRUCT) |
 | 2 | PO_DISTRIBUTION_ID | PO_DISTRIBUTIONS_ALL | PO_DISTRIBUTION_ID | Direct |
 | 3 | DISTRIBUTION_NUM | PO_DISTRIBUTIONS_ALL | DISTRIBUTION_NUM | Direct |
@@ -69,19 +68,39 @@
 | 34 | ACCRUE_ON_RECEIPT_FLAG | PO_DISTRIBUTIONS_ALL | ACCRUE_ON_RECEIPT_FLAG | Direct |
 | 35 | PJC_PROJECT_ID | PO_DISTRIBUTIONS_ALL | PJC_PROJECT_ID | Direct |
 | 36 | PJC_TASK_ID | PO_DISTRIBUTIONS_ALL | PJC_TASK_ID | Direct |
-| 37 | PROJECT_NUMBER | PJF_PROJECTS_ALL_B | SEGMENT1 | Alias via pre-joined CTE |
-| 38 | PROJECT_NAME | PJF_PROJECTS_ALL_TL | NAME | Alias via pre-joined CTE |
-| 39 | TASK_NUMBER | PJF_PROJ_ELEMENTS_B | ELEMENT_NUMBER | Alias via pre-joined CTE |
-| 40 | TASK_NAME | PJF_PROJ_ELEMENTS_TL | NAME | Alias via pre-joined CTE |
+| 37 | PROJECT_NUMBER | PJF_PROJECTS_ALL_B | SEGMENT1 | Alias (SEGMENT1 AS PROJECT_NUMBER) |
+| 38 | PROJECT_NAME | PJF_PROJECTS_ALL_TL | NAME | Pre-joined via PJF_PROJECTS_ALL_B |
+| 39 | TASK_NUMBER | PJF_PROJ_ELEMENTS_B | ELEMENT_NUMBER | Alias (ELEMENT_NUMBER AS TASK_NUMBER) |
+| 40 | TASK_NAME | PJF_PROJ_ELEMENTS_TL | NAME | Pre-joined via PJF_PROJ_ELEMENTS_B |
 | 41 | WIP_OPERATION_SEQ_NUM | PO_DISTRIBUTIONS_ALL | WIP_OPERATION_SEQ_NUM | Direct |
 | 42 | WIP_REPETITIVE_SCHEDULE_ID | PO_DISTRIBUTIONS_ALL | WIP_REPETITIVE_SCHEDULE_ID | Direct |
 | 43 | WIP_RESOURCE_SEQ_NUM | PO_DISTRIBUTIONS_ALL | WIP_RESOURCE_SEQ_NUM | Direct |
 | 44 | PREVENT_ENCUMBRANCE_FLAG | PO_DISTRIBUTIONS_ALL | PREVENT_ENCUMBRANCE_FLAG | Direct |
-| 45 | IS_DELETE | - | - | Hardcoded 'N'::BOOLEAN |
+| 45 | IS_DELETE | - | - | Hard-coded 'N'::BOOLEAN |
 | 46 | BIW_INS_DTTM | - | - | V_START_DTTM::TIMESTAMP_NTZ |
 | 47 | BIW_UPD_DTTM | - | - | V_START_DTTM::TIMESTAMP_NTZ |
 | 48 | BIW_BATCH_ID | - | - | V_BIW_BATCH_ID::NUMBER(38,0) |
-| 49 | BIW_MD5_KEY | - | - | MD5(OBJECT_CONSTRUCT(...))::BINARY |
+| 49 | BIW_MD5_KEY | - | - | MD5(OBJECT_CONSTRUCT(COL1..COL44))::BINARY |
+
+## Validation Checklist
+| # | Check | Status |
+|---|-------|--------|
+| 1 | Header block present | PASS |
+| 2 | v_pk_list defined | PASS |
+| 3 | v_house_keeping_column in is_incremental | PASS |
+| 4 | Job name format (DBT_ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM) | PASS |
+| 5 | edw_batch_control with 5 params | PASS |
+| 6 | Config has schema and alias | PASS |
+| 7 | Source ref uses ODS_ORACLE_CLOUD_ prefix | PASS |
+| 8 | IS_DELETE = 'N' (string) in WHERE | PASS |
+| 9 | _TL tables pre-joined in CTE | PASS |
+| 10 | LANGUAGE = 'US' filter | PASS |
+| 11 | MD5 uses COL1, COL2... pattern | PASS |
+| 12 | MD5 values cast to ::STRING | PASS |
+| 13 | BIW_MD5_KEY cast to ::BINARY | PASS |
+| 14 | BIW_INS_DTTM uses V_START_DTTM | PASS |
+| 15 | LEFT OUTER JOIN (not LEFT JOIN) | PASS |
+| 16 | Elements use dual join condition | PASS |
 
 ## Files Generated
 | File | Path | Status |
