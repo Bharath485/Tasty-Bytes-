@@ -6,7 +6,7 @@ Command to run model:
 
 Version     Date            Author                Description
 -------     ----------      ----------------      ----------------------------------
-1.0         2026-03-10      Cortex Code           Initial Version - Auto-Generated from STTM
+1.0         2026-03-12      Cortex Code           Initial Version - Auto-Generated from STTM
 
 ----------------------------------------------------------------------------------------------*/
 
@@ -36,7 +36,7 @@ Version     Date            Author                Description
         materialized='table',
         schema ='ETL_MART_PROCUREMENT',
         alias='PO_DISTRIBUTION_DIM',
-        tags =['PO'],
+        tags =['MART_PROCUREMENT'],
         unique_key= v_pk_list,
         post_hook= [v_sql_upd_success_batch]  
     )
@@ -241,4 +241,4 @@ LEFT OUTER JOIN PJF_PROJECTS_ALL_B
 ON PDA.PJC_PROJECT_ID = PJF_PROJECTS_ALL_B.PROJECT_ID
 LEFT OUTER JOIN PJF_PROJ_ELEMENTS_B
 ON PDA.PJC_PROJECT_ID = PJF_PROJ_ELEMENTS_B.PROJECT_ID
-AND PDA.PJC_TASK_ID = PJF_PROJ_ELEMENTS_B.PROJ_ELEMENT_ID
+AND PDA.PJC_TASK_ID=PJF_PROJ_ELEMENTS_B.PROJ_ELEMENT_ID

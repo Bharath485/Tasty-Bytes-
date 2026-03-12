@@ -20,20 +20,19 @@
 | CTEs Generated | 5 |
 | Pattern Applied | Enterprise (ONSEMI) |
 | Match Percentage | 90% |
-| Generated Date | 2026-03-10 |
 
 ## Source Tables
 | # | Source Table | CTE Name | Join Type |
-|---|-------------|----------|-----------|
-| 1 | PO_DISTRIBUTIONS_ALL | PO_DISTRIBUTIONS_ALL | Main Driver (incremental filter) |
+|---|--------------|----------|-----------|
+| 1 | PO_DISTRIBUTIONS_ALL | PO_DISTRIBUTIONS_ALL | Main Driver |
 | 2 | PJF_PROJECTS_ALL_B | PJF_PROJECTS_ALL_B | Pre-joined with _TL |
-| 3 | PJF_PROJECTS_ALL_TL | (joined in PJF_PROJECTS_ALL_B) | LANGUAGE='US' filter |
+| 3 | PJF_PROJECTS_ALL_TL | (joined in PJF_PROJECTS_ALL_B) | - |
 | 4 | PJF_PROJ_ELEMENTS_B | PJF_PROJ_ELEMENTS_B | Pre-joined with _TL |
-| 5 | PJF_PROJ_ELEMENTS_TL | (joined in PJF_PROJ_ELEMENTS_B) | LANGUAGE='US' filter |
+| 5 | PJF_PROJ_ELEMENTS_TL | (joined in PJF_PROJ_ELEMENTS_B) | - |
 
 ## Column Mapping
-| # | Target Column | Source Table | Source Field | Transformation |
-|---|---------------|-------------|--------------|----------------|
+| # | Column | Source Table | Source Field | Transformation |
+|---|--------|--------------|--------------|----------------|
 | 1 | PO_DISTRIBUTION_KEY | PO_DISTRIBUTIONS_ALL | PO_DISTRIBUTION_ID | MD5(OBJECT_CONSTRUCT) |
 | 2 | PO_DISTRIBUTION_ID | PO_DISTRIBUTIONS_ALL | PO_DISTRIBUTION_ID | Direct |
 | 3 | DISTRIBUTION_NUM | PO_DISTRIBUTIONS_ALL | DISTRIBUTION_NUM | Direct |
@@ -70,42 +69,22 @@
 | 34 | ACCRUE_ON_RECEIPT_FLAG | PO_DISTRIBUTIONS_ALL | ACCRUE_ON_RECEIPT_FLAG | Direct |
 | 35 | PJC_PROJECT_ID | PO_DISTRIBUTIONS_ALL | PJC_PROJECT_ID | Direct |
 | 36 | PJC_TASK_ID | PO_DISTRIBUTIONS_ALL | PJC_TASK_ID | Direct |
-| 37 | PROJECT_NUMBER | PJF_PROJECTS_ALL_B | SEGMENT1 | Alias (pre-joined CTE) |
-| 38 | PROJECT_NAME | PJF_PROJECTS_ALL_TL | NAME | Alias (pre-joined CTE) |
-| 39 | TASK_NUMBER | PJF_PROJ_ELEMENTS_B | ELEMENT_NUMBER | Alias (pre-joined CTE) |
-| 40 | TASK_NAME | PJF_PROJ_ELEMENTS_TL | NAME | Alias (pre-joined CTE) |
+| 37 | PROJECT_NUMBER | PJF_PROJECTS_ALL_B | SEGMENT1 | Alias via pre-joined CTE |
+| 38 | PROJECT_NAME | PJF_PROJECTS_ALL_TL | NAME | Alias via pre-joined CTE |
+| 39 | TASK_NUMBER | PJF_PROJ_ELEMENTS_B | ELEMENT_NUMBER | Alias via pre-joined CTE |
+| 40 | TASK_NAME | PJF_PROJ_ELEMENTS_TL | NAME | Alias via pre-joined CTE |
 | 41 | WIP_OPERATION_SEQ_NUM | PO_DISTRIBUTIONS_ALL | WIP_OPERATION_SEQ_NUM | Direct |
 | 42 | WIP_REPETITIVE_SCHEDULE_ID | PO_DISTRIBUTIONS_ALL | WIP_REPETITIVE_SCHEDULE_ID | Direct |
 | 43 | WIP_RESOURCE_SEQ_NUM | PO_DISTRIBUTIONS_ALL | WIP_RESOURCE_SEQ_NUM | Direct |
 | 44 | PREVENT_ENCUMBRANCE_FLAG | PO_DISTRIBUTIONS_ALL | PREVENT_ENCUMBRANCE_FLAG | Direct |
-| 45 | IS_DELETE | - | - | Hard-coded 'N'::BOOLEAN |
+| 45 | IS_DELETE | - | - | Hardcoded 'N'::BOOLEAN |
 | 46 | BIW_INS_DTTM | - | - | V_START_DTTM::TIMESTAMP_NTZ |
 | 47 | BIW_UPD_DTTM | - | - | V_START_DTTM::TIMESTAMP_NTZ |
 | 48 | BIW_BATCH_ID | - | - | V_BIW_BATCH_ID::NUMBER(38,0) |
-| 49 | BIW_MD5_KEY | - | - | MD5(OBJECT_CONSTRUCT)::BINARY |
-
-## Validation Checklist
-| # | Check | Status |
-|---|-------|--------|
-| 1 | Header block present | ✅ |
-| 2 | v_pk_list defined | ✅ |
-| 3 | v_house_keeping_column in is_incremental | ✅ |
-| 4 | Job name: DBT_ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM | ✅ |
-| 5 | edw_batch_control with 5 params | ✅ |
-| 6 | Config has schema and alias | ✅ |
-| 7 | Source ref uses ODS_ORACLE_CLOUD_ prefix | ✅ |
-| 8 | IS_DELETE = 'N' (string filter) | ✅ |
-| 9 | _TL tables pre-joined in CTE | ✅ |
-| 10 | LANGUAGE = 'US' filter applied | ✅ |
-| 11 | MD5 uses COL1, COL2... pattern | ✅ |
-| 12 | MD5 values cast to ::STRING | ✅ |
-| 13 | BIW_MD5_KEY cast to ::BINARY | ✅ |
-| 14 | BIW_INS_DTTM uses V_START_DTTM | ✅ |
-| 15 | LEFT OUTER JOIN (not LEFT JOIN) | ✅ |
-| 16 | Elements use dual join condition | ✅ |
+| 49 | BIW_MD5_KEY | - | - | MD5(OBJECT_CONSTRUCT(...))::BINARY |
 
 ## Files Generated
 | File | Path | Status |
 |------|------|--------|
-| Model SQL | models\cortex_generated\ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM.sql | ✅ Created |
-| Report | reports\ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM_report.md | ✅ Created |
+| Model SQL | models/cortex_generated/ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM.sql | Created |
+| Report | reports/ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM_report.md | Created |
