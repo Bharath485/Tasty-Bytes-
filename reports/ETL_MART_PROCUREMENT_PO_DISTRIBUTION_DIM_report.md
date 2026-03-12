@@ -22,7 +22,7 @@
 
 ## Source Tables
 | # | Source Table | CTE Name | Join Type |
-|---|-------------|----------|-----------|
+|---|--------------|----------|-----------|
 | 1 | PO_DISTRIBUTIONS_ALL | PO_DISTRIBUTIONS_ALL | Main Driver |
 | 2 | PJF_PROJECTS_ALL_B | PJF_PROJECTS_ALL_B | Pre-joined with _TL |
 | 3 | PJF_PROJECTS_ALL_TL | (joined in PJF_PROJECTS_ALL_B) | - |
@@ -31,7 +31,7 @@
 
 ## Column Mapping
 | # | Column | Source Table | Source Field | Transformation |
-|---|--------|-------------|--------------|----------------|
+|---|--------|--------------|--------------|----------------|
 | 1 | PO_DISTRIBUTION_KEY | PO_DISTRIBUTIONS_ALL | PO_DISTRIBUTION_ID | MD5(OBJECT_CONSTRUCT) |
 | 2 | PO_DISTRIBUTION_ID | PO_DISTRIBUTIONS_ALL | PO_DISTRIBUTION_ID | Direct |
 | 3 | DISTRIBUTION_NUM | PO_DISTRIBUTIONS_ALL | DISTRIBUTION_NUM | Direct |
@@ -76,34 +76,34 @@
 | 42 | WIP_REPETITIVE_SCHEDULE_ID | PO_DISTRIBUTIONS_ALL | WIP_REPETITIVE_SCHEDULE_ID | Direct |
 | 43 | WIP_RESOURCE_SEQ_NUM | PO_DISTRIBUTIONS_ALL | WIP_RESOURCE_SEQ_NUM | Direct |
 | 44 | PREVENT_ENCUMBRANCE_FLAG | PO_DISTRIBUTIONS_ALL | PREVENT_ENCUMBRANCE_FLAG | Direct |
-| 45 | IS_DELETE | - | - | Hard-coded 'N'::BOOLEAN |
+| 45 | IS_DELETE | - | - | Hardcoded 'N'::BOOLEAN |
 | 46 | BIW_INS_DTTM | - | - | V_START_DTTM::TIMESTAMP_NTZ |
 | 47 | BIW_UPD_DTTM | - | - | V_START_DTTM::TIMESTAMP_NTZ |
 | 48 | BIW_BATCH_ID | - | - | V_BIW_BATCH_ID::NUMBER(38,0) |
-| 49 | BIW_MD5_KEY | - | - | MD5(OBJECT_CONSTRUCT(COL1..COL44))::BINARY |
-
-## Validation Checklist
-| # | Check | Status |
-|---|-------|--------|
-| 1 | Header block present | PASS |
-| 2 | v_pk_list defined | PASS |
-| 3 | v_house_keeping_column in is_incremental | PASS |
-| 4 | Job name format (DBT_ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM) | PASS |
-| 5 | edw_batch_control with 5 params | PASS |
-| 6 | Config has schema and alias | PASS |
-| 7 | Source ref uses ODS_ORACLE_CLOUD_ prefix | PASS |
-| 8 | IS_DELETE = 'N' (string) in WHERE | PASS |
-| 9 | _TL tables pre-joined in CTE | PASS |
-| 10 | LANGUAGE = 'US' filter | PASS |
-| 11 | MD5 uses COL1, COL2... pattern | PASS |
-| 12 | MD5 values cast to ::STRING | PASS |
-| 13 | BIW_MD5_KEY cast to ::BINARY | PASS |
-| 14 | BIW_INS_DTTM uses V_START_DTTM | PASS |
-| 15 | LEFT OUTER JOIN (not LEFT JOIN) | PASS |
-| 16 | Elements use dual join condition | PASS |
+| 49 | BIW_MD5_KEY | - | - | MD5(OBJECT_CONSTRUCT(all cols))::BINARY |
 
 ## Files Generated
 | File | Path | Status |
 |------|------|--------|
 | Model SQL | models/cortex_generated/ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM.sql | Created |
 | Report | reports/ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM_report.md | Created |
+
+## Validation Checklist
+| # | Check | Result |
+|---|-------|--------|
+| 1 | Header block present | PASS |
+| 2 | v_pk_list defined | PASS |
+| 3 | v_house_keeping_column in is_incremental | PASS |
+| 4 | Job name format DBT_ETL_SCHEMA_TABLE | PASS |
+| 5 | edw_batch_control with 5 params | PASS |
+| 6 | Config has schema and alias | PASS |
+| 7 | Source ref uses ODS_ORACLE_CLOUD_ prefix | PASS |
+| 8 | IS_DELETE = 'N' (string) in WHERE | PASS |
+| 9 | _TL tables pre-joined in CTE | PASS |
+| 10 | LANGUAGE = 'US' filter applied | PASS |
+| 11 | MD5 uses COL1, COL2... pattern | PASS |
+| 12 | MD5 values cast to ::STRING | PASS |
+| 13 | BIW_MD5_KEY cast to ::BINARY | PASS |
+| 14 | BIW_INS_DTTM uses V_START_DTTM | PASS |
+| 15 | LEFT OUTER JOIN (not LEFT JOIN) | PASS |
+| 16 | Elements use dual join condition | PASS |
