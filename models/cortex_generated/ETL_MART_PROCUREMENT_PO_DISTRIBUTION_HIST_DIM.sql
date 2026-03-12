@@ -38,23 +38,11 @@ Version     Date            Author                Description
         alias='PO_DISTRIBUTION_HIST_DIM',
         tags =['PO'],
         unique_key= v_pk_list,
-        merge_update_columns = ['BIW_UPD_DTTM','BIW_BATCH_ID','BIW_MD5_KEY','DBT_SCD_ID','DBT_UPDATED_AT','DBT_VALID_FROM','DBT_VALID_TO'],
+        incremental_strategy='merge',
         post_hook= [v_sql_upd_success_batch]  
     )
 }}
 
-
-{% snapshot po_distribution_hist_dim_snapshot %}
-
-{{
-    config(
-        target_schema='ETL_MART_PROCUREMENT',
-        unique_key='PO_DISTRIBUTION_KEY',
-        strategy='check',
-        check_cols='all',
-        invalidate_hard_deletes=True
-    )
-}}
 
 SELECT 
     PO_DISTRIBUTION_KEY,
@@ -108,5 +96,7 @@ SELECT
     BIW_MD5_KEY
 FROM {{ref('ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM')}}
 WHERE IS_DELETE = FALSE
-
-{% endsnapshot %}
+{% if is_incremental() %}
+AND BIW_UPD_DTTM >= '{{V_LWM}}'
+AND BIW_UPD_DTTM <= '{{V_HWM}}'
+{% endif %}
