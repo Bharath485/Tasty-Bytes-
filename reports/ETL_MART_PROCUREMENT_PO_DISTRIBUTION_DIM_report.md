@@ -10,6 +10,7 @@
 | Target Schema | ETL_MART_PROCUREMENT |
 | Target Table | PO_DISTRIBUTION_DIM |
 | Table Type | DIM TABLE (SCD1) |
+| Load Strategy | MERGE |
 | Primary Key | PO_DISTRIBUTION_KEY |
 | Natural Key | PO_DISTRIBUTION_ID |
 | Total Columns | 49 |
@@ -68,10 +69,10 @@
 | 34 | ACCRUE_ON_RECEIPT_FLAG | PO_DISTRIBUTIONS_ALL | ACCRUE_ON_RECEIPT_FLAG | Direct |
 | 35 | PJC_PROJECT_ID | PO_DISTRIBUTIONS_ALL | PJC_PROJECT_ID | Direct |
 | 36 | PJC_TASK_ID | PO_DISTRIBUTIONS_ALL | PJC_TASK_ID | Direct |
-| 37 | PROJECT_NUMBER | PJF_PROJECTS_ALL_B | SEGMENT1 | Alias via Pre-joined CTE |
-| 38 | PROJECT_NAME | PJF_PROJECTS_ALL_TL | NAME | Alias via Pre-joined CTE |
-| 39 | TASK_NUMBER | PJF_PROJ_ELEMENTS_B | ELEMENT_NUMBER | Alias via Pre-joined CTE |
-| 40 | TASK_NAME | PJF_PROJ_ELEMENTS_TL | NAME | Alias via Pre-joined CTE |
+| 37 | PROJECT_NUMBER | PJF_PROJECTS_ALL_B | SEGMENT1 | Alias via pre-joined CTE |
+| 38 | PROJECT_NAME | PJF_PROJECTS_ALL_TL | NAME | Alias via pre-joined CTE |
+| 39 | TASK_NUMBER | PJF_PROJ_ELEMENTS_B | ELEMENT_NUMBER | Alias via pre-joined CTE |
+| 40 | TASK_NAME | PJF_PROJ_ELEMENTS_TL | NAME | Alias via pre-joined CTE |
 | 41 | WIP_OPERATION_SEQ_NUM | PO_DISTRIBUTIONS_ALL | WIP_OPERATION_SEQ_NUM | Direct |
 | 42 | WIP_REPETITIVE_SCHEDULE_ID | PO_DISTRIBUTIONS_ALL | WIP_REPETITIVE_SCHEDULE_ID | Direct |
 | 43 | WIP_RESOURCE_SEQ_NUM | PO_DISTRIBUTIONS_ALL | WIP_RESOURCE_SEQ_NUM | Direct |
@@ -87,3 +88,23 @@
 |------|------|--------|
 | Model SQL | models/cortex_generated/ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM.sql | Created |
 | Report | reports/ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM_report.md | Created |
+
+## Validation Checklist
+| # | Check | Status |
+|---|-------|--------|
+| 1 | Header block present | Pass |
+| 2 | v_pk_list defined | Pass |
+| 3 | v_house_keeping_column in is_incremental | Pass |
+| 4 | Job name format DBT_ETL_MART_PROCUREMENT_PO_DISTRIBUTION_DIM | Pass |
+| 5 | edw_batch_control with 5 params | Pass |
+| 6 | Config has schema and alias | Pass |
+| 7 | Source ref uses ODS_ORACLE_CLOUD_ prefix | Pass |
+| 8 | IS_DELETE = 'N' (string) | Pass |
+| 9 | _TL tables pre-joined in CTE | Pass |
+| 10 | LANGUAGE = 'US' filter | Pass |
+| 11 | MD5 uses COL1, COL2... pattern | Pass |
+| 12 | MD5 values cast to ::STRING | Pass |
+| 13 | BIW_MD5_KEY cast to ::BINARY | Pass |
+| 14 | BIW_INS_DTTM uses V_START_DTTM | Pass |
+| 15 | LEFT OUTER JOIN (not LEFT JOIN) | Pass |
+| 16 | Elements use dual join condition | Pass |
