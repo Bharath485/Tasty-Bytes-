@@ -2,22 +2,25 @@ version: 2
 
 models:
   - name: FACT_ORDER
-    description: "Order fact table, one row per order. Line-level price and quantity aggregated from ORDER_DETAIL. Incremental merge on ORDER_ID (SCD Type 1 overwrite)."
+    description: >
+      Order-level fact table (one row per ORDER_ID) built from RAW.ORDER_HEADER with line
+      price and quantity aggregated from RAW.ORDER_DETAIL. Incremental merge on ORDER_ID
+      (SCD Type 1 overwrite).
     columns:
       - name: ORDER_ID
-        description: "Primary Key"
+        description: Primary Key
         tests:
           - not_null
           - unique
       - name: ORDER_TIMESTAMP
-        description: "Order Timestamp"
+        description: Order Timestamp
         tests:
           - not_null
       - name: TOTAL_LINE_AMOUNT
-        description: "Aggregated Measure - SUM(PRICE) per order, defaults to 0"
+        description: Aggregated Measure - SUM(PRICE) per order, defaulted to 0
         tests:
           - not_null
       - name: TOTAL_QUANTITY
-        description: "Aggregated Measure - SUM(QUANTITY) per order, defaults to 0"
+        description: Aggregated Measure - SUM(QUANTITY) per order, defaulted to 0
         tests:
           - not_null
