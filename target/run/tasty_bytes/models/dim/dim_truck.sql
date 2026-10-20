@@ -2,10 +2,13 @@
   
     
 
-create or replace transient table DBT_POC.DEV.DIM_TRUCK
+create or replace transient table DBT_PROJECTS_TASTY_BYTES_DEV.dim.DIM_TRUCK
     
     
     
+    
+    
+
     as (
 
 select
@@ -24,7 +27,7 @@ select
   EV_FLAG,
   FRANCHISE_ID,
   TRUCK_OPENING_DATE
-from DBT_POC.DEV.raw_pos_truck
+from DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_truck
     )
 ;
 

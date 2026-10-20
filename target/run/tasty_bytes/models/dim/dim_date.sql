@@ -2,17 +2,20 @@
   
     
 
-create or replace transient table DBT_POC.DEV.DIM_DATE
+create or replace transient table DBT_PROJECTS_TASTY_BYTES_DEV.dim.DIM_DATE
     
     
     
+    
+    
+
     as (
 
 -- Build a minimal calendar from ORDER_HEADER timestamps
 with dates as (
   select distinct
     cast(date(ORDER_TS) as date) as calendar_date
-  from DBT_POC.DEV.raw_pos_order_header
+  from DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_order_header
   where ORDER_TS is not null
 )
 

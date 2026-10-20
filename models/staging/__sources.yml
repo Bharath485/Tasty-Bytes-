@@ -4,7 +4,7 @@ version: 2
 sources:
   - name: tb_101
     description: "Point of Sale source data"
-    database: dbt_poc
+    database: DBT_PROJECTS_TASTY_BYTES_DEV
     schema: RAW
 
     tables:

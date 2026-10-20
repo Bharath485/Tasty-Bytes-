@@ -16,4 +16,4 @@ select
   EV_FLAG,
   FRANCHISE_ID,
   TRUCK_OPENING_DATE
-from DBT_POC.DEV.raw_pos_truck
+from DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_truck

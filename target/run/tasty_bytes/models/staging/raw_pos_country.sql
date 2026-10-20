@@ -1,11 +1,11 @@
 
-  create or replace   view DBT_POC.DEV.raw_pos_country
+  create or replace   view DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_country
   
   
   
   
   as (
     SELECT *
-FROM dbt_poc.RAW.COUNTRY
+FROM DBT_PROJECTS_TASTY_BYTES_DEV.RAW.COUNTRY
   );
 

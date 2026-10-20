@@ -31,16 +31,16 @@ SELECT
     oh.order_tax_amount,
     oh.order_discount_amount,
     oh.order_total
-FROM tasty_bytes_dbt_db.DEV.raw_pos_order_detail od
-JOIN tasty_bytes_dbt_db.DEV.raw_pos_order_header oh
+FROM DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_order_detail od
+JOIN DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_order_header oh
     ON od.order_id = oh.order_id
-JOIN tasty_bytes_dbt_db.DEV.raw_pos_truck t
+JOIN DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_truck t
     ON oh.truck_id = t.truck_id
-JOIN tasty_bytes_dbt_db.DEV.raw_pos_menu m
+JOIN DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_menu m
     ON od.menu_item_id = m.menu_item_id
-JOIN tasty_bytes_dbt_db.DEV.raw_pos_franchise f
+JOIN DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_franchise f
     ON t.franchise_id = f.franchise_id
-JOIN tasty_bytes_dbt_db.DEV.raw_pos_location l
+JOIN DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_location l
     ON oh.location_id = l.location_id
-LEFT JOIN tasty_bytes_dbt_db.DEV.raw_customer_customer_loyalty cl
+LEFT JOIN DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_customer_customer_loyalty cl
     ON oh.customer_id = cl.customer_id

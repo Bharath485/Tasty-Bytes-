@@ -1,11 +1,11 @@
 
-  create or replace   view DBT_POC.DEV.raw_customer_customer_loyalty
+  create or replace   view DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_customer_customer_loyalty
   
   
   
   
   as (
     select *
-from dbt_poc.RAW.CUSTOMER_LOYALTY
+from DBT_PROJECTS_TASTY_BYTES_DEV.RAW.CUSTOMER_LOYALTY
   );
 

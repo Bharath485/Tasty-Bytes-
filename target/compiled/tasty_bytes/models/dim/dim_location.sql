@@ -10,4 +10,4 @@ select
   REGION,
   ISO_COUNTRY_CODE,
   COUNTRY
-from DBT_POC.DEV.raw_pos_location
+from DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_location

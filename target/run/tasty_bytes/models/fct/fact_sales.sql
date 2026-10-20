@@ -1,30 +1,108 @@
--- back compat for old kwarg name
+
+  create or replace   view DBT_PROJECTS_TASTY_BYTES_DEV.DEV.fact_sales
   
-  begin;
-    
-        
-            
-	    
-	    
-            
-        
-    
+  
+  
+  
+  as (
+    WITH order_header AS (
+    SELECT
+        ORDER_ID,
+        ORDER_TS,
+        LOCATION_ID,
+        TRUCK_ID,
+        CUSTOMER_ID,
+        ORDER_TAX_AMOUNT,
+        ORDER_CHANNEL,
+        ORDER_CURRENCY
+    FROM DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_order_header
+),
 
-    
+order_detail AS (
+    SELECT
+        ORDER_DETAIL_ID,
+        ORDER_ID,
+        QUANTITY,
+        UNIT_PRICE,
+        PRICE,
+        ORDER_ITEM_DISCOUNT_AMOUNT,
+        DISCOUNT_ID
+    FROM DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_order_detail
+),
 
-    merge into DBT_POC.DEV.FACT_SALES as DBT_INTERNAL_DEST
-        using DBT_POC.DEV.FACT_SALES__dbt_tmp as DBT_INTERNAL_SOURCE
-        on ((DBT_INTERNAL_SOURCE.order_item_id = DBT_INTERNAL_DEST.order_item_id))
+dim_location AS (
+    SELECT
+        LOCATION_ID,
+        LOCATION_KEY
+    FROM DBT_PROJECTS_TASTY_BYTES_DEV.dim.DIM_LOCATION
+),
 
-    
-    when matched then update set
-        "ORDER_ITEM_ID" = DBT_INTERNAL_SOURCE."ORDER_ITEM_ID","ORDER_ID" = DBT_INTERNAL_SOURCE."ORDER_ID","ORDER_TS" = DBT_INTERNAL_SOURCE."ORDER_TS","ORDER_DATE_KEY" = DBT_INTERNAL_SOURCE."ORDER_DATE_KEY","LOCATION_KEY" = DBT_INTERNAL_SOURCE."LOCATION_KEY","TRUCK_KEY" = DBT_INTERNAL_SOURCE."TRUCK_KEY","CUSTOMER_KEY" = DBT_INTERNAL_SOURCE."CUSTOMER_KEY","QUANTITY" = DBT_INTERNAL_SOURCE."QUANTITY","UNIT_PRICE" = DBT_INTERNAL_SOURCE."UNIT_PRICE","LINE_GROSS_AMOUNT" = DBT_INTERNAL_SOURCE."LINE_GROSS_AMOUNT","LINE_DISCOUNT_AMOUNT" = DBT_INTERNAL_SOURCE."LINE_DISCOUNT_AMOUNT","LINE_NET_AMOUNT" = DBT_INTERNAL_SOURCE."LINE_NET_AMOUNT","HEADER_TAX_AMOUNT" = DBT_INTERNAL_SOURCE."HEADER_TAX_AMOUNT","ORDER_CHANNEL" = DBT_INTERNAL_SOURCE."ORDER_CHANNEL","ORDER_CURRENCY" = DBT_INTERNAL_SOURCE."ORDER_CURRENCY","DISCOUNT_ID" = DBT_INTERNAL_SOURCE."DISCOUNT_ID","DW_INSERT_TS" = DBT_INTERNAL_SOURCE."DW_INSERT_TS","DW_UPDATE_TS" = DBT_INTERNAL_SOURCE."DW_UPDATE_TS"
-    
+dim_truck AS (
+    SELECT
+        TRUCK_ID,
+        TRUCK_KEY
+    FROM DBT_PROJECTS_TASTY_BYTES_DEV.dim.DIM_TRUCK
+),
 
-    when not matched then insert
-        ("ORDER_ITEM_ID", "ORDER_ID", "ORDER_TS", "ORDER_DATE_KEY", "LOCATION_KEY", "TRUCK_KEY", "CUSTOMER_KEY", "QUANTITY", "UNIT_PRICE", "LINE_GROSS_AMOUNT", "LINE_DISCOUNT_AMOUNT", "LINE_NET_AMOUNT", "HEADER_TAX_AMOUNT", "ORDER_CHANNEL", "ORDER_CURRENCY", "DISCOUNT_ID", "DW_INSERT_TS", "DW_UPDATE_TS")
-    values
-        ("ORDER_ITEM_ID", "ORDER_ID", "ORDER_TS", "ORDER_DATE_KEY", "LOCATION_KEY", "TRUCK_KEY", "CUSTOMER_KEY", "QUANTITY", "UNIT_PRICE", "LINE_GROSS_AMOUNT", "LINE_DISCOUNT_AMOUNT", "LINE_NET_AMOUNT", "HEADER_TAX_AMOUNT", "ORDER_CHANNEL", "ORDER_CURRENCY", "DISCOUNT_ID", "DW_INSERT_TS", "DW_UPDATE_TS")
+dim_customer AS (
+    SELECT
+        CUSTOMER_ID
+    FROM DBT_PROJECTS_TASTY_BYTES_DEV.dim.dim_customer
+),
 
-;
-    commit;
+joined AS (
+    SELECT
+        od.ORDER_DETAIL_ID,
+        od.ORDER_ID,
+        oh.ORDER_TS,
+        oh.LOCATION_ID,
+        oh.TRUCK_ID,
+        oh.CUSTOMER_ID,
+        od.QUANTITY,
+        od.UNIT_PRICE,
+        od.PRICE,
+        od.ORDER_ITEM_DISCOUNT_AMOUNT,
+        oh.ORDER_TAX_AMOUNT,
+        oh.ORDER_CHANNEL,
+        oh.ORDER_CURRENCY,
+        od.DISCOUNT_ID,
+        dl.LOCATION_KEY,
+        dt.TRUCK_KEY,
+        dc.CUSTOMER_ID AS CUSTOMER_KEY
+    FROM order_detail od
+    INNER JOIN order_header oh
+        ON od.ORDER_ID = oh.ORDER_ID
+    LEFT JOIN dim_location dl
+        ON oh.LOCATION_ID = dl.LOCATION_ID
+    LEFT JOIN dim_truck dt
+        ON oh.TRUCK_ID = dt.TRUCK_ID
+    LEFT JOIN dim_customer dc
+        ON oh.CUSTOMER_ID = dc.CUSTOMER_ID
+),
+
+final AS (
+    SELECT
+        ORDER_DETAIL_ID AS order_item_id,
+        ORDER_ID AS order_id,
+        COALESCE(ORDER_TS, CURRENT_TIMESTAMP()) AS order_ts,
+        CAST(TO_CHAR(ORDER_TS, 'YYYYMMDD') AS NUMBER(10)) AS order_date_key,
+        LOCATION_KEY AS location_key,
+        TRUCK_KEY AS truck_key,
+        CUSTOMER_KEY AS customer_key,
+        CASE WHEN CAST(QUANTITY AS NUMBER(12,2)) < 0 THEN 0 ELSE CAST(QUANTITY AS NUMBER(12,2)) END AS quantity,
+        COALESCE(CAST(UNIT_PRICE AS NUMBER(12,2)), 0) AS unit_price,
+        COALESCE(CAST(PRICE AS NUMBER(12,2)), 0) AS line_gross_amount,
+        COALESCE(CAST(ORDER_ITEM_DISCOUNT_AMOUNT AS NUMBER(12,2)), 0) AS line_discount_amount,
+        COALESCE(CAST(PRICE AS NUMBER(12,2)), 0) - COALESCE(CAST(ORDER_ITEM_DISCOUNT_AMOUNT AS NUMBER(12,2)), 0) AS line_net_amount,
+        COALESCE(CAST(ORDER_TAX_AMOUNT AS NUMBER(12,2)), 0) AS header_tax_amount,
+        COALESCE(TRIM(ORDER_CHANNEL), 'unknown') AS order_channel,
+        COALESCE(UPPER(ORDER_CURRENCY), 'USD') AS order_currency,
+        DISCOUNT_ID AS discount_id,
+        CURRENT_TIMESTAMP() AS dw_insert_ts,
+        CURRENT_TIMESTAMP() AS dw_update_ts
+    FROM joined
+)
+
+SELECT * FROM final
+  );
+

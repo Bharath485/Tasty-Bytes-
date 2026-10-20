@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw
+    database: DBT_TASTY_BYTES
+    schema: RAW
+    tables:
+      - name: ORDER_HEADER
+      - name: ORDER_DETAIL

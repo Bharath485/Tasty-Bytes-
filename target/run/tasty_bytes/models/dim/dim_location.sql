@@ -2,10 +2,13 @@
   
     
 
-create or replace transient table DBT_POC.DEV.DIM_LOCATION
+create or replace transient table DBT_PROJECTS_TASTY_BYTES_DEV.dim.DIM_LOCATION
     
     
     
+    
+    
+
     as (
 
 -- Minimal conformed attributes for lookups
@@ -18,7 +21,7 @@ select
   REGION,
   ISO_COUNTRY_CODE,
   COUNTRY
-from DBT_POC.DEV.raw_pos_location
+from DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_location
     )
 ;
 

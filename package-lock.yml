@@ -5,4 +5,10 @@ packages:
   - name: dbt_semantic_view
     package: Snowflake-Labs/dbt_semantic_view
     version: 1.0.3
-sha1_hash: fca0a22b02e70c2db4c67d829601c001c7058775
+  - name: dbt_artifacts
+    package: brooklyn-data/dbt_artifacts
+    version: 2.11.1
+  - name: dbt_project_evaluator
+    package: dbt-labs/dbt_project_evaluator
+    version: 1.4.0
+sha1_hash: 09a718b993f97530cee90334d8aeb412f25edd09

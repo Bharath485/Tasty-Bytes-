@@ -1,11 +1,11 @@
 
-  create or replace   view DBT_POC.DEV.raw_pos_order_detail
+  create or replace   view DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_order_detail
   
   
   
   
   as (
     SELECT *
-FROM dbt_poc.RAW.ORDER_DETAIL
+FROM DBT_PROJECTS_TASTY_BYTES_DEV.RAW.ORDER_DETAIL
   );
 

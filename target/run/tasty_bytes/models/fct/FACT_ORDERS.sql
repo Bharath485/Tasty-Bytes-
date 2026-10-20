@@ -4,16 +4,16 @@
     
         
             
-	    
-	    
+            
+            
             
         
     
 
     
 
-    merge into DBT_POC.DEV.FACT_ORDERS as DBT_INTERNAL_DEST
-        using DBT_POC.DEV.FACT_ORDERS__dbt_tmp as DBT_INTERNAL_SOURCE
+    merge into DBT_PROJECTS_TASTY_BYTES_DEV.DEV.fact_orders as DBT_INTERNAL_DEST
+        using DBT_PROJECTS_TASTY_BYTES_DEV.DEV.fact_orders__dbt_tmp as DBT_INTERNAL_SOURCE
         on ((DBT_INTERNAL_SOURCE.order_id = DBT_INTERNAL_DEST.order_id))
 
     

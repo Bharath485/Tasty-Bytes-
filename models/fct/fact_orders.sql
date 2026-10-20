@@ -7,7 +7,7 @@ with order_header as (
     select
         cast(ORDER_ID as INTEGER) as order_id,
         cast(ORDER_TS as TIMESTAMP) as order_timestamp
-    from {{ source('tb_101', 'ORDER_HEADER') }}
+    from {{ref('raw_pos_order_header') }}
 ),
 
 order_detail_aggregated as (
@@ -15,7 +15,7 @@ order_detail_aggregated as (
         cast(ORDER_ID as INTEGER) as order_id,
         cast(sum(PRICE) as NUMERIC) as total_line_amount,
         cast(sum(QUANTITY) as INTEGER) as total_quantity
-    from {{ source('tb_101', 'ORDER_DETAIL') }}
+    from {{ ref('raw_pos_order_detail') }}
     group by ORDER_ID
 ),
 

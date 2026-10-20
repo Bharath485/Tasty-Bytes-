@@ -15,6 +15,6 @@ with customer as (
 
         -- type 1 dimension pattern: latest snapshot from staging
         current_timestamp()            as dim_load_ts
-    from DBT_POC.DEV.raw_customer_customer_loyalty
+    from DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_customer_customer_loyalty
 )
 select * from customer

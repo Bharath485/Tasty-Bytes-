@@ -8,7 +8,7 @@ WITH order_header AS (
         ORDER_TAX_AMOUNT,
         ORDER_CHANNEL,
         ORDER_CURRENCY
-    FROM {{ source('tb_101', 'ORDER_HEADER') }}
+    FROM {{ ref('raw_pos_order_header') }}
 ),
 
 order_detail AS (
@@ -20,7 +20,7 @@ order_detail AS (
         PRICE,
         ORDER_ITEM_DISCOUNT_AMOUNT,
         DISCOUNT_ID
-    FROM {{ source('tb_101', 'ORDER_DETAIL') }}
+    FROM {{ ref('raw_pos_order_detail') }}
 ),
 
 dim_location AS (

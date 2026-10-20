@@ -1,11 +1,11 @@
 
-  create or replace   view DBT_POC.DEV.raw_pos_location
+  create or replace   view DBT_PROJECTS_TASTY_BYTES_DEV.DEV.raw_pos_location
   
   
   
   
   as (
     SELECT *
-FROM dbt_poc.RAW.LOCATION
+FROM DBT_PROJECTS_TASTY_BYTES_DEV.RAW.LOCATION
   );
 

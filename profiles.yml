@@ -3,7 +3,11 @@ tasty_bytes:
   outputs:
     dev:
       type: snowflake
-      database: DBT_POC
+      account: ELFUPUZ-LHB20209
+      user: VARIENT27
+      password: Bharath@1234567890
+      database: DBT_PROJECTS_TASTY_BYTES_DEV
       schema: DEV
-      warehouse: DBT_POC
-      role: dbt_poc
+      warehouse: SNOWFLAKE_LEARNING_WH
+      role: DBT_DEVELOPER
+      threads: 4
